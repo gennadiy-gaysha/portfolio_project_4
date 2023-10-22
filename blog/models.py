@@ -44,7 +44,7 @@ class Country(models.Model):
         """
         if not self.slug:
             self.slug = slugify(self.country_name)
-        self.save(*args, **qwargs)
+        super().save(*args, **qwargs)
 
 
 class Post(models.Model):
@@ -90,7 +90,7 @@ class Post(models.Model):
         """
         if not self.slug:
             self.slug = slugify(self.title)
-        self.save(*args, **qwargs)
+        super().save(*args, **qwargs)
 
 
 class Comment(models.Model):
