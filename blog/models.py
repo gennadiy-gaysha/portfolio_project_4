@@ -12,7 +12,7 @@ class Country(models.Model):
     iso_numeric = models.CharField(max_length=5, blank=True)
     fips = models.CharField(max_length=5, blank=True)
     country_name = models.CharField(max_length=100, unique=True)
-    slug = models.SlugField(max_length=100, unique=True, blank=True)
+    slug = models.SlugField(max_length=100, unique=True)
     capital = models.CharField(max_length=100, blank=True)
     area_sq_km = models.FloatField(default=0.0)
     population = models.IntegerField(default=0)
@@ -25,7 +25,7 @@ class Country(models.Model):
     postal_code_regex = models.CharField(max_length=100, blank=True)
     languages = models.CharField(max_length=100, blank=True)
     geo_name_id = models.IntegerField(default=0)
-    neighbours = models.CharField(max_length=100, default='')
+    neighbours = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         """
