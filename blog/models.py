@@ -44,6 +44,8 @@ class Country(models.Model):
         """
         if not self.slug:
             self.slug = slugify(self.country_name)
+        # explicitly calling the save method with super(Country, self).save(*args, **kwargs)
+        # (instead of self.save() of the current instance) ensures avoiding recursion issue
         super().save(*args, **qwargs)
 
 

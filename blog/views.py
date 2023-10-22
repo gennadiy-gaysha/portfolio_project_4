@@ -17,3 +17,15 @@ class PostList(generic.ListView):
     template_name = 'blog/home.html'
     queryset = Post.objects.filter(status=2).order_by('-created_on')
     paginate_by = 3
+
+
+class PostDetails(generic.DetailView):
+    """
+    A view that displays the detailed information of a specific blog post.
+
+    Attributes:
+    model: The model used for retrieving data, in this case, the Post model.
+    template_name: The template used for rendering the view, here, the 'blog/post_details.html' template.
+    """
+    model = Post
+    template_name = 'blog/post_details.html'
