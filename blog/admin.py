@@ -5,6 +5,7 @@ from .models import Country, Post, Comment
 
 @admin.register(Country)
 class CountryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug':['country_name']}
     search_fields = ['country_name']
 
 
