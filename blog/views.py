@@ -15,6 +15,6 @@ class PostList(generic.ListView):
     paginate_by: The number of posts displayed per page, set to 3 in this case.
     """
     model=Post
-    template = 'blog/home.html'
+    template_name = 'blog/home.html'
     queryset = Post.objects.filter(status=2).order_by('-created_on')
     paginate_by = 3
