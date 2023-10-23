@@ -16,6 +16,11 @@ class RegisterForm(UserCreationForm):
     characters and a 'form-control' widget.
     email: An email field for the email address with a maximum length of 50
     characters and a 'form-control error-message' widget.
+
+    Methods:
+    clean_email: A method that cleans the email field and checks if the email
+    already exists in the User model. Raises a validation error if the email
+    already exists.
     """
     username = forms.CharField(
         widget=forms.TextInput({'class': 'form-control'}), max_length=20)
@@ -26,6 +31,17 @@ class RegisterForm(UserCreationForm):
     email = forms.EmailField(
         widget=forms.EmailInput({'class': 'form-control error-message'}),
         max_length=50)
+
+    def clean_email(self):
+        """
+        Cleans the email field and checks if the email already exists in the
+        User model. Raises a validation error if the email already exists.
+        """
+        email = self.cleaned_data['email']
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError(
+                'This email address is already in use.')
+        return email
 
     class Meta:
         model = User
