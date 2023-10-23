@@ -166,3 +166,11 @@ body {
 .follow-us {
     color: #E9EDE9;
 }
+
+.form-width{
+    width: 50%;
+}
+
+.form-login-width{
+    width: 25%;
+}
