@@ -21,7 +21,17 @@ body {
     color: orange;
 }
 
-.nav-link:hover{
+.hello-user{
+    font-weight: bold;
+    color: #23BBBB;
+}
+
+.hello-user:hover{
+    color: #23BBBB;
+    cursor: default;
+}
+
+.link-hover:hover {
     color: #A4A9AE !important;
 }
 
@@ -157,6 +167,3 @@ body {
     color: #E9EDE9;
 }
 
-.follow-us:hover {
-    color: #A4A9AE !important;
-}
