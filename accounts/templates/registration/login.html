@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>Logging in</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <h1>Logging in</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-outline-success">Login</button>
+    </form>
+    <br>
+</div>
+{% endblock content %}
