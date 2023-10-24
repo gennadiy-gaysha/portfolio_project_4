@@ -11,9 +11,11 @@ class PostList(generic.ListView):
 
     Attributes:
     model: The model used for retrieving data, in this case, the Post model.
-    template_name: The template used for rendering the view, here, the 'blog/home.html' template.
-    queryset: The queryset used to retrieve all published posts, filtering the posts based
-    on their status (status=2) and ordering them by their creation date in descending order.
+    template_name: The template used for rendering the view, here, the
+    'blog/home.html' template.
+    queryset: The queryset used to retrieve all published posts, filtering the
+    posts based on their status (status=2) and ordering them by their creation
+    date in descending order.
     paginate_by: The number of posts displayed per page, set to 3 in this case.
     """
     model = Post
@@ -28,10 +30,12 @@ class PostDetails(generic.DetailView):
 
     Attributes:
     model: The model used for retrieving data, in this case, the Post model.
-    template_name: The template used for rendering the view, here, the 'blog/post_details.html' template.
+    template_name: The template used for rendering the view, here, the
+    'blog/post_details.html' template.
     """
     model = Post
     template_name = 'blog/post_details.html'
+
 
 class CreatePost(LoginRequiredMixin, CreateView):
     """
@@ -47,7 +51,7 @@ class CreatePost(LoginRequiredMixin, CreateView):
     """
     model = Post
     template_name = 'blog/create_post.html'
-    fields = ('title', 'author', 'content', 'featured_image')
+    fields = ('title', 'featured_image', 'excerpt', 'content', 'status')
 
     def form_valid(self, form):
         """
