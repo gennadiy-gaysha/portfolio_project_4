@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import redirect
 from django.views import generic
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
 
 from .forms import PostForm
 from .models import Post
@@ -70,4 +71,34 @@ class CreatePost(LoginRequiredMixin, CreateView):
         """
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+class UpdatePost(UpdateView):
+    """
+    A class-based view that allows the updating of an existing blog post.
+
+    Attributes:
+    model: The model used for updating the post, which is the Post model.
+    form_class: The form class used for the update view, which is the PostForm.
+    template_name: The template used for rendering the update post view,
+    'blog/update_post'
+    """
+    model = Post
+    form_class = PostForm
+    template_name = 'blog/update_post'
+
+    def form_valid(self, form):
+        """
+        The method is executed when the submitted form data is valid. It saves the
+        updated post and then redirects the user to the post-details page for the updated
+        post.
+
+        Args:
+        form: The form that has valid data.
+
+        Returns:
+        A redirection to the post-details page for the updated post.
+        """
+        post = form.instance
+        post.save()
+        return redirect('post-details', slug=post.slug)
 
