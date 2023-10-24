@@ -84,7 +84,7 @@ class UpdatePost(UpdateView):
     """
     model = Post
     form_class = PostForm
-    template_name = 'blog/update_post'
+    template_name = 'blog/update_post.html'
 
     def form_valid(self, form):
         """
