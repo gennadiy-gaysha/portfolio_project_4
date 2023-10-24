@@ -51,7 +51,7 @@ class CreatePost(LoginRequiredMixin, CreateView):
     """
     model = Post
     template_name = 'blog/create_post.html'
-    fields = ('title', 'featured_image', 'excerpt', 'content', 'status')
+    fields = ('title', 'featured_image', 'country', 'excerpt', 'content', 'status')
 
     def form_valid(self, form):
         """
@@ -67,6 +67,6 @@ class CreatePost(LoginRequiredMixin, CreateView):
         form_valid method of the parent class (CreateView) to ensure that
         the standard behavior of the CreateView is executed.
         """
-        form.instance.user = self.request.user
+        form.instance.author = self.request.user
         return super().form_valid(form)
 
