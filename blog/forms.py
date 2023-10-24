@@ -41,7 +41,7 @@ class PostForm(forms.ModelForm):
 
         """
         model = Post
-        fields = ('country', 'title', 'featured_image', 'content', 'status')
+        fields = ('country', 'title', 'featured_image', 'excerpt', 'content', 'status')
 
         widgets = {
             'country': forms.Select(choices=countries_list,
@@ -51,6 +51,7 @@ class PostForm(forms.ModelForm):
             'featured_image': forms.FileInput(
                 attrs={'class': 'form-control-file'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
+            'excerpt': forms.Textarea(attrs={'class': 'form-control'}),
             'status': forms.Select(
                 attrs={'class': 'form-control', 'style': 'width: 100%'})
         }
