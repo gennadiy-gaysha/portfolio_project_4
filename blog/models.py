@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 from django.utils.text import slugify
 
 STATUS = ((0, 'Draft'), (1, 'Moderation'), (2, 'Published'))
@@ -56,7 +57,8 @@ class Post(models.Model):
     # the User model back to the Post model.
     # user.blog_posts.all() - retrieves all the Post instances
     # that have that specific User instance as their author
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                               related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
@@ -64,7 +66,8 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='country')
+    country = models.ForeignKey(Country, on_delete=models.CASCADE,
+                                related_name='country')
 
     class Meta:
         ordering = ['-created_on']
@@ -94,9 +97,25 @@ class Post(models.Model):
             self.slug = slugify(self.title)
         super().save(*args, **qwargs)
 
+    def get_absolute_url(self):
+        """
+        Calling the get_absolute_url method in Django templates or views
+        generates the absolute URL for a specific model instance, e.g.
+        <a href="{{ post.get_absolute_url }}"> generates
+        http://127.0.0.1:8000/post/slug_name/
+
+        get_absolute_url method provides the URL to which Django will redirect
+        the user after the successful creation of a new post, allowing Django's
+        built-in view handling to take care of the actual redirection to the
+        post-details view and template. Slug here is from urls.py path:
+        ('post/<slug:slug>/', views.PostDetails.as_view(), name='post-details')
+        """
+        return reverse('post-details', args=(str(self.slug),))
+
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE,
+                             related_name='comments')
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
