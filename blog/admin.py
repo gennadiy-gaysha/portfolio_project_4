@@ -19,7 +19,7 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ['content']
     actions = ['approve_posts']
 
-    def approve_posts(self, queryset):
+    def approve_posts(self, request, queryset):
         """
         Updates the status of the selected posts in the queryset
         to a value of 2, indicating that they have been approved.
