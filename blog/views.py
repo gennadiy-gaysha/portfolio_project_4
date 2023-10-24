@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic
 from django.views.generic import CreateView
 
+from .forms import PostForm
 from .models import Post
 
 
@@ -51,7 +52,7 @@ class CreatePost(LoginRequiredMixin, CreateView):
     """
     model = Post
     template_name = 'blog/create_post.html'
-    fields = ('title', 'featured_image', 'country', 'excerpt', 'content', 'status')
+    form_class = PostForm
 
     def form_valid(self, form):
         """

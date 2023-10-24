@@ -138,3 +138,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+SUMMERNOTE_CONFIG = {
+    'summernote': {
+        # Change editor size
+        'width': '100%',
+        'height': '480',
+    }
+}

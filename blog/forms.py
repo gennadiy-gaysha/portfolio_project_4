@@ -1,5 +1,6 @@
 from django import forms
 from .models import Country, Post
+from django_summernote.widgets import SummernoteWidget
 
 # Creates a list of all countries form Country table
 countries = Country.objects.all().values_list('country_name', 'country_name')
@@ -50,8 +51,8 @@ class PostForm(forms.ModelForm):
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'featured_image': forms.FileInput(
                 attrs={'class': 'form-control-file'}),
-            'content': forms.Textarea(attrs={'class': 'form-control'}),
-            'excerpt': forms.Textarea(attrs={'class': 'form-control'}),
+            'content': SummernoteWidget(attrs={'class': 'form-control'}),
+            'excerpt': forms.Textarea(attrs={'class': 'form-control', 'style': 'height: 120px'}),
             'status': forms.Select(
                 attrs={'class': 'form-control', 'style': 'width: 100%'})
         }
