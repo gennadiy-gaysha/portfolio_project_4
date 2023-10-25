@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
+from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import CreateView, UpdateView
 
@@ -130,6 +131,9 @@ class DraftList(LoginRequiredMixin, generic.ListView):
 
 
 class PublishedList(LoginRequiredMixin, generic.ListView):
+    """
+    Look at DraftList docstring
+    """
     model = Post
     template_name = 'blog/user_post_list.html'
     paginate_by = 3
@@ -140,6 +144,9 @@ class PublishedList(LoginRequiredMixin, generic.ListView):
 
 
 class ModerationList(LoginRequiredMixin, generic.ListView):
+    """
+    Look at DraftList docstring
+    """
     model = Post
     template_name = 'blog/user_post_list.html'
     paginate_by = 3
@@ -150,5 +157,16 @@ class ModerationList(LoginRequiredMixin, generic.ListView):
 
 
 class DeletePost(generic.DeleteView):
+    """
+    A generic view for deleting a blog post.
+
+    Attributes:
+    model: The model to be used for deleting the post, in this case, the Post model.
+    template_name: The template used for rendering the confirmation page for deleting
+    the post, 'blog/delete_post.html'.
+    success_url: The URL to redirect to after the successful deletion of the post,
+    using the reverse_lazy method.
+    """
     model = Post
     template_name = 'blog/delete_post.html'
+    success_url = reverse_lazy('home')
