@@ -127,3 +127,13 @@ class DraftList(LoginRequiredMixin, generic.ListView):
         """
         user = self.request.user
         return Post.objects.filter(author=user, status=0).order_by('-created_on')
+
+class PublishedList(LoginRequiredMixin, generic.ListView):
+    model = Post
+    template_name = 'blog/published_list.html'
+    paginate_by = 3
+
+    def get_queryset(self):
+        user = self.request.user
+        return Post.objects.filter(author=user, status=3).order_by('-created_on')
+
