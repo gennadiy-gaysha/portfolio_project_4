@@ -114,7 +114,7 @@ class DraftList(LoginRequiredMixin, generic.ListView):
     paginate_by: The number of items to include per page in the pagination.
     """
     model = Post
-    template_name = 'blog/draft.html'
+    template_name = 'blog/draft_list.html'
     paginate_by = 3
 
     def get_queryset(self):
