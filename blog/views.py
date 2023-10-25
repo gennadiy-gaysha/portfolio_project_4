@@ -147,3 +147,7 @@ class ModerationList(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         user = self.request.user
         return Post.objects.filter(author=user, status=1).order_by('-created_on')
+
+class DeletePost(generic.DeleteView):
+    model = Post
+    template_name = 'blog/delete_post'
