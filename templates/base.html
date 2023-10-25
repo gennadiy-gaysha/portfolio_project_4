@@ -62,6 +62,10 @@
                        href="{% url 'create-post' %}">New post</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link text-white link-hover"
+                       href="{% url 'draft-list' user.username %}">My drafts</a>
+                </li>
+                <li class="nav-item">
                     <a class="text-white nav-link link-hover"
                        href="{% url 'logout' %}">Logout</a>
                 </li>
