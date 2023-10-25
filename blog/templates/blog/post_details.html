@@ -37,11 +37,16 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">{{post.content|safe}}</p>
+
                 {% if user.is_authenticated and user.id == post.author.id %}
                 <a href="{% url 'update-post' slug=post.slug %}"
-                   class="btn btn-outline-success post-buttons">Update Post</a>
+                   class="btn btn-outline-success">Update Post</a>
+                <a href="{% url 'delete-post' slug=post.slug %}"
+                   class="btn btn-outline-success">Delete Post</a>
                 {% endif %}
                 <a href="{% url 'home' %}" class="btn btn-outline-success">Home</a>
+
+
                 <br><br>
                 <div class="row">
                     <div class="col-1">

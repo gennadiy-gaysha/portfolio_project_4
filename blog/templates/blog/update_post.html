@@ -16,6 +16,8 @@
             {% csrf_token %}
             {{ form.as_p }}
             <button class="btn btn-outline-success">Update post</button>
+            <a href="{% url 'post-details' slug=post.slug %}"
+                   class="btn btn-outline-success">Reject</a>
         </div>
     </form>
     <br>
