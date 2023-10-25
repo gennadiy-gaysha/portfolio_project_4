@@ -114,7 +114,7 @@ class DraftList(LoginRequiredMixin, generic.ListView):
     paginate_by: The number of items to include per page in the pagination.
     """
     model = Post
-    template_name = 'blog/draft_list.html'
+    template_name = 'blog/user_post_list.html'
     paginate_by = 3
 
     def get_queryset(self):
@@ -131,7 +131,7 @@ class DraftList(LoginRequiredMixin, generic.ListView):
 
 class PublishedList(LoginRequiredMixin, generic.ListView):
     model = Post
-    template_name = 'blog/published_list.html'
+    template_name = 'blog/user_post_list.html'
     paginate_by = 3
 
     def get_queryset(self):
@@ -141,13 +141,14 @@ class PublishedList(LoginRequiredMixin, generic.ListView):
 
 class ModerationList(LoginRequiredMixin, generic.ListView):
     model = Post
-    template_name = 'blog/moderation_list.html'
+    template_name = 'blog/user_post_list.html'
     paginate_by = 3
 
     def get_queryset(self):
         user = self.request.user
         return Post.objects.filter(author=user, status=1).order_by('-created_on')
 
+
 class DeletePost(generic.DeleteView):
     model = Post
-    template_name = 'blog/delete_post'
+    template_name = 'blog/delete_post.html'

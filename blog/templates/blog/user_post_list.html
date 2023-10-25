@@ -2,7 +2,15 @@
 {% load static %}
 
 {% block title %}
+{% for post in post_list %}
+{% if post.status == 0 %}
 <title>Draft posts</title>
+{% elif post.status == 1 %}
+<title>Awaiting moderation</title>
+{% else %}
+<title>Published posts</title>
+{% endif %}
+{% endfor %}
 {% endblock title %}
 
 {% block content %}
