@@ -7,6 +7,6 @@ urlpatterns = [
     path('create_post/', views.CreatePost.as_view(), name='create-post'),
     path('post/update/<slug:slug>/', views.UpdatePost.as_view(), name='update-post'),
     path('draft_list/<str:username>/', views.DraftList.as_view(), name='draft-list'),
-    path('published_list/<str:username>/', views.DraftList.as_view(),
+    path('published_list/<str:username>/', views.PublishedList.as_view(),
          name='published-list'),
 ]

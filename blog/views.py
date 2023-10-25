@@ -135,5 +135,5 @@ class PublishedList(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         user = self.request.user
-        return Post.objects.filter(author=user, status=3).order_by('-created_on')
+        return Post.objects.filter(author=user, status=2).order_by('-created_on')
 
