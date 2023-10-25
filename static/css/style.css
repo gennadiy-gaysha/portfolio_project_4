@@ -174,3 +174,7 @@ body {
 .form-login-width{
     width: 25%;
 }
+
+.post-buttons{
+    margin-left: 25px;
+}

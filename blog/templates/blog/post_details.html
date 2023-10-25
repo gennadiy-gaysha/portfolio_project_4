@@ -37,15 +37,22 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">{{post.content|safe}}</p>
-
+                {% if user.is_authenticated and user.id == post.author.id %}
+                <a href="{% url 'update-post' slug=post.slug %}"
+                   class="btn btn-outline-success post-buttons">Update Post</a>
+                {% endif %}
+                <a href="{% url 'home' %}" class="btn btn-outline-success">Home</a>
+                <br><br>
                 <div class="row">
                     <div class="col-1">
                         <!-- The number of likes goes before the closing strong tag -->
-                        <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }}</strong>
+                        <strong class="text-secondary"><i class="far fa-heart"></i>
+                            {{ post.number_of_likes }}</strong>
                     </div>
                     <div class="col-1">
                         {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"> {{total_comments}}</i>
+                        <strong class="text-secondary"><i class="far fa-comments">
+                            {{total_comments}}</i>
                             <!-- Our total_comments variable goes before the closing strong tag -->
                         </strong>
                         {% endwith %}
