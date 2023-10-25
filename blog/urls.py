@@ -9,6 +9,6 @@ urlpatterns = [
     path('draft_list/<str:username>/', views.DraftList.as_view(), name='draft-list'),
     path('published_list/<str:username>/', views.PublishedList.as_view(),
          name='published-list'),
-    path('published_list/<str:username>/', views.ModerationList.as_view(),
+    path('moderation_list/<str:username>/', views.ModerationList.as_view(),
          name='moderation-list'),
 ]

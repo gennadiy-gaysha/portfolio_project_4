@@ -141,7 +141,7 @@ class PublishedList(LoginRequiredMixin, generic.ListView):
 
 class ModerationList(LoginRequiredMixin, generic.ListView):
     model = Post
-    template_name = 'blog/published_list.html'
+    template_name = 'blog/moderation_list.html'
     paginate_by = 3
 
     def get_queryset(self):
