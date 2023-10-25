@@ -2,7 +2,7 @@ from django.contrib.auth.forms import UserChangeForm
 from django.urls import reverse_lazy
 from django.views import generic
 
-from accounts.forms import RegisterForm
+from accounts.forms import RegisterForm, EditDetailsForm
 
 
 class RegisterNewAccount(generic.CreateView):
@@ -34,7 +34,7 @@ class EditDetails(generic.UpdateView):
     success_url: The URL to redirect to upon successfully updating the user details,
     utilizing the reverse_lazy method.
     """
-    form_class = UserChangeForm
+    form_class = EditDetailsForm
     template_name = 'registration/edit_details.html'
     success_url = reverse_lazy('home')
 

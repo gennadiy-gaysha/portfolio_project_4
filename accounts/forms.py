@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 
 
@@ -53,4 +53,35 @@ class RegisterForm(UserCreationForm):
         self.fields['password1'].widget.attrs.update({'class': 'form-control'})
         self.fields['password2'].widget.attrs.update({'class': 'form-control'})
         self.fields[
-            'username'].help_text = '<span style="color: green">Disclaimer: Once created, you cannot change your username.</span><br><span>Required. 20 characters or fewer. Letters, digits and @/./+/-/_ only.</span>'
+            'username'].help_text = '<span style="color: green">Disclaimer: Once ' \
+            'created, you cannot change your username.</span><br><span>Required. ' \
+            '20 characters or fewer. Letters, digits and @/./+/-/_ only.</span>'
+
+
+class EditDetailsForm(UserChangeForm):
+    first_name = forms.CharField(
+        widget=forms.TextInput({'class': 'form-control'}), max_length=50)
+    last_name = forms.CharField(
+        widget=forms.TextInput({'class': 'form-control'}), max_length=50)
+    email = forms.EmailField(
+        widget=forms.EmailInput({'class': 'form-control'}), max_length=50)
+    last_login = forms.CharField(
+        widget=forms.TextInput({'class': 'form-control', 'readonly': True}),
+        max_length=50)
+    date_joined = forms.CharField(
+        widget=forms.TextInput({'class': 'form-control', 'readonly': True}),
+        max_length=50)
+
+    class Meta:
+        model = User
+        fields = ['username', 'first_name', 'last_name', 'email', 'last_login',
+                  'date_joined']
+
+    def __init__(self, *args, **qwargs):
+        super().__init__(*args, **qwargs)
+        self.fields['username'].widget.attrs.update(
+            {'class': 'form-control', 'readonly': True})
+        self.fields[
+            'username'].help_text = '<span style="color: green">Disclaimer: Once ' \
+            'created, you cannot change your username.</span><br><span>Required. ' \
+            '20 characters or fewer. Letters, digits and @/./+/-/_ only.</span>'
