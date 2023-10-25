@@ -72,6 +72,7 @@ class CreatePost(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+
 class UpdatePost(UpdateView):
     """
     A class-based view that allows the updating of an existing blog post.
@@ -102,3 +103,27 @@ class UpdatePost(UpdateView):
         post.save()
         return redirect('post-details', slug=post.slug)
 
+
+class DraftList(LoginRequiredMixin, generic.ListView):
+    """
+    View for displaying a list of drafts authored by the logged-in user.
+
+    Attributes:
+    model: The model to be used for retrieving draft posts, in this case, the Post model.
+    template_name: The template used for rendering the draft list, 'blog/draft.html'.
+    paginate_by: The number of items to include per page in the pagination.
+    """
+    model = Post
+    template_name = 'blog/draft.html'
+    paginate_by = 3
+
+    def get_queryset(self):
+        """
+        Method to retrieve the queryset of draft posts authored by the logged-in user.
+
+        Returns:
+        A queryset filtered by the current user and posts with status 0 (drafts), ordered
+        by the creation date in descending order.
+        """
+        user = self.request.user
+        return Post.objects.filter(author=user, status=0).order_by('-created_on')
