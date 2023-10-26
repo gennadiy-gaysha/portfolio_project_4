@@ -25,7 +25,7 @@
                                      src=" {{ post.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
+                                    <p class="author">Author: <a href="{% url 'author-bio' author_name=post.author %}" class="text-white text-decoration-none link-hover" >{{ post.author }}</a></p>
                                 </div>
                             </div>
                             <a href="{% url 'post-details' slug=post.slug %}"

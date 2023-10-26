@@ -78,8 +78,7 @@ def author_bio(request, author_name):
     author = User.objects.get(username=author_name)
     userprofile =  UserProfile.objects.get(user=author)
 
-    return render(request, 'registration/author_bio.html',
-                  {'author': author, 'userprofile': userprofile})
+    return render(request, 'registration/author_bio.html', {'author': author, 'userprofile': userprofile})
 
 
 
