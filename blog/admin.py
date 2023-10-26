@@ -12,8 +12,8 @@ class CountryAdmin(admin.ModelAdmin):
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ['title']}
-    list_display = ['title', 'status', 'created_on']
-    list_filter = ['status', 'created_on']
+    list_display = ['title', 'author', 'status', 'created_on']
+    list_filter = ['status', 'author', 'created_on']
     search_fields = ['title', 'content']
     ordering = ['-created_on']
     summernote_fields = ['content']

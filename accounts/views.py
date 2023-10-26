@@ -1,3 +1,4 @@
+from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -45,3 +46,9 @@ class EditDetails(generic.UpdateView):
         The user object representing the currently logged-in user.
         """
         return self.request.user
+
+
+class ChangePassword(PasswordChangeView):
+    form_class = ChangePasswordForm
+    template_name = 'registration/change_password.html'
+    success_url = reverse_lazy('home')
