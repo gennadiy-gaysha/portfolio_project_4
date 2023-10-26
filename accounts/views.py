@@ -84,3 +84,10 @@ class CreateProfile(generic.CreateView):
     model = UserProfile
     form_class = UserProfileForm
     template_name = 'registration/create_profile.html'
+
+    def form_valid(self, form):
+        """
+        Setting the user field of the profile to the currently logged-in user
+        """
+        form.instance.user = self.request.user
+        return super().form_valid(form)
