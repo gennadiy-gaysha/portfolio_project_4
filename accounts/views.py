@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from accounts.forms import RegisterForm, EditDetailsForm, ChangePasswordForm
+from accounts.models import UserProfile
 
 
 class RegisterNewAccount(generic.CreateView):
@@ -63,3 +64,10 @@ class ChangePassword(PasswordChangeView):
     form_class = ChangePasswordForm
     template_name = 'registration/change_password.html'
     success_url = reverse_lazy('home')
+
+class CreateProfile(generic.CreateView):
+    model = UserProfile
+    form_class = UserProfileForm
+    template_name = 'registration/create_profile.html'
+
+
