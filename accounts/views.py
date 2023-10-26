@@ -66,9 +66,21 @@ class ChangePassword(PasswordChangeView):
     template_name = 'registration/change_password.html'
     success_url = reverse_lazy('home')
 
+
 class CreateProfile(generic.CreateView):
+    """
+    A view that handles the creation of user profiles. The view utilizes the
+    generic.CreateView class from Django to handle the form creation process and
+    template rendering.
+
+    Attributes:
+    model: The model associated with the view, UserProfile, which determines the model
+    the view interacts with.
+    form_class: The form class associated with the view, UserProfileForm, which specifies
+    the form used for creating and updating user profiles.
+    template_name: The name of the template used for rendering the create profile page,
+    set to 'registration/create_profile.html'
+    """
     model = UserProfile
     form_class = UserProfileForm
     template_name = 'registration/create_profile.html'
-
-
