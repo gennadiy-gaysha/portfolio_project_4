@@ -74,7 +74,7 @@
                                href="{% url 'moderation-list' user.username %}">Awaiting
                             moderation ({{ num_moderated_posts }})</a></li>
                         <li><a class="dropdown-item"
-                               href="{% url 'published-list' user.username %}">Published</a>
+                               href="{% url 'published-list' user.username %}">Published ({{ num_published_posts }})</a>
                         </li>
                     </ul>
                 </li>
