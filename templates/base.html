@@ -69,10 +69,10 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item"
-                               href="{% url 'draft-list' user.username %}">Drafts ({{num_draft_posts}})</a></li>
+                               href="{% url 'draft-list' user.username %}">Drafts ({{ num_draft_posts }})</a></li>
                         <li><a class="dropdown-item"
                                href="{% url 'moderation-list' user.username %}">Awaiting
-                            moderation</a></li>
+                            moderation ({{ num_moderated_posts }})</a></li>
                         <li><a class="dropdown-item"
                                href="{% url 'published-list' user.username %}">Published</a>
                         </li>

@@ -23,3 +23,11 @@ def draft_posts(request):
         num_draft_posts = 0
     return {'num_draft_posts': num_draft_posts}
 
+
+def moderated_posts(request):
+    user = request.user
+    if user.is_authenticated:
+        num_moderated_posts = Post.objects.filter(author=user, status=1).count()
+    else:
+        num_moderated_posts = 0
+    return {'num_moderated_posts': num_moderated_posts}
