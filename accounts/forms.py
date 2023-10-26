@@ -83,5 +83,4 @@ class EditDetailsForm(UserChangeForm):
             {'class': 'form-control', 'readonly': True})
         self.fields[
             'username'].help_text = '<span style="color: green">Disclaimer: Once ' \
-            'created, you cannot change your username.</span><br><span>Required. ' \
-            '20 characters or fewer. Letters, digits and @/./+/-/_ only.</span>'
+            'created, you cannot change your username.</span>'
