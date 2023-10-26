@@ -4,8 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from accounts.forms import RegisterForm, EditDetailsForm, ChangePasswordForm, \
-    UserProfileForm
+from accounts.forms import RegisterForm, EditDetailsForm, ChangePasswordForm, UserProfileForm
 from accounts.models import UserProfile
 
 
@@ -76,7 +75,7 @@ def author_bio(request, author_name):
     Renders the author_bio.html template
     """
     author = User.objects.get(username=author_name)
-    userprofile =  UserProfile.objects.get(user=author)
+    userprofile = UserProfile.objects.get(user=author)
 
     return render(request, 'registration/author_bio.html', {'author': author, 'userprofile': userprofile})
 
