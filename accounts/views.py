@@ -49,6 +49,17 @@ class EditDetails(generic.UpdateView):
 
 
 class ChangePassword(PasswordChangeView):
+    """
+    A view for allowing users to change their passwords.
+
+    Attributes:
+    form_class: The form class used for changing the user's password, which is set to
+    ChangePasswordForm.
+    template_name: The name of the template used for rendering the change password page,
+    set to 'registration/change_password.html'.
+    success_url: The URL to redirect to upon successfully changing the password, utilizing
+    the reverse_lazy method with the 'home' URL name.
+    """
     form_class = ChangePasswordForm
     template_name = 'registration/change_password.html'
     success_url = reverse_lazy('home')
