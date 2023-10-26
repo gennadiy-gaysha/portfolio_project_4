@@ -2,7 +2,8 @@ from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
 from django.views import generic
 
-from accounts.forms import RegisterForm, EditDetailsForm, ChangePasswordForm
+from accounts.forms import RegisterForm, EditDetailsForm, ChangePasswordForm, \
+    UserProfileForm
 from accounts.models import UserProfile
 
 

@@ -1,6 +1,9 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User
+from django_summernote.widgets import SummernoteWidget
+
+from accounts.models import UserProfile
 
 
 class RegisterForm(UserCreationForm):
@@ -54,8 +57,8 @@ class RegisterForm(UserCreationForm):
         self.fields['password2'].widget.attrs.update({'class': 'form-control'})
         self.fields[
             'username'].help_text = '<span style="color: green">Disclaimer: Once ' \
-            'created, you cannot change your username.</span><br><span>Required. ' \
-            '20 characters or fewer. Letters, digits and @/./+/-/_ only.</span>'
+                                    'created, you cannot change your username.</span><br><span>Required. ' \
+                                    '20 characters or fewer. Letters, digits and @/./+/-/_ only.</span>'
 
 
 class EditDetailsForm(UserChangeForm):
@@ -83,7 +86,7 @@ class EditDetailsForm(UserChangeForm):
             {'class': 'form-control', 'readonly': True})
         self.fields[
             'username'].help_text = '<span style="color: green">Disclaimer: Once ' \
-            'created, you cannot change your username.</span>'
+                                    'created, you cannot change your username.</span>'
 
 
 class ChangePasswordForm(PasswordChangeForm):
@@ -97,3 +100,46 @@ class ChangePasswordForm(PasswordChangeForm):
         self.fields['new_password1'].widget.attrs.update({'class': 'form-control'})
         self.fields['new_password2'].widget.attrs.update({'class': 'form-control'})
 
+
+class UserProfileForm(forms.ModelForm):
+    """
+    A form used for creating and updating user profiles. Additionally, the widgets
+    attribute customizes the appearance and behavior of the form fields, such as
+    defining the type of input for each field along with associated attributes for
+    controlling their presentation.
+
+    Attributes:
+    model: The model associated with the form, in this case, the UserProfile model.
+    fields: A tuple indicating the specific fields from the UserProfile model to be
+    included in the form.
+    widgets: A dictionary containing the various widget attributes for each form field
+
+    Methods:
+    __init__: Initializes the form, setting up the help text for the 'date_of_birth' field, providing instructions
+    for the expected date format. The super function is called, which refers to the superclass and initializes the
+    form with any additional arguments passed to it.
+    """
+
+    class Meta:
+        model = UserProfile
+        fields = ('profile_picture', 'bio', 'home_country', 'gender', 'date_of_birth',
+                  'instagram_profile', 'twitter_profile', 'facebook_profile',
+                  'linkedin_profile')
+
+        widgets = {
+            'profile_picture': forms.FileInput(attrs={'class': 'form-control-file'}),
+            'bio': SummernoteWidget(),
+            'home_country': forms.TextInput(attrs={'class': 'form-control'}),
+            'gender': forms.Select(attrs={'class': 'form-control'}),
+            'date_of_birth': forms.DateInput(attrs={'class': 'form-control'}),
+            'instagram_profile': forms.URLInput(attrs={'class': 'form-control'}),
+            'twitter_profile': forms.URLInput(attrs={'class': 'form-control'}),
+            'facebook_profile': forms.URLInput(attrs={'class': 'form-control'}),
+            'linkedin_profile': forms.URLInput(attrs={'class': 'form-control'}),
+        }
+
+    def __init__(self, *args, **qwargs):
+        super().__init__(*args, **qwargs)
+        self.fields[
+            'date_of_birth'].help_text = '<span style="color: green;">YYYY-MM-DD ' \
+                                         '(please, follow this date format)</span>'
