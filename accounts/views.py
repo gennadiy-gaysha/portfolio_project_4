@@ -1,4 +1,6 @@
+from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordChangeView
+from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -65,6 +67,20 @@ class ChangePassword(PasswordChangeView):
     form_class = ChangePasswordForm
     template_name = 'registration/change_password.html'
     success_url = reverse_lazy('home')
+
+
+def author_bio(request, author_name):
+    """
+    Gets the User and UserProfile objects based on author name.
+
+    Renders the author_bio.html template
+    """
+    author = User.objects.get(username=author_name)
+    userprofile =  UserProfile.objects.get(user=author)
+
+    return render(request, 'registration/author_bio.html',
+                  {'author': author, 'userprofile': userprofile})
+
 
 
 class CreateProfile(generic.CreateView):
