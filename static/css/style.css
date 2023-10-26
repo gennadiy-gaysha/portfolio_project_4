@@ -167,7 +167,7 @@ body {
     color: #E9EDE9;
 }
 
-.form-width{
+.form-width, .alert{
     width: 70%;
 }
 
