@@ -108,12 +108,33 @@ class CreateProfile(generic.CreateView):
 
 
 class UpdateProfile(generic.UpdateView):
+    """
+    A class-based view for updating user profiles.
+
+    Attributes:
+    model: The model associated with the view, UserProfile, which determines the model
+    the view interacts with.
+    form_class: The form class associated with the view, UserProfileForm, which specifies
+    the form used for updating user profiles.
+    template_name: The name of the template used for rendering the update profile page,
+    set to 'registration/update_profile.html'.
+
+    Methods:
+    get_object: Retrieves UserProfile object based on the username provided in the URL.
+    """
     model = UserProfile
     form_class = UserProfileForm
     template_name = 'registration/update_profile.html'
 
     def get_object(self, queryset=None):
+        # this line extracts the username from the URL
         username = self.kwargs['username']
+        # this line retrieves the User object with the specified username;
+        # if a user with that username is not found, a 404 error is raised.
         user = get_object_or_404(User, username=username)
+        # returns the associated userprofile by accessing it through the
+        # user object. The UserProfile model is linked to the User model
+        # via a OneToOneField. So, we can access the associated profile
+        # through user.userprofile
         return user.userprofile
 
