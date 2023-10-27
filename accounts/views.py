@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordChangeView
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -105,3 +105,15 @@ class CreateProfile(generic.CreateView):
         """
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+
+class UpdateProfile(generic.UpdateView):
+    model = UserProfile
+    form_class = UserProfileForm
+    template_name = 'registration/update_profile.html'
+
+    def get_object(self, queryset=None):
+        username = self.kwargs['username']
+        user = get_object_or_404(User, username=username)
+        return user.userprofile
+
