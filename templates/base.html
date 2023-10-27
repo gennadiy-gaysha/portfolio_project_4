@@ -90,7 +90,7 @@
                         <li><a class="dropdown-item"
                                href="{% url 'author-bio' author_name=user %}">Show
                             profile</a></li>
-                        <li><a class="dropdown-item" href="#">Update profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'update-profile' username=user.username %}">Update profile</a></li>
                         <li>
                             {% else %}
                         <li><a class="dropdown-item"
