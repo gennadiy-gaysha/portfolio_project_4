@@ -6,6 +6,7 @@ from django.views import generic
 
 from accounts.forms import RegisterForm, EditDetailsForm, ChangePasswordForm, UserProfileForm
 from accounts.models import UserProfile
+from blog.models import Post
 
 
 class RegisterNewAccount(generic.CreateView):
@@ -77,7 +78,9 @@ def author_bio(request, author_name):
     author = User.objects.get(username=author_name)
     userprofile = UserProfile.objects.get(user=author)
 
-    return render(request, 'registration/author_bio.html', {'author': author, 'userprofile': userprofile})
+    post_list = Post.objects.filter(author=author)
+
+    return render(request, 'registration/author_bio.html', {'author': author, 'userprofile': userprofile, 'post_list': post_list})
 
 
 

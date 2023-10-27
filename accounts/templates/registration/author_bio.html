@@ -81,6 +81,9 @@
                     {% if user.is_authenticated and user.id == userprofile.user.id %}
                     <a href="{% url 'update-profile' username=user.username %}" class="btn btn-outline-success">Update profile</a>
                     {% endif %}
+                    {% for post in post_list %}
+                    {{ post }}<br>
+                    {% endfor %}
                 </div>
             </div>
         </div>
