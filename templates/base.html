@@ -14,8 +14,6 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 
     <link href="{% static 'img/favicon.png' %}" type="image/x-icon" rel="icon">
 
@@ -28,6 +26,9 @@
             integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
             crossorigin="anonymous">
     </script>
+
+    <script src="https://kit.fontawesome.com/fb168f9df2.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
@@ -90,37 +91,39 @@
                         <li><a class="dropdown-item"
                                href="{% url 'author-bio' author_name=user %}">Show
                             profile</a></li>
-                        <li><a class="dropdown-item" href="{% url 'update-profile' username=user.username %}">Update profile</a></li>
+                        <li><a class="dropdown-item" href="{% url 'update-profile' username=user.username %}">Update
+                            profile</a></li>
                         <li>
                             {% else %}
                         <li><a class="dropdown-item"
                                href="{% url 'create-profile' username=user.username %}">Create
                             profile</a></li>
                         {% endif %}
-                        <hr class="dropdown-divider">
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="{% url 'edit-details' %}">Edit
+                            details</a></li>
+                        <li><a class="dropdown-item" href="{% url 'change-password' %}">Change
+                            password</a></li>
+                    </ul>
                 </li>
-                <li><a class="dropdown-item" href="{% url 'edit-details' %}">Edit
-                    details</a></li>
-                <li><a class="dropdown-item" href="{% url 'change-password' %}">Change
-                    password</a></li>
-            </ul>
-            </li>
-            <li class="nav-item">
-                <a class="text-white nav-link link-hover"
-                   href="{% url 'logout' %}">Logout</a>
-            </li>
-            <li class="hello-user nav-link">hello, {{user.username}}</li>
-            {% else %}
-            <li class="nav-item  text-white">
-                <a class="nav-link text-white link-hover"
-                   href="{% url 'register' %}">Register</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white link-hover"
-                   href="{% url 'login' %}">Login</a>
-            </li>
-            <li class="hello-user nav-link">hello, guest user</li>
-            {% endif %}
+                <li class="nav-item">
+                    <a class="text-white nav-link link-hover"
+                       href="{% url 'logout' %}">Logout</a>
+                </li>
+                <li class="hello-user nav-link">hello, {{user.username}}</li>
+                {% else %}
+                <li class="nav-item  text-white">
+                    <a class="nav-link text-white link-hover"
+                       href="{% url 'register' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white link-hover"
+                       href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="hello-user nav-link">hello, guest user</li>
+                {% endif %}
             </ul>
         </div>
     </div>
@@ -140,15 +143,13 @@
         blog</a></p>
     <p class="m-0 text-center text-white">Follow us:
         <a href="https://www.facebook.com/" class="link-hover follow-us"
-           target="_blank"><i
-                class="fab fa-facebook-square ms-3"></i></a>
+           target="_blank"><i class="fa-brands fa-square-facebook ms-3"></i></a>
         <a href="https://twitter.com/" class="link-hover follow-us"
-           target="_blank"><i class="fab fa-twitter-square ms-3"></i></a>
+           target="_blank"><i class="fa-brands fa-square-x-twitter ms-3"></i></a>
         <a href="https://www.instagram.com/" class="link-hover follow-us"
-           target="_blank"><i
-                class="fab fa-instagram-square ms-3"></i></a>
-        <a href="https://www.youtube.com/" class="link-hover follow-us"
-           target="_blank"><i class="fab fa-youtube-square ms-3"></i>
+           target="_blank"><i class="fa-brands fa-square-instagram ms-3"></i></a>
+        <a href="https://www.linkedin.com/" class="link-hover follow-us"
+           target="_blank"><i class="fa-brands fa-linkedin ms-3"></i>
         </a>
 </footer>
 </body>

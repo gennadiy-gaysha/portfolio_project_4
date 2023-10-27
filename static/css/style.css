@@ -167,6 +167,14 @@ body {
     color: #E9EDE9;
 }
 
+.follow-me {
+    color: grey;
+}
+
+.follow-me:hover {
+    color: #253A47;
+}
+
 .form-width, .alert{
     width: 70%;
 }
