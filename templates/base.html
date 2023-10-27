@@ -69,12 +69,14 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item"
-                               href="{% url 'draft-list' user.username %}">Drafts ({{ num_draft_posts }})</a></li>
+                               href="{% url 'draft-list' user.username %}">
+                            Drafts ({{ num_draft_posts }})</a></li>
                         <li><a class="dropdown-item"
                                href="{% url 'moderation-list' user.username %}">Awaiting
                             moderation ({{ num_moderated_posts }})</a></li>
                         <li><a class="dropdown-item"
-                               href="{% url 'published-list' user.username %}">Published ({{ num_published_posts }})</a>
+                               href="{% url 'published-list' user.username %}">Published
+                            ({{ num_published_posts }})</a>
                         </li>
                     </ul>
                 </li>
@@ -85,34 +87,40 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         {% if user.userprofile %}
-                        <li><a class="dropdown-item" href="{% url 'author-bio' author_name=user %}">Show profile</a></li>
+                        <li><a class="dropdown-item"
+                               href="{% url 'author-bio' author_name=user %}">Show
+                            profile</a></li>
                         <li><a class="dropdown-item" href="#">Update profile</a></li>
                         <li>
                             {% else %}
-                            <li><a class="dropdown-item" href="{% url 'create-profile' username=user.username %}">Create profile</a></li>
-                            {% endif %}
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="{% url 'edit-details' %}">Edit details</a></li>
-                        <li><a class="dropdown-item" href="{% url 'change-password' %}">Change password</a></li>
-                    </ul>
+                        <li><a class="dropdown-item"
+                               href="{% url 'create-profile' username=user.username %}">Create
+                            profile</a></li>
+                        {% endif %}
+                        <hr class="dropdown-divider">
                 </li>
-                <li class="nav-item">
-                    <a class="text-white nav-link link-hover"
-                       href="{% url 'logout' %}">Logout</a>
-                </li>
-                <li class="hello-user nav-link">hello, {{user.username}}</li>
-                {% else %}
-                <li class="nav-item  text-white">
-                    <a class="nav-link text-white link-hover"
-                       href="{% url 'register' %}">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white link-hover"
-                       href="{% url 'login' %}">Login</a>
-                </li>
-                <li class="hello-user nav-link">hello, guest user</li>
-                {% endif %}
+                <li><a class="dropdown-item" href="{% url 'edit-details' %}">Edit
+                    details</a></li>
+                <li><a class="dropdown-item" href="{% url 'change-password' %}">Change
+                    password</a></li>
+            </ul>
+            </li>
+            <li class="nav-item">
+                <a class="text-white nav-link link-hover"
+                   href="{% url 'logout' %}">Logout</a>
+            </li>
+            <li class="hello-user nav-link">hello, {{user.username}}</li>
+            {% else %}
+            <li class="nav-item  text-white">
+                <a class="nav-link text-white link-hover"
+                   href="{% url 'register' %}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white link-hover"
+                   href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="hello-user nav-link">hello, guest user</li>
+            {% endif %}
             </ul>
         </div>
     </div>
