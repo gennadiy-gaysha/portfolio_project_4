@@ -7,11 +7,11 @@ from django.urls import reverse
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_picture = CloudinaryField ('image', default='placeholder')
-    bio = models.TextField(blank=True)
+    bio = models.TextField()
     date_of_birth = models.DateField(blank=True, null=True)
     gender = models.CharField(max_length=10, choices=[('Male', 'Male'), ('Female', 'Female'),
-                                       ('Other', 'Other')], blank=True)
-    home_country = models.CharField(max_length=100, blank=True)
+                                       ('Other', 'Other')])
+    home_country = models.CharField(max_length=100)
     instagram_profile = models.URLField(blank=True)
     twitter_profile = models.URLField(blank=True)
     facebook_profile = models.URLField(blank=True)
