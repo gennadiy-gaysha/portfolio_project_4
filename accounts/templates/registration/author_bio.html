@@ -59,29 +59,37 @@
                         {% else %}
                         Follow me:
                         {% if userprofile.instagram_profile %}
-                        <a href="{{ userprofile.instagram_profile }}" class="follow-me" target="_blank"><i class="fa-brands fa-square-instagram ms-3"></i></a>
+                        <a href="{{ userprofile.instagram_profile }}" class="follow-me" target="_blank"><i
+                                class="fa-brands fa-square-instagram ms-3"></i></a>
                         {% endif %}
 
                         {% if userprofile.twitter_profile %}
-                        <a href="{{ userprofile.twitter_profile }}" class="follow-me" target="_blank"><i class="fa-brands fa-square-x-twitter ms-3"></i></a>
+                        <a href="{{ userprofile.twitter_profile }}" class="follow-me" target="_blank"><i
+                                class="fa-brands fa-square-x-twitter ms-3"></i></a>
                         {% endif %}
 
                         {% if userprofile.linkedin_profile %}
-                        <a href="{{ userprofile.linkedin_profile }}" class="follow-me" target="_blank"><i class="fa-brands fa-linkedin ms-3"></i></a>
+                        <a href="{{ userprofile.linkedin_profile }}" class="follow-me" target="_blank"><i
+                                class="fa-brands fa-linkedin ms-3"></i></a>
                         {% endif %}
 
                         {% if userprofile.facebook_profile %}
-                        <a href="{{ userprofile.facebook_profile }}" class="follow-me" target="_blank"><i class="fa-brands fa-square-facebook ms-3"></i></a>
+                        <a href="{{ userprofile.facebook_profile }}" class="follow-me" target="_blank"><i
+                                class="fa-brands fa-square-facebook ms-3"></i></a>
                         {% endif %}
 
                         {% endif %}
                     </p>
                     <br>
                     {% if user.is_authenticated and user.id == userprofile.user.id %}
-                    <a href="{% url 'update-profile' username=user.username %}" class="btn btn-outline-success">Update profile</a>
+                    <a href="{% url 'update-profile' username=user.username %}" class="btn btn-outline-success">Update
+                        profile</a>
                     {% endif %}
+
                     {% for post in post_list %}
-                    {{ post }} ({{ post.country }})<br>
+                        {% if post.status == 2 %}
+                            {{ post }} ({{ post.country }})<br>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
