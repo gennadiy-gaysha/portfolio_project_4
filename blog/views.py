@@ -180,3 +180,7 @@ def search_country(request):
         return render(request, 'blog/show_searched_results.html', context)
     else:
         return render(request, 'blog/show_searched_results.html')
+
+class ShowCountry(generic.DetailView):
+    model = Country
+    template_name = 'blog/show_country.html'

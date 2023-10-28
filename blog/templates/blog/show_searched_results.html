@@ -14,7 +14,7 @@
     <table class="table table-hover" id="searched-table">
         {% for country in countries %}
         <tr>
-            <td><p class="mb-0">{{ country }}</p></td>
+            <td><a href="{% url 'show-country' slug=country.slug %}" class="text-dark text-decoration-none"><p class="mb-0">{{ country }}</p></a></td>
         </tr>
         {% endfor %}
     </table>
