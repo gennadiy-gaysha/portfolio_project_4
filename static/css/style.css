@@ -182,3 +182,8 @@ body {
 .form-login-width{
     width: 25%;
 }
+
+#searched-table{
+    width: 75%;
+    margin: 0 auto;
+}
