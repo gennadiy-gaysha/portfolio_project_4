@@ -53,7 +53,6 @@
                     {% else %}
                     <p class="card-text">Date of birth: <span style="text-transform: uppercase;">n/a</span></p>
                     {% endif %}
-                    <br>
                     <p class="card-text text-muted">
                         {% if not userprofile.instagram_profile and not userprofile.twitter_profile and not userprofile.linkedin_profile and not userprofile.facebook_profile %}
 
@@ -82,7 +81,7 @@
                     <a href="{% url 'update-profile' username=user.username %}" class="btn btn-outline-success">Update profile</a>
                     {% endif %}
                     {% for post in post_list %}
-                    {{ post }}<br>
+                    {{ post }} ({{ post.country }})<br>
                     {% endfor %}
                 </div>
             </div>
