@@ -1,11 +1,11 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import CreateView, UpdateView
 
 from .forms import PostForm
-from .models import Post
+from .models import Post, Country
 
 
 class PostList(generic.ListView):
@@ -170,3 +170,13 @@ class DeletePost(generic.DeleteView):
     model = Post
     template_name = 'blog/delete_post.html'
     success_url = reverse_lazy('home')
+
+
+def search_country(request):
+    if request.method == 'POST':
+        searched_country = request.POST.get('searched-country')
+        countries = Country.objects.filter(country_name__icontains=searched_country)
+        context = {'searched_country': searched_country, 'countries': countries}
+        return render(request, 'blog/show_searched_results.html', context)
+    else:
+        return render(request, 'blog/show_searched_results.html')
