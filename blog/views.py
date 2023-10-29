@@ -43,6 +43,27 @@ class PostList(generic.ListView):
         filter_data = PostFilter(self.request.GET, queryset=queryset)
         return filter_data.qs
 
+    def get_context_data(self, **kwargs):
+        """
+        Get the context data for rendering the template.
+
+        Retrieves the context data using the superclass's get_context_data method.
+        Adds the 'filter' key to the context with the PostFilter object, allowing
+        the filter form to be accessible in the template.
+
+        Args:
+            **kwargs: dict
+                Arbitrary keyword arguments.
+
+        Returns:
+            dict:
+                The context data for rendering the template, including the 'filter'
+                key for the PostFilter object.
+        """
+        context = super().get_context_data(**kwargs)
+        context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
+        return context
+
 
 class PostDetails(generic.DetailView):
     """
@@ -197,6 +218,7 @@ def search_country(request):
         return render(request, 'blog/show_searched_results.html', context)
     else:
         return render(request, 'blog/show_searched_results.html')
+
 
 class ShowCountry(generic.DetailView):
     model = Country
