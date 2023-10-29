@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'accounts',
 
     'django.contrib.humanize',  # intcomma filter
+    'django_filters',
 ]
 
 MIDDLEWARE = [
