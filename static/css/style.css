@@ -31,8 +31,16 @@ body {
     cursor: default;
 }
 
-.link-hover:hover {
-    color: #A4A9AE !important;
+.post-list-card:hover {
+    color: #125D5D !important;
+}
+
+.link-nav-footer:hover {
+        color: #A4A9AE !important;
+}
+
+.post-list-title:hover{
+        color: #BA2323 !important;
 }
 
 .thin {
@@ -119,7 +127,7 @@ body {
 }
 
 .post-title {
-    margin-top: 20%;
+    margin-top: 15%;
     margin-left: 5%;
 }
 

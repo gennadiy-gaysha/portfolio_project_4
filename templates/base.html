@@ -54,16 +54,16 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active text-white link-hover"
+                    <a class="nav-link active text-white link-nav-footer"
                        aria-current="page" href="{% url 'home' %}">Home</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link text-white link-hover"
+                    <a class="nav-link text-white link-nav-footer"
                        href="{% url 'create-post' %}">New post</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white link-hover" href="#"
+                    <a class="nav-link dropdown-toggle text-white link-nav-footer" href="#"
                        id="navbarDropdown"
                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         My posts
@@ -82,7 +82,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white link-hover" href="#"
+                    <a class="nav-link dropdown-toggle text-white link-nav-footer" href="#"
                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         My profile
                     </a>
@@ -109,17 +109,17 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="text-white nav-link link-hover"
+                    <a class="text-white nav-link link-nav-footer"
                        href="{% url 'logout' %}">Logout</a>
                 </li>
                 <li class="hello-user nav-link">hello, {{user.username}}</li>
                 {% else %}
                 <li class="nav-item  text-white">
-                    <a class="nav-link text-white link-hover"
+                    <a class="nav-link text-white link-nav-footer"
                        href="{% url 'register' %}">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white link-hover"
+                    <a class="nav-link text-white link-nav-footer"
                        href="{% url 'login' %}">Login</a>
                 </li>
                 <li class="hello-user nav-link">hello, guest user</li>
@@ -146,17 +146,17 @@
 <!-- Footer -->
 <footer class="footer mt-auto py-3 dark-bg">
     <p class="text-center"><a href="{% url 'home' %}"
-                              class="text-white text-decoration-none link-hover">&copy;
+                              class="text-white text-decoration-none link-nav-footer">&copy;
         2023 travel
         blog</a></p>
     <p class="m-0 text-center text-white">Follow us:
-        <a href="https://www.facebook.com/" class="link-hover follow-us"
+        <a href="https://www.facebook.com/" class="link-nav-footer follow-us"
            target="_blank"><i class="fa-brands fa-square-facebook ms-3"></i></a>
-        <a href="https://twitter.com/" class="link-hover follow-us"
+        <a href="https://twitter.com/" class="link-nav-footer follow-us"
            target="_blank"><i class="fa-brands fa-square-x-twitter ms-3"></i></a>
-        <a href="https://www.instagram.com/" class="link-hover follow-us"
+        <a href="https://www.instagram.com/" class="link-nav-footer follow-us"
            target="_blank"><i class="fa-brands fa-square-instagram ms-3"></i></a>
-        <a href="https://www.linkedin.com/" class="link-hover follow-us"
+        <a href="https://www.linkedin.com/" class="link-nav-footer follow-us"
            target="_blank"><i class="fa-brands fa-linkedin ms-3"></i>
         </a>
 </footer>

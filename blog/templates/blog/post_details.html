@@ -16,7 +16,8 @@
                 <h1 class="post-title">{{post.title}}
                 </h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle"><a href="{% url 'author-bio' author_name=post.author %}" class="text-white text-decoration-none link-hover" >{{post.author}}</a> | {{post.created_on}}</p>
+                <p class="post-subtitle author"><a href="{% url 'author-bio' author_name=post.author %}" class="text-white text-decoration-none link-nav-footer" >{{post.author}}</a> | <a href="{% url 'show-country' post.country.slug %}" class="text-white text-decoration-none link-nav-footer">{{post.country}}</a></p>
+                <p class="post-subtitle">{{post.created_on}}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->

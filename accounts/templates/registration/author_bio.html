@@ -94,7 +94,7 @@
                         {% if post.status == 2 %}
                         <tr>
                             <td><a href="{% url 'post-details' slug=post.slug %}"
-                                   class="post-link text-decoration-underline">{{post.title}}</a></td>
+                                   class="post-link text-decoration-underline post-list-title">{{post.title}}</a></td>
                             <td>{{post.country}}</td>
                             <td>{{post.created_on}}</td>
                         </tr>
