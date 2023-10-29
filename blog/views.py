@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import CreateView, UpdateView
 
+from .filters import PostFilter
 from .forms import PostForm
 from .models import Post, Country
 
@@ -25,6 +26,22 @@ class PostList(generic.ListView):
     template_name = 'blog/home.html'
     queryset = Post.objects.filter(status=2).order_by('-created_on')
     paginate_by = 3
+
+    def get_queryset(self):
+        """
+        Get the filtered queryset of Post objects based on the request parameters.
+
+        Filters the queryset of Post objects by the 'status' field with a value of 2.
+        Orders the queryset by the 'created_on' field in descending order.
+        Applies the filters specified in the PostFilter class based on the request parameters.
+
+        Returns:
+            queryset:
+                The filtered queryset of Post objects based on the applied filters.
+        """
+        queryset = Post.objects.filter(status=2).order_by('-created_on')
+        filter_data = PostFilter(self.request.GET, queryset=queryset)
+        return filter_data.qs
 
 
 class PostDetails(generic.DetailView):
