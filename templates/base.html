@@ -112,6 +112,11 @@
                     <a class="text-white nav-link link-nav-footer"
                        href="{% url 'logout' %}">Logout</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white link-nav-footer" href="{% url 'about' %}">About us</a>
+                </li>
+
                 <li class="hello-user nav-link">hello, {{user.username}}</li>
                 {% else %}
                 <li class="nav-item  text-white">
@@ -121,6 +126,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-white link-nav-footer"
                        href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white link-nav-footer" href="{% url 'about' %}">About us</a>
                 </li>
                 <li class="hello-user nav-link">hello, guest user</li>
                 {% endif %}
