@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid my-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 pt-2">
+            <div class="card mb-3">
+                <div class="col-md-12">
+                    <!-- The featured image URL goes in the src attribute -->
+                    {% if "placeholder" in last_about.featured_image.url %}
+                    <img src="{% static 'about_default_image.jpg' %}" alt="About page default image" width="100%">
+                    {% else %}
+                    <img src="{{ last_about.featured_image.url }}" alt="About page featured image" width="100%">
+                    {% endif %}
+                </div>
+
+                <div class="card-body">
+                    <h3 class="card-title text-center">{{ last_about.title }}</h3>
+                    <p class="card-text">{{ last_about.content|safe }}</p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
