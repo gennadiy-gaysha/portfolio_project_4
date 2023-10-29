@@ -1,14 +1,58 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% load humanize %}
 
 {% block title %}
 <title>Show country</title>
 {% endblock title %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1>Show info for: {{ country.country_name }}</h1>
+<div class="container mt-3">
+    <div class="card mb-3">
+        <div class="row g-0 justify-content-center">
+            <div class="col-md-4 mt-3 d-flex flex-column align-items-center text-center">
+                <img src="https://img.geonames.org/flags/x/{{country.iso|lower}}.gif" class="img-fluid rounded-start"
+                     alt="{{ country.country_name }} flag">
+                <div id="map"></div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card-body text-center">
+                    <h4 class="card-title mb-3">{{ country.country_name }}</h4>
+                    <p class="card-text">Capital: {{ country.capital|upper }}</p>
+                    <p class="card-text">Area (in sq km): {{ country.area_sq_km|intcomma }}</p>
+                    <p class="card-text">Population: {{ country.population|intcomma }}</p>
+
+                    {% if country.continent == 'AF' %}
+                    <p class="card-text">Continent: <span class="text-uppercase">Africa</span></p>
+                    {% elif country.continent == 'AS' %}
+                    <p class="card-text">Continent: <span class="text-uppercase">Asia</span></p>
+                    {% elif country.continent == 'EU' %}
+                    <p class="card-text">Continent: <span class="text-uppercase">Europe</span></p>
+                    {% elif country.continent == 'NA' %}
+                    <p class="card-text">Continent: <span class="text-uppercase">North America</span></p>
+                    {% elif country.continent == 'SA' %}
+                    <p class="card-text">Continent: <span class="text-uppercase">South America</span></p>
+                    {% elif country.continent == 'OC' %}
+                    <p class="card-text">Continent: <span class="text-uppercase">Oceania</span></p>
+                    {% else %}
+                    <p class="card-text">Continent: <span class="text-uppercase">Antarctica</span></p>
+                    {% endif %}
+
+                    <p class="card-text">Internet TLD: {{ country.tld }}</p>
+                    <p class="card-text">Currency Code: {{ country.currency_code|upper }}</p>
+                    <p class="card-text">Currency Name: {{ country.currency_name|upper }}</p>
+                    <p class="card-text">Phone: {{ country.phone }}</p>
+                    <p class="card-text">Languages: {{ country.languages|upper }}</p>
+                    <hr>
+                    <a href="https://en.wikipedia.org/wiki/{{ country.country_name|lower }}" target="_blank"><img
+                            src="{% static 'wiki.png' %}" class="img-fluid rounded-start" id="wiki"
+                            alt="Wikipedia link for {{ country.country_name }}"></a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock content %}
