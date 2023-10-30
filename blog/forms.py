@@ -46,7 +46,7 @@ class PostForm(forms.ModelForm):
 
         widgets = {
             'country': forms.Select(choices=countries_list,
-                                    attrs={'class': 'form-control',
+                                    attrs={'class': 'form-select',
                                            'style': 'width: 100%'}),
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'featured_image': forms.FileInput(
@@ -54,5 +54,5 @@ class PostForm(forms.ModelForm):
             'content': SummernoteWidget(attrs={'class': 'form-control'}),
             'excerpt': forms.Textarea(attrs={'class': 'form-control', 'style': 'height: 120px'}),
             'status': forms.Select(
-                attrs={'class': 'form-control', 'style': 'width: 100%'})
+                attrs={'class': 'form-select', 'style': 'width: 100%'})
         }

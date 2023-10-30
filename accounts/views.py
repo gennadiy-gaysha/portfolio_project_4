@@ -80,8 +80,8 @@ def author_bio(request, author_name):
 
     post_list = Post.objects.filter(author=author)
 
-    return render(request, 'registration/author_bio.html', {'author': author, 'userprofile': userprofile, 'post_list': post_list})
-
+    return render(request, 'registration/author_bio.html',
+                  {'author': author, 'userprofile': userprofile, 'post_list': post_list})
 
 
 class CreateProfile(generic.CreateView):
@@ -140,4 +140,3 @@ class UpdateProfile(generic.UpdateView):
         # via a OneToOneField. So, we can access the associated profile
         # through user.userprofile
         return user.userprofile
-

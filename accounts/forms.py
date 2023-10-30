@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django_summernote.widgets import SummernoteWidget
 
 from accounts.models import UserProfile
+from blog.models import Country
 
 
 class RegisterForm(UserCreationForm):
@@ -119,7 +120,7 @@ class UserProfileForm(forms.ModelForm):
     for the expected date format. The super function is called, which refers to the superclass and initializes the
     form with any additional arguments passed to it.
     """
-
+    home_country = forms.ModelChoiceField(queryset=Country.objects.all(), widget=forms.Select(attrs={'class': 'form-select'}))
     class Meta:
         model = UserProfile
         fields = ('profile_picture', 'bio', 'home_country', 'gender', 'date_of_birth',
@@ -129,8 +130,7 @@ class UserProfileForm(forms.ModelForm):
         widgets = {
             'profile_picture': forms.FileInput(attrs={'class': 'form-control-file'}),
             'bio': SummernoteWidget(),
-            'home_country': forms.TextInput(attrs={'class': 'form-control'}),
-            'gender': forms.Select(attrs={'class': 'form-control'}),
+            'gender': forms.Select(attrs={'class': 'form-select'}),
             'date_of_birth': forms.DateInput(attrs={'class': 'form-control'}),
             'instagram_profile': forms.URLInput(attrs={'class': 'form-control'}),
             'twitter_profile': forms.URLInput(attrs={'class': 'form-control'}),
