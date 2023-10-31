@@ -98,8 +98,13 @@
         <div class="col-md-8 card mb-4  mt-3 ">
             <div class="card-body">
                 <!-- For later -->
-                {% if user.is_authenticated %}
+                {% if commented %}
+                <div class="alert alert-success" role="alert">
+                    Your comment is awaiting approval
+                </div>
+                {% else %}
 
+                {% if user.is_authenticated and user.id != post.author.id %}
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" class="mt-2">
@@ -107,6 +112,8 @@
                     {% csrf_token %}
                     <button type="submit" class="btn btn-outline-success mt-3">Submit</button>
                 </form>
+                {% else %}
+                {% endif %}
                 {% endif %}
             </div>
         </div>
