@@ -52,8 +52,8 @@ class RegisterForm(UserCreationForm):
         fields = ('username', 'email', 'first_name', 'last_name', 'password1',
                   'password2')
 
-    def __init__(self, *args, **qwargs):
-        super().__init__(*args, **qwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.fields['password1'].widget.attrs.update({'class': 'form-control'})
         self.fields['password2'].widget.attrs.update({'class': 'form-control'})
         self.fields[
@@ -81,8 +81,8 @@ class EditDetailsForm(UserChangeForm):
         fields = ['username', 'first_name', 'last_name', 'email', 'last_login',
                   'date_joined']
 
-    def __init__(self, *args, **qwargs):
-        super().__init__(*args, **qwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update(
             {'class': 'form-control', 'readonly': True})
         self.fields[
@@ -95,8 +95,8 @@ class ChangePasswordForm(PasswordChangeForm):
         model = User
         fields = ['old_password', 'new_password1', 'new_password2']
 
-    def __init__(self, *args, **qwargs):
-        super().__init__(*args, **qwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.fields['old_password'].widget.attrs.update({'class': 'form-control'})
         self.fields['new_password1'].widget.attrs.update({'class': 'form-control'})
         self.fields['new_password2'].widget.attrs.update({'class': 'form-control'})
@@ -138,8 +138,8 @@ class UserProfileForm(forms.ModelForm):
             'linkedin_profile': forms.URLInput(attrs={'class': 'form-control'}),
         }
 
-    def __init__(self, *args, **qwargs):
-        super().__init__(*args, **qwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.fields[
             'date_of_birth'].help_text = '<span style="color: green;">YYYY-MM-DD ' \
                                          '(please, follow this date format)</span>'

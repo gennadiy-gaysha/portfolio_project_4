@@ -1,7 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse_lazy
-from django.views import generic
+from django.views import generic, View
 from django.views.generic import CreateView, UpdateView
 
 from .filters import PostFilter
@@ -47,7 +47,7 @@ class PostList(generic.ListView):
         """
         Get the context data for rendering the template.
 
-        Retrieves the context data using the superclass's get_context_data method.
+        Retrieves the context data using the superclass get_context_data method.
         Adds the 'filter' key to the context with the PostFilter object, allowing
         the filter form to be accessible in the template.
 
@@ -65,17 +65,18 @@ class PostList(generic.ListView):
         return context
 
 
-class PostDetails(generic.DetailView):
-    """
-    A view that displays the detailed information of a specific blog post.
+class PostDetails(View):
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Post.objects.filter(status=2)
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by('created_on')
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
 
-    Attributes:
-    model: The model used for retrieving data, in this case, the Post model.
-    template_name: The template used for rendering the view, here, the
-    'blog/post_details.html' template.
-    """
-    model = Post
-    template_name = 'blog/post_details.html'
+        return render(request, 'blog/post_details.html', {'post': post, 'comments': comments, 'liked': liked},)
+
+
 
 
 class CreatePost(LoginRequiredMixin, CreateView):

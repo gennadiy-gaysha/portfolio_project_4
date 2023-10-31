@@ -35,7 +35,7 @@ class Country(models.Model):
         """
         return self.country_name
 
-    def save(self, *args, **qwargs):
+    def save(self, *args, **kwargs):
         """
         Save method of the model is being overriden. Inside the save method,
         the condition if the slug is not already set is checked.
@@ -47,7 +47,7 @@ class Country(models.Model):
             self.slug = slugify(self.country_name)
         # explicitly calling the save method with super(Country, self).save(*args, **kwargs)
         # (instead of self.save() of the current instance) ensures avoiding recursion issue
-        super().save(*args, **qwargs)
+        super().save(*args, **kwargs)
 
 
 class Post(models.Model):
@@ -84,7 +84,7 @@ class Post(models.Model):
         """
         return self.likes.count()
 
-    def save(self, *args, **qwargs):
+    def save(self, *args, **kwargs):
         """
         Save method of the model is being overriden. Inside the save method,
         the condition if the slug is not already set is checked.
@@ -94,7 +94,7 @@ class Post(models.Model):
         """
         if not self.slug:
             self.slug = slugify(self.title)
-        super().save(*args, **qwargs)
+        super().save(*args, **kwargs)
 
     def get_absolute_url(self):
         """
