@@ -1,3 +1,5 @@
+from django.contrib import messages
+from django.contrib.auth import user_logged_in, user_logged_out
 from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordChangeView
 from django.shortcuts import render, get_object_or_404
@@ -25,6 +27,28 @@ class RegisterNewAccount(generic.CreateView):
     template_name = 'registration/register.html'
     success_url = reverse_lazy('login')
 
+    def form_valid(self, form):
+        messages.success(self.request, 'Account registered successfully.')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        for field, errors in form.errors.items():
+            for error in errors:
+                messages.error(self.request, f'Error in {field}: {error}')
+                return super().form_invalid(form)
+
+
+def login_success(sender, request, user, **kwargs):
+    messages.success(request, 'You have been logged in successfully.')
+
+
+def logout_success(sender, request, user, **kwargs):
+    messages.success(request, 'You have been logged out successfully.')
+
+
+user_logged_in.connect(login_success)
+user_logged_out.connect(logout_success)
+
 
 class EditDetails(generic.UpdateView):
     """
@@ -51,6 +75,16 @@ class EditDetails(generic.UpdateView):
         """
         return self.request.user
 
+    def form_valid(self, form):
+        messages.success(self.request, 'Details have been updated successfully.')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        for field, errors in form.errors.items():
+            for error in errors:
+                messages.error(self.request, f'Error in {field}: {error}')
+                return super().form_invalid(form)
+
 
 class ChangePassword(PasswordChangeView):
     """
@@ -67,6 +101,10 @@ class ChangePassword(PasswordChangeView):
     form_class = ChangePasswordForm
     template_name = 'registration/change_password.html'
     success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Password changed successfully.')
+        return super().form_valid(form)
 
 
 def author_bio(request, author_name):
@@ -107,7 +145,14 @@ class CreateProfile(generic.CreateView):
         Setting the user field of the profile to the currently logged-in user
         """
         form.instance.user = self.request.user
+        messages.success(self.request, 'Profile created successfully.')
         return super().form_valid(form)
+
+    def form_invalid(self, form):
+        for field, errors in form.errors.items():
+            for error in errors:
+                messages.error(self.request, f'Error in {field}: {error}')
+                return super().form_invalid(form)
 
 
 class UpdateProfile(generic.UpdateView):
@@ -140,3 +185,15 @@ class UpdateProfile(generic.UpdateView):
         # via a OneToOneField. So, we can access the associated profile
         # through user.userprofile
         return user.userprofile
+
+    def form_valid(self, form):
+
+        form.instance.user = self.request.user
+        messages.success(self.request, 'Profile updated successfully.')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        for field, errors in form.errors.items():
+            for error in errors:
+                messages.error(self.request, f'Error in {field}: {error}')
+                return super().form_invalid(form)
