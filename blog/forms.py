@@ -1,5 +1,5 @@
 from django import forms
-from .models import Country, Post
+from .models import Country, Post, Comment
 from django_summernote.widgets import SummernoteWidget
 
 # Creates a list of all countries form Country table
@@ -13,6 +13,7 @@ class PostForm(forms.ModelForm):
     """
     A form used for creating and updating blog posts
     """
+
     def __init__(self, *args, **kwargs):
         """
         __init__: Initializes the form, setting up the queryset for the
@@ -56,3 +57,9 @@ class PostForm(forms.ModelForm):
             'status': forms.Select(
                 attrs={'class': 'form-select', 'style': 'width: 100%'})
         }
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['body']

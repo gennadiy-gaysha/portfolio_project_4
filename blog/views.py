@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView
+from .forms import CommentForm
 
 from .filters import PostFilter
 from .forms import PostForm
@@ -74,9 +75,9 @@ class PostDetails(View):
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        return render(request, 'blog/post_details.html', {'post': post, 'comments': comments, 'liked': liked},)
-
-
+        return render(request, 'blog/post_details.html',
+                      {'post': post, 'comments': comments,
+                       'liked': liked, 'comment_form': CommentForm()}, )
 
 
 class CreatePost(LoginRequiredMixin, CreateView):
