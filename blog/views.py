@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render, get_object_or_404
@@ -69,7 +70,7 @@ class PostList(generic.ListView):
 
 class PostDetails(View):
     def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=2)
+        queryset = Post.objects.all()
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('created_on')
         liked = False
@@ -145,6 +146,7 @@ class CreatePost(LoginRequiredMixin, CreateView):
         the standard behavior of the CreateView is executed.
         """
         form.instance.author = self.request.user
+        messages.success(self.request, 'Post created successfully.')
         return super().form_valid(form)
 
 
@@ -176,6 +178,7 @@ class UpdatePost(UpdateView):
         """
         post = form.instance
         post.save()
+        messages.success(self.request, 'Post updated successfully.')
         return redirect('post-details', slug=post.slug)
 
 
@@ -244,6 +247,10 @@ class DeletePost(generic.DeleteView):
     model = Post
     template_name = 'blog/delete_post.html'
     success_url = reverse_lazy('home')
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, 'Post deleted successfully.')
+        return super().delete(request, *args, **kwargs)
 
 
 def search_country(request):
