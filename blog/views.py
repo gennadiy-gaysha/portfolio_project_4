@@ -87,13 +87,13 @@ class PostDetails(View):
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
-        comment_form = CommentForm(data=request.Post)
+        comment_form = CommentForm(data=request.POST)
 
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
-            comment_form.instance.mail = request.user.username
+            comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
-            comment = comment.post
+            comment.post = post
             comment.save()
         else:
             comment_form = CommentForm()

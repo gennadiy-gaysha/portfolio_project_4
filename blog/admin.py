@@ -36,7 +36,7 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ['name', 'email', 'address', 'body']
     actions = ['approve_comments']
 
-    def approve_comments(self, queryset):
+    def approve_comments(self, request, queryset):
         """
         Updates the status of the selected comments in the queryset
         to a value of True, indicating that they have been approved.

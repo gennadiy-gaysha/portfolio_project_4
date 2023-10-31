@@ -60,6 +60,7 @@ class PostForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
+    body = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'style': 'height: 150px'}))
     class Meta:
         model = Comment
         fields = ['body']

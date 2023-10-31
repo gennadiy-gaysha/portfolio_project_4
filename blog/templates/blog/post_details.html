@@ -17,7 +17,10 @@
                 <h1 class="post-title">{{post.title}}
                 </h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle author"><a href="{% url 'author-bio' author_name=post.author %}" class="text-white text-decoration-none link-nav-footer" >{{post.author}}</a> | <a href="{% url 'show-country' post.country.slug %}" class="text-white text-decoration-none link-nav-footer">{{post.country}}</a></p>
+                <p class="post-subtitle author"><a href="{% url 'author-bio' author_name=post.author %}"
+                                                   class="text-white text-decoration-none link-nav-footer">{{post.author}}</a>
+                    | <a href="{% url 'show-country' post.country.slug %}"
+                         class="text-white text-decoration-none link-nav-footer">{{post.country}}</a></p>
                 <p class="post-subtitle">{{post.created_on}}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
@@ -74,7 +77,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col card mb-4  mt-3 ">
+        <div class="col-md-7 card mb-4  mt-3 ">
             <h3>Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the tags to iterate through each comment in comments -->
@@ -82,7 +85,8 @@
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                        {{ comment.name }}
+                        <a href="{% url 'author-bio' author_name=post.author %}"
+                           class="text-info text-decoration-none link-nav-footer">{{ user.username }}</a> on
                         <span class=" text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->
                             {{ comment.created_on }}
@@ -95,16 +99,16 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-md-5 card mb-4">
             <div class="card-body">
                 <!-- For later -->
+                {% if user.is_authenticated and user.id != post.author.id %}
                 {% if commented %}
                 <div class="alert alert-success" role="alert">
                     Your comment is awaiting approval
                 </div>
                 {% else %}
 
-                {% if user.is_authenticated and user.id != post.author.id %}
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" class="mt-2">
@@ -112,7 +116,6 @@
                     {% csrf_token %}
                     <button type="submit" class="btn btn-outline-success mt-3">Submit</button>
                 </form>
-                {% else %}
                 {% endif %}
                 {% endif %}
             </div>
