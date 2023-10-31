@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render, get_object_or_404
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView
 from .forms import CommentForm
@@ -102,6 +103,16 @@ class PostDetails(View):
                       {'post': post, 'comments': comments,
                        'liked': liked, 'comment_form': CommentForm(), 'commented': True}, )
 
+
+class PostLikes(View):
+    def post(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 class CreatePost(LoginRequiredMixin, CreateView):
     """
