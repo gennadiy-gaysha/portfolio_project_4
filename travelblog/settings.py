@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'cloudinary',
 
     'django_summernote',
+    'crispy_forms',
 
     'blog',
     'accounts',
@@ -45,6 +46,8 @@ INSTALLED_APPS = [
 
     'about',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
