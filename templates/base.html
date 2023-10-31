@@ -140,10 +140,22 @@
                        name="searched-country">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
-
         </div>
     </div>
 </nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            {% for message in messages %}
+            <div class="alert-dismissible fade show alert {{message.tags}}" role="alert" id="msg">
+                {{ message | safe }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 <main class="flex-shrink-0 main-bg">
     {% block content %}
