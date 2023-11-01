@@ -14,7 +14,7 @@
             <div class="col-md-4 mt-3 d-flex flex-column align-items-center text-center">
                 <img src="https://img.geonames.org/flags/x/{{country.iso|lower}}.gif" class="img-fluid rounded-start"
                      alt="{{ country.country_name }} flag">
-                <div id="map"></div>
+                <div id="map" class="mt-4"></div>
             </div>
 
             <div class="col-md-5">
@@ -58,22 +58,40 @@
 {% endblock content %}
 
 {% block script %}
+
+<script
+        async
+        defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRfWpP45aS8GtQRilRNZJ_p0zB873kdRU&callback=initMap&v=weekly"
+></script>
+
 <script>
-  function initMap() {
+    function initMap() {
+<!--converts addresses into geographic coordinates-->
     let geocoder = new google.maps.Geocoder();
-    let countryName = "{{country.country_name}}"; // Replace with the desired country name
+    let countryName = "{{country.country_name}}";
     let capitalName = "{{country.capital}}"; // Replace with the desired capital city name
 
+<!--converts the country name into geographic coordinates-->
     geocoder.geocode({ address: countryName }, function (results, status) {
       if (status === "OK") {
+
+    <!--extracts the country's coordinates from the results-->
         let countryCoordinates = results[0].geometry.location;
+
+   <!--converts the capital city name into geographic coordinates-->
         geocoder.geocode({ address: capitalName }, function (results, status) {
           if (status === "OK") {
+        <!--extracts the capital's coordinates from the results-->
             let capitalCoordinates = results[0].geometry.location;
+
+        <!--creates a new google.maps.Map object and initializes it-->
             let map = new google.maps.Map(document.getElementById("map"), {
-              zoom: 4,
+              zoom: 3,
               center: countryCoordinates,
             });
+
+        <!--specifies the position as the capital's coordinates and associating it with the map-->
             let marker = new google.maps.Marker({
               position: capitalCoordinates,
               map: map,
@@ -89,15 +107,7 @@
   }
 
 
-
-
-
 </script>
 
-
-<script
-        async
-        defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRfWpP45aS8GtQRilRNZJ_p0zB873kdRU&callback=initMap&v=weekly"
-></script>
 {% endblock script %}
+

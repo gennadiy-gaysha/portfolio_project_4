@@ -200,3 +200,8 @@ body {
    width: 80%;
    margin: 0 auto;
 }
+
+#map {
+    min-height: 270px;
+    min-width: 100%;
+}
