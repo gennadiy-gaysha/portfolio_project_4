@@ -17,6 +17,7 @@
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
+                {% if post_list %}
                 {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
@@ -31,7 +32,8 @@
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author"><a href="{% url 'author-bio' author_name=post.author %}"
-                                                         class="text-white text-decoration-none post-list-card">{{ post.author }}</a> |
+                                                         class="text-white text-decoration-none post-list-card">
+                                        {{ post.author }}</a> |
                                         <a href="{% url 'show-country' post.country.slug %}"
                                            class="text-white text-decoration-none post-list-card">{{ post.country }}</a>
                                     </p>
@@ -54,7 +56,9 @@
             <div class="row">
                 {% endif %}
                 {% endfor %}
-
+                {% else %}
+                <h1>No posts found</h1>
+                {% endif %}
             </div>
         </div>
     </div>

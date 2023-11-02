@@ -100,8 +100,8 @@
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                        <a href="{% url 'author-bio' author_name=post.author %}"
-                           class="text-info text-decoration-none link-nav-footer">{{ user.username }}</a> on
+                        <a href="{% url 'author-bio' author_name=comment.name %}"
+                           class="text-info text-decoration-none link-nav-footer">{{ comment.name }}</a> on
                         <span class=" text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->
                             {{ comment.created_on }}
