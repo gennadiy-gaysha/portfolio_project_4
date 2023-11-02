@@ -131,7 +131,7 @@ class UserProfileForm(forms.ModelForm):
             'profile_picture': forms.FileInput(attrs={'class': 'form-control-file'}),
             'bio': SummernoteWidget(),
             'gender': forms.Select(attrs={'class': 'form-select'}),
-            'date_of_birth': forms.TextInput(attrs={'class': 'form-control', 'id': 'datepicker', 'name': 'date_of_birth'}),
+            'date_of_birth': forms.DateInput(attrs={'class': 'form-control', 'id': 'datepicker', 'name': 'date_of_birth'}),
             'instagram_profile': forms.URLInput(attrs={'class': 'form-control'}),
             'twitter_profile': forms.URLInput(attrs={'class': 'form-control'}),
             'facebook_profile': forms.URLInput(attrs={'class': 'form-control'}),
