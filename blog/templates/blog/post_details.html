@@ -8,7 +8,6 @@
 {% endblock title %}
 
 {% block content %}
-
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
@@ -56,7 +55,7 @@
                 <div class="row">
                     <div class="col-1">
                         <!-- The number of likes goes before the closing strong tag -->
-
+                        <strong>
                             {% if user.is_authenticated and user.id != post.author.id %}
                             <form class="d-inline" action="{% url 'post-like' post.slug %}" method="POST">
                                 {% csrf_token %}
@@ -71,7 +70,7 @@
                             {% endif %}
                         <!-- The number of likes goes before the closing strong tag -->
                         <span class="text-secondary">{{ post.number_of_likes }} </span>
-
+                        </strong>
                     </div>
                     <div class="col-1">
 
@@ -118,6 +117,10 @@
             <div class="card-body">
                 <!-- For later -->
                 {% if user.is_authenticated and user.id != post.author.id %}
+                {% if not user.userprofile %}
+                <h5 class="mt-2 text-secondary">Before leaving a comment, please create your user profile first!</h5>
+                {% else %}
+
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" class="mt-2" id="comment_form">
@@ -126,14 +129,13 @@
                     <button type="submit" class="btn btn-outline-success mt-3">Submit</button>
                 </form>
                 {% endif %}
+                {% endif %}
             </div>
         </div>
     </div>
 </div>
-
 {% endblock content %}
 
 {% block script %}
-<script src="{% static 'blog/js/comment.js' %}">
-</script>
+<script src="{% static 'blog/js/comment.js' %}"></script>
 {% endblock script %}
