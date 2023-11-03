@@ -25,7 +25,7 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                     src="{% static 'default_post_image.jpg' %}">
+                                     src="{% static 'blog/img/default_post_image.jpg' %}">
                                 {% else %}
                                 <img class="card-img-top"
                                      src=" {{ post.featured_image.url }}">

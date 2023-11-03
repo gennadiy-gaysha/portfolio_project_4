@@ -26,7 +26,7 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="{% static 'default_post_image.jpg' %}" width="100%">
+                <img src="{% static 'blog/img/default_post_image.jpg' %}" width="100%">
                 {% else %}
                 <img src="{{ post.featured_image.url }}" width="100%">
                 {% endif %}
@@ -56,7 +56,7 @@
                 <div class="row">
                     <div class="col-1">
                         <!-- The number of likes goes before the closing strong tag -->
-                        <strong>
+
                             {% if user.is_authenticated and user.id != post.author.id %}
                             <form class="d-inline" action="{% url 'post-like' post.slug %}" method="POST">
                                 {% csrf_token %}
@@ -71,7 +71,7 @@
                             {% endif %}
                         <!-- The number of likes goes before the closing strong tag -->
                         <span class="text-secondary">{{ post.number_of_likes }} </span>
-                        </strong>
+
                     </div>
                     <div class="col-1">
 
@@ -118,20 +118,13 @@
             <div class="card-body">
                 <!-- For later -->
                 {% if user.is_authenticated and user.id != post.author.id %}
-                {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Your comment is awaiting approval
-                </div>
-                {% else %}
-
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }}</p>
-                <form method="post" class="mt-2">
+                <form method="post" class="mt-2" id="comment_form">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-outline-success mt-3">Submit</button>
                 </form>
-                {% endif %}
                 {% endif %}
             </div>
         </div>
@@ -139,3 +132,8 @@
 </div>
 
 {% endblock content %}
+
+{% block script %}
+<script src="{% static 'blog/js/comment.js' %}">
+</script>
+{% endblock script %}
