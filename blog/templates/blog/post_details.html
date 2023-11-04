@@ -40,8 +40,8 @@
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <h4 class="mb-3 text-secondary">Original title: {{ post.title }}</h4>
-                <h6 class="mb-4 text-secondary">Original excerpt: {{ post.excerpt }}</h6>
+                <h6 class="mb-3 text-secondary">Original title: <i>{{ post.title }}</i></h6>
+                <h6 class="mb-4 text-secondary">Original excerpt: <i>{{ post.excerpt }}</i></h6>
                 <p class="card-text ">{{post.content|safe}}</p>
 
                 {% if user.is_authenticated and user.id == post.author.id %}
