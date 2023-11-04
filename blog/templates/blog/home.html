@@ -8,12 +8,15 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-
-        <form class="d-flex align-items-center mt-4" method="get">
-            {{ filter.form }}
-            <button type="submit" class="btn btn-outline-secondary ms-2">Apply Filter</button>
-        </form>
-
+        <div class="col-lg-9 col-md-12">
+            <form class="d-flex align-items-center ms-3 mt-4" method="get">
+                {{ filter.form }}
+                <button type="submit" class="btn btn-outline-secondary ms-2">Apply Filter</button>
+            </form>
+        </div>
+        <div class="col-lg-3 col-md-12 pt-1">
+            <p class="mt-4 lead">Total number of posts: <strong class="text-info">{{ page_obj.paginator.count }}</strong></p>
+        </div>
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -45,7 +48,7 @@
                                 <p class="card-text">{{ post.excerpt | truncatechars:40 }}</p>
                             </a>
                             <hr/>
-                            <p class="card-text text-muted h6">{{ post.created_on}}
+                            <p class="card-text text-muted h6"><abbr title="date when the post was created">{{ post.created_on }}</abbr>
                                 <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
                         </div>
