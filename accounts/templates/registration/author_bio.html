@@ -13,16 +13,16 @@
         <div class="row g-0">
             <div class="col-md-2 d-flex flex-column align-items-center text-center">
                 {% if 'placeholder' in userprofile.profile_picture.url and userprofile.gender == 'Female' %}
-                <img src="{% static 'accounts/img/placeholder_f.jpg' %}" height=120 class="mt-3"
+                <img src="{% static 'accounts/img/placeholder_f.jpg' %}" class="mt-3 mt-3 d-block img-fluid"
                      alt="Female silhouette">
                 {% elif 'placeholder' in userprofile.profile_picture.url and userprofile.gender == 'Male' %}
-                <img src="{% static 'accounts/img/placeholder_m.jpg' %}" height=120 class="mt-3"
+                <img src="{% static 'accounts/img/placeholder_m.jpg' %}" class="mt-3 mt-3 d-block img-fluid"
                      alt="Male silhouette">
                 {% elif 'placeholder' in userprofile.profile_picture.url and userprofile.gender == 'Other' %}
-                <img src="{% static 'accounts/img/placeholder_o.jpg' %}" height=120 class="mt-3"
+                <img src="{% static 'accounts/img/placeholder_o.jpg' %}" class="mt-3 mt-3 d-block img-fluid"
                      alt="Genderless silhouette">
                 {% else %}
-                <img src="{{ userprofile.profile_picture.url }}" height=120 class="mt-3"
+                <img src="{{ userprofile.profile_picture.url }}" class="mt-3 d-block img-fluid"
                      alt="User image">
                 {% endif %}
                 {% if user.is_authenticated and user.id == userprofile.user.id %}

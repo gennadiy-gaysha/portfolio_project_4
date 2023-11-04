@@ -91,7 +91,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-7 card mb-4  mt-3 ">
+        <div class="col-md-7 card mb-4  mt-4 ">
             <h3>Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the tags to iterate through each comment in comments -->
@@ -118,7 +118,11 @@
                 <!-- For later -->
                 {% if user.is_authenticated and user.id != post.author.id %}
                 {% if not user.userprofile %}
-                <h5 class="mt-2 text-secondary">Before leaving a comment, please create your user profile first!</h5>
+                <div class="card">
+                    <div class="card-body">
+                        <h6 class="text-danger comment-warning">Before leaving a comment, please create your user profile first!</h6>
+                    </div>
+                </div>
                 {% else %}
 
                 <h3>Leave a comment:</h3>
