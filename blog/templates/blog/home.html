@@ -8,13 +8,13 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-9 col-md-12">
+        <div class="col-lg-8 col-md-12">
             <form class="d-flex align-items-center ms-3 mt-4" method="get">
                 {{ filter.form }}
                 <button type="submit" class="btn btn-outline-secondary ms-2">Apply Filter</button>
             </form>
         </div>
-        <div class="col-lg-3 col-md-12 pt-1">
+        <div class="col-lg-3 col-md-12 pt-1 ms-3">
             <p class="mt-4 lead">Total number of posts: <strong class="text-info">{{ page_obj.paginator.count }}</strong></p>
         </div>
         <!-- Blog Entries Column -->
