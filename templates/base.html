@@ -131,7 +131,8 @@
                     <a class="nav-link text-white link-nav-footer" href="{% url 'about' %}">About us</a>
                 </li>
 
-                <li class="hello-user nav-link">hello, {{user.username}}</li>
+                <li class="hello-user nav-link"><strong>hello,
+                    {{user.username}}</strong></li>
                 {% else %}
                 <li class="nav-item  text-white">
                     <a class="nav-link text-white link-nav-footer"
@@ -144,7 +145,7 @@
                 <li class="nav-item">
                     <a class="nav-link text-white link-nav-footer" href="{% url 'about' %}">About us</a>
                 </li>
-                <li class="hello-user nav-link">hello, guest user</li>
+                <li class="hello-user nav-link"><strong>hello, guest user</strong></li>
                 {% endif %}
             </ul>
 

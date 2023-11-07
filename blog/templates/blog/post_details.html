@@ -13,7 +13,8 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
-                <h2 class="post-title text-info">{{post.title | truncatechars:25 }}
+                <h2 class="post-title hello-user font-weight-normal">
+                    {{post.title | truncatechars:25 }}
                 </h2>
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle author"><a href="{% url 'author-bio' author_name=post.author %}"

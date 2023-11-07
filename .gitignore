@@ -3,3 +3,4 @@ venv/
 db.sqlite3
 commit_types.txt
 how_to_create_empty_project.txt
+user_story.xls

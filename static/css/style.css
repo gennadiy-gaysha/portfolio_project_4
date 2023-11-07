@@ -22,8 +22,7 @@ body {
 }
 
 .hello-user{
-    font-weight: bold;
-    color: #23BBBB;
+    color: #23BBBB !important;
 }
 
 .hello-user:hover{
