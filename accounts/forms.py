@@ -120,7 +120,8 @@ class UserProfileForm(forms.ModelForm):
     for the expected date format. The super function is called, which refers to the superclass and initializes the
     form with any additional arguments passed to it.
     """
-    home_country = forms.ModelChoiceField(queryset=Country.objects.all(), widget=forms.Select(attrs={'class': 'form-select'}))
+    home_country = forms.ModelChoiceField(queryset=Country.objects.all().order_by('country_name'),
+                                          widget=forms.Select(attrs={'class': 'form-select'}))
     class Meta:
         model = UserProfile
         fields = ('profile_picture', 'bio', 'home_country', 'gender', 'date_of_birth',

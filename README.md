@@ -29,6 +29,22 @@ joy of exploration and discovery!
     4. [Database Models](#database-models)
     5. [Color Scheme](#color-scheme)
     6. [Topography](#topography)
+2. [Features](#features)
+    1. [General](#general)
+    2. [Navigation Bar & Footer](#navigation-bar--footer)
+    3. [Home Page](#home-page)
+    4. [Post Details Page](#post-details-page)
+    5. [Create Post Page](#create-post-page)
+    6. [Update Post Page](#update-post-page)
+    7. [Delete Post Page](#delete-post-page)
+    8. [Show Country Page](#show-country-page)
+    9. [Author bio page](#author-bio-page)
+    10. [Authentication Pages](#authentication-pages)
+    11. [Edit Details Page](#edit-details-page)
+    12. [Change Password Page](#change-password-page)
+    13. [Create User Profile Page](#create-user-profile-page)
+    14. [Update User Profile Page](#general)
+    15. [About Page](#general)
 
 ## User Experience (UX)
 
@@ -40,6 +56,7 @@ Management, Search and Filtering, and User Management, represent distinct
 aspects of the travel blog application. Each section within the project goals is
 designed to address specific requirements related to these epics, ensuring a
 cohesive and efficient implementation of the application.
+[Back to top ⇧](#table-of-contents)
 
 #### Admin Management:
 
@@ -52,6 +69,7 @@ cohesive and efficient implementation of the application.
   enhanced control and organization.
 - Implement a user-friendly interface for managing the 'About Us' page
   within the admin panel.
+  [Back to top ⇧](#table-of-contents)
 
 #### Post Management:
 
@@ -64,6 +82,7 @@ cohesive and efficient implementation of the application.
   content management.
 - Enable users to like and comment on posts, fostering engagement and
   interaction.
+  [Back to top ⇧](#table-of-contents)
 
 #### Search and Filtering:
 
@@ -71,6 +90,7 @@ cohesive and efficient implementation of the application.
   relevant information quickly.
 - Categorize posts by the author's name and location to facilitate efficient
   searching and filtering.
+  [Back to top ⇧](#table-of-contents)
 
 #### User Management:
 
@@ -82,6 +102,7 @@ cohesive and efficient implementation of the application.
 - Provide comprehensive user profile creation and management capabilities for a
   personalized user experience.
 - Enable users to view their profiles and manage them as needed.
+  [Back to top ⇧](#table-of-contents)
 
 ### User stories:
 
@@ -113,6 +134,8 @@ in a sequence that is presented in the project development strategy table.
 | 18 | Like and Comment on Posts                | As a user I can like and comment on blog posts so that I can engage with the community, express my thoughts, and show appreciation for interesting content                                                                                 | Post Management      | SHOULD HAVE |
 | 19 | Categorize Posts by Author's Name        | As a user I can utilize a system for categorizing and filtering posts by author's name so that I can easily navigate and explore content related to specific author                                                                        | Search and Filtering | WON'T HAVE  |
 
+[Back to top ⇧](#table-of-contents)
+
 ### General structure:
 
 The key component of the site is the navbar, which is structured to enable users
@@ -122,13 +145,9 @@ seamless and intuitive navigation experience for the site's users.
 ![Travelblog navbar structure](assets/readme_files/navbar_structure.png)
 
 * The header, footer, and navigation bar maintain consistency across all pages.
-* Each separate post and postcard on paginated list of posts contains links to
-  the author and country pages, providing clear feedback for the user.
-* The home page presents a paginated list of posts, along with a filter for
-  selecting posts by country. Additionally, it provides information about the
-  total number of filtered or unfiltered posts.
 * Upon registering an account and creating their profile, users can add extra
   content to the site.
+  [Back to top ⇧](#table-of-contents)
 
 ### Database models:
 
@@ -257,6 +276,7 @@ For the purpose of this project relational database
   the default.
 - **Created On:** This field stores the date and time when the 'About' content
   was created. By default, it takes the current time as the creation time.
+  [Back to top ⇧](#table-of-contents)
 
 ### Color scheme:
 
@@ -280,9 +300,205 @@ contrasting colors.
 The color scheme was selected to strike a balance between a contemporary design
 and a simple, user-friendly interface, ensuring that the content remains the
 focal point while also delivering an attractive layout for users.
+[Back to top ⇧](#table-of-contents)
 
-### Topography
+### Topography:
 
- - The main font used on the site is Roboto, with a sans-serif font as a 
- fallback in case the main font is not imported correctly.
- - Lato was used for the logo design.
+- The main font used on the site is Roboto, with a sans-serif font as a
+  fallback in case the main font is not imported correctly.
+- Lato was used for the logo design.
+  [Back to top ⇧](#table-of-contents)
+
+## Features.
+
+### General:
+
+* The website was built with a mobile-centric approach.
+* The website was developed to ensure optimal performance across various
+  devices, including mobile phones, tablets, etc.
+  [Back to top ⇧](#table-of-contents)
+
+### Navigation Bar & Footer:
+
+* Includes the main logo, colored greeting and section links.
+* Logo image is linked to the [home page](#home-page).
+* The navigation bar features links to all sections, enhancing ease of
+  navigation throughout the site. Additionally, it incorporates a hover effect
+  that changes color, providing users with visual feedback for an improved
+  browsing experience.
+
+**Depending on the user status, nav bar has two different state:**
+
+1. Unauthorized user:
+   ![Travelblog Nvbar image Unauthorized](assets/readme_files/nav_unauthorized.png)
+2. Authorized user:
+   ![Travelblog Nvbar image Authorized](assets/readme_files/nav_authorized.png)
+
+* The 'My Profile' dropdown menu toggles between 'Create Profile' and 'Show
+  Profile'/'Edit Profile' choices based on whether the user has created their
+  profile or not.
+* The 'My Posts' dropdown menu provides three options: 'Drafts', 'Awaiting
+  Moderation', and 'Published', allowing authorised post authors to view their
+  paginated list of posts for each corresponding status.
+* The search country info window enables users to easily access country
+  profiles.
+  ![Travelblog Search Bar image](assets/readme_files/search_country.png)
+* If the user clicks on the search bar without entering any text, a
+  comprehensive list of all countries is displayed. Otherwise, a list of
+  countries containing the user's search query in any part of the country name
+  is generated. All countries in the list are arranged in alphabetical order.
+  Each country in the list is linked to its profile. The search query is not
+  case-sensitive.
+
+![Travelblog Country Searched Results image](assets/readme_files/show_searched_results_page.png)
+
+* The footer includes the TravelBlog trademark, which is linked to the main
+  page, and links to various social media channels.
+  ![Travelblog Footer image](assets/readme_files/footer.png)
+  [Back to top ⇧](#table-of-contents)
+
+### Home Page:
+
+* The home page presents a paginated list of posts, with 3 posts displayed per
+  page, and includes a filter for selecting posts by country.
+* The home page also provides information about the total number of posts,
+  that are filtered and unfiltered.
+* To improve user experience, all post titles are truncated if they exceed 30
+  characters, and post excerpts are truncated if they exceed 40 characters.
+* Each post card on the paginated list of posts contains links to the
+  [author bio page](#author-bio-page) and
+  the [show country page](#show-country-page),
+  along with the date when the post was created and the total number of likes.
+  This provides clear feedback for the user.
+
+  ![Travelblog Home Page image](assets/readme_files/home_page.png)
+  [Back to top ⇧](#table-of-contents)
+
+### Post Details Page:
+
+* Clicking on a post title or excerpt on the paginated list of posts redirects
+  the user to the post details page.
+* To improve the user experience, all post titles are truncated if they exceed
+  25 characters.
+* To maintain the author's writing style, the original title and excerpts are
+  presented before the post content.
+* At the end of the content, there is a comment section where other users'
+  comments and post likes can be found. If you are not the post author, you can
+  also like the post or leave a comment, provided that you have created your
+  user profile.
+* For better user experience, each comment contains the user's name, which is
+  linked to their profile page, and the date the comment was created.
+  ![Travelblog Post Details Page image](assets/readme_files/post_details_page.png)
+* Two buttons are available at the end of the post content for the authorized
+  post author, enabling them to edit or delete the post.
+* The post author is unable to like their own posts or leave a comment on them.
+  ![Travelblog Post Details Page image](assets/readme_files/post_details_page_author.png)
+  [Back to top ⇧](#table-of-contents)
+
+### Create Post Page:
+
+* An authorized user with a user profile can create their own posts by clicking
+  on the 'Create post' button on the [navigation bar](#navigation-bar--footer).
+* The 'Create post' page contains various fields such as 'Country' (a dropdown
+  list of all countries previously uploaded to the database), 'Title' (which
+  should be unique), 'Post main image' (with a default post image option
+  available), 'Excerpt', 'Content' (featuring the embedded Summernote WYSIWYG
+  Editor), and a dropdown 'Status' list to save the post as Draft for future
+  editing or send it for Moderation.
+  ![Travelblog Create Post Page image](assets/readme_files/create_post_true_page.png)
+* If the user doesn't have a profile, they are kindly asked to create one if
+  they wish to have the ability to publish their posts or comments.
+  ![Travelblog Create Post Warning Page image](assets/readme_files/create_post_false_page.png)
+  [Back to top ⇧](#table-of-contents)
+
+### Update Post Page:
+
+* Authors can update their posts at any time regardless of their status ('
+  Draft', 'Awaiting approval', or 'Published').
+* All updated posts must be approved by the Admin before they are published.
+  ![Travelblog Update Post Page image](assets/readme_files/update_post_page.png)
+  [Back to top ⇧](#table-of-contents)
+
+### Delete Post Page:
+
+* Authors can also delete their posts at any time, regardless of their status ('
+  Draft', 'Awaiting approval', or 'Published').
+* Before deleting the post, the user is asked to confirm this action since
+  this action can not be undone.
+  ![Travelblog delete Post Page image](assets/readme_files/delete_post_page.png)
+  [Back to top ⇧](#table-of-contents)
+
+### Show Country Page:
+
+* The user can access this page through three different links: via the 
+* [home page](#home-page), the [post details page](#post-details-page), and the 
+  search country result page.
+* This page includes a brief country description, the country's flag, an
+  interactive Google map, and a Wikipedia link.
+  ![Travelblog Show Country Page image](assets/readme_files/show_country_page.png)
+  [Back to top ⇧](#table-of-contents)
+
+### Author bio page:
+
+* Users can access this page via two different links: through the 
+  [home page](#home-page) and through the 
+  [post details](#post-details-page) page.
+* The page displays the user's uploaded image (with three default images
+  available for different genders), the user's name, a short user bio, and other
+  data from the user's profile.
+* At the bottom of this page, you can find all the user's published posts,
+  each linked to its corresponding [post details](#post-details-page) page.
+  ![Travelblog Author Bio Page image](assets/readme_files/author_bio_page.png)
+  [Back to top ⇧](#table-of-contents)
+
+### Authentication Pages:
+
+* To enhance the user experience and reduce the number of required clicks, it
+  was determined not to prompt for confirmation when the user chooses to log
+  out.
+
+| Page     | Description                                                    | Screenshot                                                        |
+|----------|----------------------------------------------------------------|-------------------------------------------------------------------|
+| Register | Allows the site user to sign up for an account on the website. | ![Travelblog Sign Up Page](assets/readme_files/register_page.png) |
+| Login    | Allows the Site User to sign in with their account.            | ![Travelblog Sign In Page](assets/readme_files/login_page.png)    |
+
+[Back to top ⇧](#table-of-contents)
+
+### Edit Details Page:
+
+* Enables the user to modify their first name, last name, and email.
+* After creation, the user is unable to change their username.
+  ![Travelblog Edit Details Page image](assets/readme_files/edit_details_page.png)
+  [Back to top ⇧](#table-of-contents)
+
+### Change Password Page:
+
+* Enables the user to change their password, requiring them to provide their old
+  password for confirmation before proceeding.
+  ![Travelblog Change Password Page image](assets/readme_files/change_password_page.png)
+  [Back to top ⇧](#table-of-contents)
+
+### Create User Profile Page:
+
+* To add additional content to the site, users are required to create a user
+  profile upon registration.
+* The form includes various fields such as 'Image' for uploading a user's
+  image (with three default images available for different genders), 'Bio',
+  dropdown fields for selecting 'Home country' and 'Gender', 'Date of birth'
+  field (featuring an interactive date picker calendar), and more.
+  ![Travelblog Create Profile Page image](assets/readme_files/create_profile_page.png)
+  [Back to top ⇧](#table-of-contents)
+
+### Update User Profile Page:
+
+* After creating their profile, users can update it at any time if needed.
+  ![Travelblog Update Profile Page image](assets/readme_files/update_profile_page.png)
+  [Back to top ⇧](#table-of-contents)
+
+### About Page:
+
+* Provides relevant details about the website's purpose and goals.
+* Enables the site admin to create or update the 'About' page.
+* Includes a default image option.
+  ![Travelblog About Page image](assets/readme_files/about_page.png)
+  [Back to top ⇧](#table-of-contents)

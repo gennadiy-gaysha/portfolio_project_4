@@ -256,7 +256,8 @@ class DeletePost(generic.DeleteView):
 def search_country(request):
     if request.method == 'POST':
         searched_country = request.POST.get('searched-country')
-        countries = Country.objects.filter(country_name__icontains=searched_country)
+        countries = Country.objects.filter(
+            country_name__icontains=searched_country).order_by('country_name')
         context = {'searched_country': searched_country, 'countries': countries}
         return render(request, 'blog/show_searched_results.html', context)
     else:
