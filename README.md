@@ -45,6 +45,14 @@ joy of exploration and discovery!
     13. [Create User Profile Page](#create-user-profile-page)
     14. [Update User Profile Page](#general)
     15. [About Page](#general)
+3. [Technologies Used](#technologies-used)
+    1. [Languages Used](#languages-used)
+    2. [Libraries and Frameworks](#libraries-and-frameworks)
+    3. [Packages Installed](#packages-installed)
+    4. [Database Management](#database-management)
+    5. [Tools and Programs](#tools-and-programs)
+4. [Testing](#testing)
+    1. [Go to TESTING.md]()
 
 ## User Experience (UX)
 
@@ -430,8 +438,8 @@ focal point while also delivering an attractive layout for users.
 
 ### Show Country Page:
 
-* The user can access this page through three different links: via the 
-* [home page](#home-page), the [post details page](#post-details-page), and the 
+* The user can access this page through three different links: via the
+* [home page](#home-page), the [post details page](#post-details-page), and the
   search country result page.
 * This page includes a brief country description, the country's flag, an
   interactive Google map, and a Wikipedia link.
@@ -440,8 +448,8 @@ focal point while also delivering an attractive layout for users.
 
 ### Author bio page:
 
-* Users can access this page via two different links: through the 
-  [home page](#home-page) and through the 
+* Users can access this page via two different links: through the
+  [home page](#home-page) and through the
   [post details](#post-details-page) page.
 * The page displays the user's uploaded image (with three default images
   available for different genders), the user's name, a short user bio, and other
@@ -501,4 +509,120 @@ focal point while also delivering an attractive layout for users.
 * Enables the site admin to create or update the 'About' page.
 * Includes a default image option.
   ![Travelblog About Page image](assets/readme_files/about_page.png)
+  [Back to top ⇧](#table-of-contents)
+
+## Technologies Used
+
+### Languages Used
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML)
+* [CSS3](https://en.wikipedia.org/wiki/CSS)
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+<br>[Back to top ⇧](#table-of-contents)
+
+### Libraries and Frameworks
+
+* [Django](https://www.djangoproject.com/) was employed as the web framework.
+
+* [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+  was used to enhance the visual appeal and responsiveness of the website.
+
+* [Google Fonts](https://fonts.google.com) were imported into the HTML file
+  to ensure consistent and appealing typography across all sections of the
+  website.
+
+* [Font Awesome](https://fontawesome.com) was employed across the website to
+  incorporate icons for improved aesthetics and user experience.
+
+* [jQuery 3.6.0 datepicker widget](https://jqueryui.com/datepicker/) was
+  integrated as part of the JavaScript library to streamline the process of
+  writing less JavaScript code.
+
+<br>[Back to top ⇧](#table-of-contents)
+
+### Packages Installed
+
+* [Django filter](https://django-filter.readthedocs.io/en/stable/) was used
+  to filter down a queryset based on a model’s fields.
+
+* [Django Crispy Form](https://django-crispy-forms.readthedocs.io/en/latest/)
+  was utilized to manage the appearance and rendering of the forms.
+
+* [Gunicorn](https://gunicorn.org/) was employed as a Python WSGI HTTP
+  Server for UNIX systems to facilitate the deployment of the Django
+  application.
+
+* [Summernote](https://summernote.org/) was utilized as the text editor with
+  a user-friendly interface that allows for the creation and editing of rich
+  text content.
+
+* [Cloudinary](https://cloudinary.com/) was utilized as an image management
+  solution, facilitating the storage, manipulation, and delivery of images for
+  the website.
+
+<br>[Back to top ⇧](#table-of-contents)
+
+### Database Management
+
+* [Elephant PostgreSQL](https://www.elephantsql.com/) database instance was
+  set up to be accessed in the production environment by Heroku.
+
+<br>[Back to top ⇧](#table-of-contents)
+
+### Tools and Programs
+
+* [PyCharm](https://www.jetbrains.com/pycharm/) was employed as the
+  integrated development environment (IDE) to facilitate efficient Django
+  development.
+
+* [Git](https://git-scm.com) was employed for version control by using the
+  PowerShell terminal to commit changes to Git and push them to GitHub.
+
+* [GitHub](https://github.com) was utilized to store the project's code
+  after it was pushed from Git.
+
+* [Heroku](https://www.heroku.com) was utilized for the deployment of the
+  website.
+
+* [Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php)
+  was employed to preview the website on a range of popular devices.
+
+* [Tiny PNG](https://tinypng.com) was used to reduce the file size of the
+  images.
+
+* [Coolors](https://coolors.co) was utilized to craft a color scheme for the
+  website.
+
+* [Chrome DevTools](https://developer.chrome.com/docs/devtools/) were
+  employed during the development process for code review and to test
+  responsiveness.
+
+* [W3C Markup Validator](https://validator.w3.org/) was used to validate the
+  HTML code.
+
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to
+  validate the CSS code.
+
+* [JSHint JavaScript Code Quality Tool](https://jshint.com/) was employed to
+  verify the integrity of the site's JavaScript code.
+
+* [Canva](https://www.canva.com/) was used to create the site favicon.
+
+* [GeoNames](https://www.geonames.org/) geographical database was utilized
+  to fetch and import detailed countries data into the project's database.
+
+* [Google Cloud](https://console.cloud.google.com/) was utilized to gain
+  access to the Google Maps API, enabling the rendering of country maps and the
+  addition of markers (for each country's capital) to them.
+
+* [Wikipedia](https://www.wikipedia.org/) was employed to generate links to 
+  the country flag image and respective Wikipedia country page.
+
+<br>[Back to top ⇧](#table-of-contents)
+
+## Testing
+
+* The testing documentation can be found [here]().
   [Back to top ⇧](#table-of-contents)
