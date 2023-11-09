@@ -53,6 +53,7 @@ joy of exploration and discovery!
     5. [Tools and Programs](#tools-and-programs)
 4. [Testing](#testing)
     1. [Go to TESTING.md]()
+5. [Virtual environment](#virtual-environment)
 
 ## User Experience (UX)
 
@@ -138,7 +139,7 @@ in a sequence that is presented in the project development strategy table.
 | 14 | Categorize Posts by Location             | As a user I can utilize a system for categorizing and filtering posts by country so that I can easily navigate and explore content related to specific locations                                                                           | Search and Filtering | SHOULD HAVE |
 | 15 | Country Information Search Feature       | As a user I can quickly search and access brief information about a specific country so that I can gather essential details without extensive navigation or research                                                                       | Search and Filtering | SHOULD HAVE |
 | 16 | Display About Us Information             | As a user I can view the About Us page so that I can stay informed about the mission, and understand the platform's purpose and offerings                                                                                                  | Post Management      | MUST HAVE   |
-| 17 | Manage About Us Page in the Admin Panel  | As a site admin I can I can manage and update the About Us page through an intuitive interface within the Django admin panel so that the travelblog mission, purpose, and latest information are accurately presented to the site visitors | Admin Management     | MUST HAVE   |
+| 17 | Manage About Us Page in the Admin Panel  | As a site admin I can I can manage and update the About Us page through an intuitive interface within the Django admin panel so that the TravelBlog mission, purpose, and latest information are accurately presented to the site visitors | Admin Management     | MUST HAVE   |
 | 18 | Like and Comment on Posts                | As a user I can like and comment on blog posts so that I can engage with the community, express my thoughts, and show appreciation for interesting content                                                                                 | Post Management      | SHOULD HAVE |
 | 19 | Categorize Posts by Author's Name        | As a user I can utilize a system for categorizing and filtering posts by author's name so that I can easily navigate and explore content related to specific author                                                                        | Search and Filtering | WON'T HAVE  |
 
@@ -511,9 +512,9 @@ focal point while also delivering an attractive layout for users.
   ![Travelblog About Page image](assets/readme_files/about_page.png)
   [Back to top ⇧](#table-of-contents)
 
-## Technologies Used
+## Technologies Used.
 
-### Languages Used
+### Languages Used:
 
 * [HTML5](https://en.wikipedia.org/wiki/HTML)
 * [CSS3](https://en.wikipedia.org/wiki/CSS)
@@ -522,107 +523,112 @@ focal point while also delivering an attractive layout for users.
 
 <br>[Back to top ⇧](#table-of-contents)
 
-### Libraries and Frameworks
+### Libraries and Frameworks:
 
 * [Django](https://www.djangoproject.com/) was employed as the web framework.
-
 * [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
   was used to enhance the visual appeal and responsiveness of the website.
-
 * [Google Fonts](https://fonts.google.com) were imported into the HTML file
   to ensure consistent and appealing typography across all sections of the
   website.
-
 * [Font Awesome](https://fontawesome.com) was employed across the website to
   incorporate icons for improved aesthetics and user experience.
-
 * [jQuery 3.6.0 datepicker widget](https://jqueryui.com/datepicker/) was
   integrated as part of the JavaScript library to streamline the process of
   writing less JavaScript code.
 
 <br>[Back to top ⇧](#table-of-contents)
 
-### Packages Installed
+### Packages Installed:
 
 * [Django filter](https://django-filter.readthedocs.io/en/stable/) was used
   to filter down a queryset based on a model’s fields.
-
 * [Django Crispy Form](https://django-crispy-forms.readthedocs.io/en/latest/)
   was utilized to manage the appearance and rendering of the forms.
-
 * [Gunicorn](https://gunicorn.org/) was employed as a Python WSGI HTTP
   Server for UNIX systems to facilitate the deployment of the Django
   application.
-
 * [Summernote](https://summernote.org/) was utilized as the text editor with
   a user-friendly interface that allows for the creation and editing of rich
   text content.
-
 * [Cloudinary](https://cloudinary.com/) was utilized as an image management
   solution, facilitating the storage, manipulation, and delivery of images for
   the website.
 
 <br>[Back to top ⇧](#table-of-contents)
 
-### Database Management
+### Database Management:
 
 * [Elephant PostgreSQL](https://www.elephantsql.com/) database instance was
   set up to be accessed in the production environment by Heroku.
 
 <br>[Back to top ⇧](#table-of-contents)
 
-### Tools and Programs
+### Tools and Programs:
 
 * [PyCharm](https://www.jetbrains.com/pycharm/) was employed as the
   integrated development environment (IDE) to facilitate efficient Django
   development.
-
 * [Git](https://git-scm.com) was employed for version control by using the
   PowerShell terminal to commit changes to Git and push them to GitHub.
-
 * [GitHub](https://github.com) was utilized to store the project's code
   after it was pushed from Git.
-
 * [Heroku](https://www.heroku.com) was utilized for the deployment of the
   website.
-
 * [Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php)
   was employed to preview the website on a range of popular devices.
-
 * [Tiny PNG](https://tinypng.com) was used to reduce the file size of the
   images.
-
 * [Coolors](https://coolors.co) was utilized to craft a color scheme for the
   website.
-
 * [Chrome DevTools](https://developer.chrome.com/docs/devtools/) were
   employed during the development process for code review and to test
   responsiveness.
-
 * [W3C Markup Validator](https://validator.w3.org/) was used to validate the
   HTML code.
-
 * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to
   validate the CSS code.
-
 * [JSHint JavaScript Code Quality Tool](https://jshint.com/) was employed to
   verify the integrity of the site's JavaScript code.
-
 * [Canva](https://www.canva.com/) was used to create the site favicon.
-
 * [GeoNames](https://www.geonames.org/) geographical database was utilized
   to fetch and import detailed countries data into the project's database.
-
 * [Google Cloud](https://console.cloud.google.com/) was utilized to gain
   access to the Google Maps API, enabling the rendering of country maps and the
   addition of markers (for each country's capital) to them.
-
-* [Wikipedia](https://www.wikipedia.org/) was employed to generate links to 
+* [Wikipedia](https://www.wikipedia.org/) was employed to generate links to
   the country flag image and respective Wikipedia country page.
+* [Lorem Ipsum](https://www.lipsum.com/) was employed to generate placeholder 
+  text for post content and excerpt.
 
 <br>[Back to top ⇧](#table-of-contents)
 
-## Testing
+## Testing:
 
 * The testing documentation can be found [here]().
-  [Back to top ⇧](#table-of-contents)
+<br>[Back to top ⇧](#table-of-contents)
+
+## Virtual environment:
+
+* Before creating a Django project, it's a good practice to create a virtual
+  environment for it. This isolates project's dependencies from the system-wide
+  Python installation. Go to the terminal and run the command:
+  <br>"python -m venv venv_name"
+* Activate the virtual environment (on Windows):
+  <br>`venv_name\Scripts\activate`
+* When you're done working on your project, deactivate the virtual
+  environment:
+  <br>`deactivate - exits venv`
+* !!! PyCharm provides an option to automatically activate the virtual
+  environment associated with a project whenever you open a terminal within the
+  IDE.
+  <br>`File>Settings>Tools>Terminal>Activate virtualenv` (check/uncheck)
+* Whenever you want to continue working on your project, activate the virtual
+  environment first:
+  `venv_name\Scripts\activate`
+* While your virtual environment is active, install Django and supporting 
+  packages to start working on the project.
+<br>[Back to top ⇧](#table-of-contents)
+
+
+
