@@ -54,7 +54,8 @@ joy of exploration and discovery!
 4. [Testing](#testing)
     1. [Go to TESTING.md]()
 5. [Creating empty django project in PyCharm and deploying it to Heroku](#creating-empty-django-project-in-pycharm-and-deploying-it-to-heroku)
-
+6. [Creating structure for static and template files](#creating-structure-for-static-and-template-files)
+7. [Get static and media files stored on Cloudinary](#get-static-and-media-files-stored-on-cloudinary)
 
 ## User Experience (UX)
 
@@ -613,28 +614,15 @@ focal point while also delivering an attractive layout for users.
 * Before creating a Django project, it's a good practice to create a virtual
   environment for it. This isolates project's dependencies from the system-wide
   Python installation. Go to the terminal and run the command:
-
-```commandline
-python -m venv venv_name
-```
-
+  <br>`python -m venv venv_name`
 * Activate the virtual environment (on Windows):
-
-```commandline
-venv_name\Scripts\activate
-```
-
+  <br>`venv_name\Scripts\activate`
 * When you're done working on your project, deactivate the virtual
   environment:
   <br>`deactivate - exits venv_name`
-
 * Whenever you want to continue working on your project, activate the virtual
   environment first:
-
-```commandline
-venv_name\Scripts\activate
-```
-
+  <br>`venv_name\Scripts\activate`
 * !!! PyCharm provides an option to automatically activate the virtual
   environment
   associated with a project whenever you open a terminal within the IDE.
@@ -643,11 +631,8 @@ venv_name\Scripts\activate
 
 2. Add Python interpreter to the project, clicking OK button to add
    interpreter after choosing the path to it:
-
-```settings
-PyCharm > File > Settings > Project_name > Python Interpreter > Add
-Interpreter > absolute_path_to_your_project\venv_name
-```
+   <br>`PyCharm > File > Settings > Project_name > Python Interpreter > Add
+   Interpreter > absolute_path_to_your_project\venv_name`
 
 3. When deploying a Django project to Heroku, you will typically need to use a
    web server to serve your application. Gunicorn (short for "Green Unicorn") is
@@ -661,55 +646,35 @@ Interpreter > absolute_path_to_your_project\venv_name
 
    While your virtual environment is active, install Django and gunicorn using
    pip. You don't need to install Django globally on your system.
-
-```commandline
-pip install 'django<4' gunicorn
-```
+   <br>`pip install 'django<4' gunicorn`
 
 4. Install supporting libraries (in this project psycopg2 was used to
    connect to PostgreSQL):
-
-```commandline
-pip install dj_database_url==0.5.0 psycopg2 python-dotenv 
-```
+   <br>`pip install dj_database_url==0.5.0 psycopg2 python-dotenv`
 
 5. Install Cloudinary Libraries:
+   <br>`pip install dj3-cloudinary-storage urllib3==1.26.15`
 
-```commandline
-pip install dj3-cloudinary-storage urllib3==1.26.15
-```
 
 6. If you need additional packages for your project, you can install them
    while your virtual environment is active:
-
-```commandline
-pip install package_name_1 package_name_2 package_name_3 package_name_4
-```
+   <br>`pip install package_name_1 package_name_2 package_name_3`
 
 7. After installing all packages create requirements.txt file:
-
-```commandline
-pip freeze > requirements.txt
-```
+   <br>`pip freeze > requirements.txt`
 
 8. Create Project: Once you're in the desired directory, you can create your
    Django project using the django-admin startproject command followed by the
    project name. For example, if you want to name your project travelblog, you
    can run:
+   <br>`django-admin startproject travelblog .`
 
-```commandline
-django-admin startproject travelblog .
-```
-
-- !!! The "." at the end indicates that the project should be created in the
+- !!! The `.` at the end indicates that the project should be created in the
   current directory. This will create travelblog directory with the initial
   project files.
 
 9. Create App (blog):
-
-```commandline
-python manage.py startapp blog
-```
+   <br>`python manage.py startapp blog`
 
 10. Add newly created app to the end of INSTALLED_APPS variable in settings.py:
 
@@ -767,10 +732,9 @@ dotenv.load_dotenv()
 import dj_database_url
 ```
 
-- Use the os.environ dictionary to access the environment variables from the
-  .env file. For example, to access the secret key:
+- Use the `os.environ` dictionary to access the environment variables from the
+  `.env` file. For example, to access the secret key:
   `SECRET_KEY = os.environ.get('SECRET_KEY')`
-
 
 - To access remote database (!replace the local database with a remote
   database):
@@ -793,7 +757,6 @@ DATABASES = {
   database:
   <br>`db.sqlite3`
 
-
 - Usage of .env in Production: In production environments, you can manually set
   environment variables using the server's configuration or a service like
   Heroku's config vars.
@@ -804,7 +767,7 @@ DATABASES = {
 
 
 16. Run Server in PyCharm for the first Test:
-    `current file (dropdown menu) > Edit Configuration > Add new configuration > Python`
+    <br>`current file (dropdown menu) > Edit Configuration > Add new configuration > Python`
 
 - Give any reasonable name to your configuration in the first top field (e.g.,
   your project's name).
@@ -851,12 +814,9 @@ ALLOWED_HOSTS = ["127.0.0.1", "your_full_heroku_project_name.herokuapp.com"]
 20. Create a new repository on GitHub to which you will push your local
     repository.
 21. In terminal window go to your project's root folder and initialise your
-    project in git:
-    `git init`
-22. Move your project to the staging area:
-    `git add .`
-23. Commit your project:
-    `git commit -m 'your commit message'`
+    project in git: `git init`
+22. Move your project to the staging area: `git add .`
+23. Commit your project: `git commit -m 'your commit message'`
 24. Push your project to GitHub:
     <br>`git remote add origin https://github.com/your_github_user_name/your_project_name.git`
     <br>`git branch -M main`
@@ -887,6 +847,7 @@ ALLOWED_HOSTS = ["127.0.0.1", "your_full_heroku_project_name.herokuapp.com"]
 
 27. !!! Important: to avoid any extra charges, in your Heroku app go to
     'Resources' tab and remove Add-ons.
+    <br>[Back to top ⇧](#table-of-contents)
 
 ## Creating structure for static and template files.
 
@@ -948,6 +909,68 @@ my_project/
 - templates/: This is a common directory for global templates that are shared
   across multiple apps. For example, a base template (base.html) is placed
   here.
+  <br>[Back to top ⇧](#table-of-contents)
 
+## Get static and media files stored on Cloudinary.
 
+### Cloudinary setup.
 
+- Visit [Cloudinary website](https://cloudinary.com/)
+- Click on the Sign-Up For Free button.
+- Provide your name, email address and choose a password.
+- Click Create Account.
+- Verify your email, and you will be brought to the dashboard.
+- From Cloudinary Dashboard copy your CLOUDINARY_URL e.g. 'API Environment
+  Variable'.
+- Add (paste) Cloudinary URL to `.env`: `CLOUDINARY_URL=...`
+- In Heroku app add to Settings tab in Config Vars your CLOUDINARY_URL.
+- In settings.py add Cloudinary Libraries to installed apps (order is
+  important):
+
+```python
+INSTALLED_APPS = [
+    'cloudinary_storage',
+    'django.contrib.staticfiles',
+    'cloudinary',
+]
+```
+
+- Tell Django to use Cloudinary to store media and static files.
+  Place this code snippets under the STATIC_URL:
+  <br>`STATICFILES_STORAGE = 'cloudinary_storage.storage.
+  StaticHashedCloudinaryStorage'`
+  <br>This line defines a list of additional directories where Django will
+  look for
+  static files. In this case, it specifies that the 'static' directory within
+  the project's base directory (BASE_DIR) should be considered when collecting
+  static files. This is useful when you have static files that are not tied to a
+  specific app but are shared across the entire project:
+  <br>`STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]`
+  <br>This line sets the absolute path to the directory where `collectstatic`, a
+  Django management command, will collect and store all the static files from
+  your project. In this code, it specifies that the collected static files
+  should be placed in the 'staticfiles' directory within the project's base
+  directory (BASE_DIR). This directory is typically used when deploying a Django
+  project to a production server, as it consolidates all the static files in one
+  location for efficient serving by the web server:
+  <br>`STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')`
+  <br>when running `python manage.py collectstatic` Django will
+  automatically create the staticfiles directory (if it doesn't exist).
+  <br>`MEDIA_URL = '/media/'`
+  <br>`DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'`
+- Tell Django where templates are stored:
+  <br>`TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')`
+
+```python
+TEMPLATES = [
+    {
+        'DIRS': [TEMPLATES_DIR],
+    },
+]
+```
+
+- Create `media`, `static` and `templates` folders in root directory.
+- Include `img`, `css`, `js` subdirectories to `static` folder.
+- For each app created add `templates/app` and `static/js`, `static/css` and
+  `static/img` folders and sub-folders to it.
+  <br>[Back to top ⇧](#table-of-contents)
