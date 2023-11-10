@@ -715,7 +715,7 @@ SECRET_KEY = my_secret_key
 DATABASE_URL = my_elephantsql_url
 ```
 
-- !!! in DATABASE_URL in .env file insert port number:
+- !!! in DATABASE_URL in `.env` file insert port number:
   <br>`...elephantsql.com:5432/...`
 
 14. Access to Environment Variables:
@@ -746,10 +746,10 @@ DATABASES = {
 ```
 
 - Replace 'SECRET_KEY' with the actual name of the environment variable you
-  defined in your .env file (if needed).
-- It's crucial to add .env to your .gitignore file (also place it in root
+  defined in your `.env` file (if needed).
+- It's crucial to add `.env` to your `.gitignore` file (also place it in root
   directory) so that you don't accidentally commit sensitive data to version
-  control. Also add venv directory and local db to .gitignore:
+  control. Also add venv directory and local db to `.gitignore`:
   <br>`.env`
   <br>`venv_name/`
 - add this line to .gitignore if you occasionally run your django project before
@@ -757,7 +757,7 @@ DATABASES = {
   database:
   <br>`db.sqlite3`
 
-- Usage of .env in Production: In production environments, you can manually set
+- Usage of `.env` in Production: In production environments, you can manually set
   environment variables using the server's configuration or a service like
   Heroku's config vars.
 
@@ -787,8 +787,8 @@ DATABASES = {
   app'.
 - Select 'Settings' in the menubar
 - Click 'Reveal Config Vars' and add the following:<br>
-    - DATABASE_URL: the DATABASE_URL copied from .env (p.13)
-    - SECRET_KEY: The SECRET_KEY copied from .env
+    - DATABASE_URL: the DATABASE_URL copied from `.env` (p.13)
+    - SECRET_KEY: The SECRET_KEY copied from `.env`
     - PORT: 8000
     - DISABLE_COLLECTSTATIC: 1 (temporary step, will be removed
       before deployment)
@@ -939,20 +939,19 @@ INSTALLED_APPS = [
   Place this code snippets under the STATIC_URL:
   <br>`STATICFILES_STORAGE = 'cloudinary_storage.storage.
   StaticHashedCloudinaryStorage'`
-  <br>This line defines a list of additional directories where Django will
-  look for
-  static files. In this case, it specifies that the 'static' directory within
-  the project's base directory (BASE_DIR) should be considered when collecting
-  static files. This is useful when you have static files that are not tied to a
-  specific app but are shared across the entire project:
+  <br>This line below defines a list of additional directories where Django will
+  look for static files. In this case, it specifies that the 'static' directory
+  within the project's base directory (BASE_DIR) should be considered when
+  collecting static files. This is useful when you have static files that are
+  not tied to a specific app but are shared across the entire project:
   <br>`STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]`
-  <br>This line sets the absolute path to the directory where `collectstatic`, a
-  Django management command, will collect and store all the static files from
-  your project. In this code, it specifies that the collected static files
-  should be placed in the 'staticfiles' directory within the project's base
-  directory (BASE_DIR). This directory is typically used when deploying a Django
-  project to a production server, as it consolidates all the static files in one
-  location for efficient serving by the web server:
+  <br>This line below sets the absolute path to the directory where
+  `collectstatic`, a Django management command, will collect and store all the
+  static files from your project. In this code, it specifies that the collected
+  static files should be placed in the 'staticfiles' directory within the
+  project's base directory (BASE_DIR). This directory is typically used when
+  deploying a Django project to a production server, as it consolidates all the
+  static files in one location for efficient serving by the web server:
   <br>`STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')`
   <br>when running `python manage.py collectstatic` Django will
   automatically create the staticfiles directory (if it doesn't exist).
