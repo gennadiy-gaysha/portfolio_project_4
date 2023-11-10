@@ -53,7 +53,8 @@ joy of exploration and discovery!
     5. [Tools and Programs](#tools-and-programs)
 4. [Testing](#testing)
     1. [Go to TESTING.md]()
-5. [Virtual environment](#virtual-environment)
+5. [Creating empty django project in PyCharm and deploying it to Heroku](#creating-empty-django-project-in-pycharm-and-deploying-it-to-heroku)
+
 
 ## User Experience (UX)
 
@@ -65,7 +66,7 @@ Management, Search and Filtering, and User Management, represent distinct
 aspects of the travel blog application. Each section within the project goals is
 designed to address specific requirements related to these epics, ensuring a
 cohesive and efficient implementation of the application.
-[Back to top ⇧](#table-of-contents)
+<br>[Back to top ⇧](#table-of-contents)
 
 #### Admin Management:
 
@@ -78,7 +79,7 @@ cohesive and efficient implementation of the application.
   enhanced control and organization.
 - Implement a user-friendly interface for managing the 'About Us' page
   within the admin panel.
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 #### Post Management:
 
@@ -91,7 +92,7 @@ cohesive and efficient implementation of the application.
   content management.
 - Enable users to like and comment on posts, fostering engagement and
   interaction.
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 #### Search and Filtering:
 
@@ -99,7 +100,7 @@ cohesive and efficient implementation of the application.
   relevant information quickly.
 - Categorize posts by the author's name and location to facilitate efficient
   searching and filtering.
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 #### User Management:
 
@@ -111,7 +112,7 @@ cohesive and efficient implementation of the application.
 - Provide comprehensive user profile creation and management capabilities for a
   personalized user experience.
 - Enable users to view their profiles and manage them as needed.
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### User stories:
 
@@ -143,7 +144,7 @@ in a sequence that is presented in the project development strategy table.
 | 18 | Like and Comment on Posts                | As a user I can like and comment on blog posts so that I can engage with the community, express my thoughts, and show appreciation for interesting content                                                                                 | Post Management      | SHOULD HAVE |
 | 19 | Categorize Posts by Author's Name        | As a user I can utilize a system for categorizing and filtering posts by author's name so that I can easily navigate and explore content related to specific author                                                                        | Search and Filtering | WON'T HAVE  |
 
-[Back to top ⇧](#table-of-contents)
+<br>[Back to top ⇧](#table-of-contents)
 
 ### General structure:
 
@@ -156,7 +157,7 @@ seamless and intuitive navigation experience for the site's users.
 * The header, footer, and navigation bar maintain consistency across all pages.
 * Upon registering an account and creating their profile, users can add extra
   content to the site.
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Database models:
 
@@ -285,7 +286,7 @@ For the purpose of this project relational database
   the default.
 - **Created On:** This field stores the date and time when the 'About' content
   was created. By default, it takes the current time as the creation time.
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Color scheme:
 
@@ -309,14 +310,14 @@ contrasting colors.
 The color scheme was selected to strike a balance between a contemporary design
 and a simple, user-friendly interface, ensuring that the content remains the
 focal point while also delivering an attractive layout for users.
-[Back to top ⇧](#table-of-contents)
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Topography:
 
 - The main font used on the site is Roboto, with a sans-serif font as a
   fallback in case the main font is not imported correctly.
 - Lato was used for the logo design.
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ## Features.
 
@@ -325,7 +326,7 @@ focal point while also delivering an attractive layout for users.
 * The website was built with a mobile-centric approach.
 * The website was developed to ensure optimal performance across various
   devices, including mobile phones, tablets, etc.
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Navigation Bar & Footer:
 
@@ -364,7 +365,7 @@ focal point while also delivering an attractive layout for users.
 * The footer includes the TravelBlog trademark, which is linked to the main
   page, and links to various social media channels.
   ![Travelblog Footer image](assets/readme_files/footer.png)
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Home Page:
 
@@ -381,7 +382,7 @@ focal point while also delivering an attractive layout for users.
   This provides clear feedback for the user.
 
   ![Travelblog Home Page image](assets/readme_files/home_page.png)
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Post Details Page:
 
@@ -402,7 +403,7 @@ focal point while also delivering an attractive layout for users.
   post author, enabling them to edit or delete the post.
 * The post author is unable to like their own posts or leave a comment on them.
   ![Travelblog Post Details Page image](assets/readme_files/post_details_page_author.png)
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Create Post Page:
 
@@ -418,7 +419,7 @@ focal point while also delivering an attractive layout for users.
 * If the user doesn't have a profile, they are kindly asked to create one if
   they wish to have the ability to publish their posts or comments.
   ![Travelblog Create Post Warning Page image](assets/readme_files/create_post_false_page.png)
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Update Post Page:
 
@@ -426,7 +427,7 @@ focal point while also delivering an attractive layout for users.
   Draft', 'Awaiting approval', or 'Published').
 * All updated posts must be approved by the Admin before they are published.
   ![Travelblog Update Post Page image](assets/readme_files/update_post_page.png)
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Delete Post Page:
 
@@ -435,7 +436,7 @@ focal point while also delivering an attractive layout for users.
 * Before deleting the post, the user is asked to confirm this action since
   this action can not be undone.
   ![Travelblog delete Post Page image](assets/readme_files/delete_post_page.png)
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Show Country Page:
 
@@ -445,7 +446,7 @@ focal point while also delivering an attractive layout for users.
 * This page includes a brief country description, the country's flag, an
   interactive Google map, and a Wikipedia link.
   ![Travelblog Show Country Page image](assets/readme_files/show_country_page.png)
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Author bio page:
 
@@ -458,7 +459,7 @@ focal point while also delivering an attractive layout for users.
 * At the bottom of this page, you can find all the user's published posts,
   each linked to its corresponding [post details](#post-details-page) page.
   ![Travelblog Author Bio Page image](assets/readme_files/author_bio_page.png)
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Authentication Pages:
 
@@ -471,21 +472,21 @@ focal point while also delivering an attractive layout for users.
 | Register | Allows the site user to sign up for an account on the website. | ![Travelblog Sign Up Page](assets/readme_files/register_page.png) |
 | Login    | Allows the Site User to sign in with their account.            | ![Travelblog Sign In Page](assets/readme_files/login_page.png)    |
 
-[Back to top ⇧](#table-of-contents)
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Edit Details Page:
 
 * Enables the user to modify their first name, last name, and email.
 * After creation, the user is unable to change their username.
   ![Travelblog Edit Details Page image](assets/readme_files/edit_details_page.png)
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Change Password Page:
 
 * Enables the user to change their password, requiring them to provide their old
   password for confirmation before proceeding.
   ![Travelblog Change Password Page image](assets/readme_files/change_password_page.png)
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Create User Profile Page:
 
@@ -496,13 +497,13 @@ focal point while also delivering an attractive layout for users.
   dropdown fields for selecting 'Home country' and 'Gender', 'Date of birth'
   field (featuring an interactive date picker calendar), and more.
   ![Travelblog Create Profile Page image](assets/readme_files/create_profile_page.png)
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Update User Profile Page:
 
 * After creating their profile, users can update it at any time if needed.
   ![Travelblog Update Profile Page image](assets/readme_files/update_profile_page.png)
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### About Page:
 
@@ -510,7 +511,7 @@ focal point while also delivering an attractive layout for users.
 * Enables the site admin to create or update the 'About' page.
 * Includes a default image option.
   ![Travelblog About Page image](assets/readme_files/about_page.png)
-  [Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ## Technologies Used.
 
@@ -520,8 +521,7 @@ focal point while also delivering an attractive layout for users.
 * [CSS3](https://en.wikipedia.org/wiki/CSS)
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
-
-<br>[Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Libraries and Frameworks:
 
@@ -536,8 +536,7 @@ focal point while also delivering an attractive layout for users.
 * [jQuery 3.6.0 datepicker widget](https://jqueryui.com/datepicker/) was
   integrated as part of the JavaScript library to streamline the process of
   writing less JavaScript code.
-
-<br>[Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Packages Installed:
 
@@ -554,15 +553,13 @@ focal point while also delivering an attractive layout for users.
 * [Cloudinary](https://cloudinary.com/) was utilized as an image management
   solution, facilitating the storage, manipulation, and delivery of images for
   the website.
-
-<br>[Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Database Management:
 
 * [Elephant PostgreSQL](https://www.elephantsql.com/) database instance was
   set up to be accessed in the production environment by Heroku.
-
-<br>[Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ### Tools and Programs:
 
@@ -598,37 +595,359 @@ focal point while also delivering an attractive layout for users.
   addition of markers (for each country's capital) to them.
 * [Wikipedia](https://www.wikipedia.org/) was employed to generate links to
   the country flag image and respective Wikipedia country page.
-* [Lorem Ipsum](https://www.lipsum.com/) was employed to generate placeholder 
+* [Lorem Ipsum](https://www.lipsum.com/) was employed to generate placeholder
   text for post content and excerpt.
-
-<br>[Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
 ## Testing:
 
 * The testing documentation can be found [here]().
-<br>[Back to top ⇧](#table-of-contents)
+  <br>[Back to top ⇧](#table-of-contents)
 
-## Virtual environment:
+## Creating empty django project in PyCharm and deploying it to Heroku.
 
+1. Virtual environment:
+
+* Create project directory and open it in PyCharm. Delete default main.py
+  file after opening in PyCharm.
 * Before creating a Django project, it's a good practice to create a virtual
   environment for it. This isolates project's dependencies from the system-wide
   Python installation. Go to the terminal and run the command:
-  <br>"python -m venv venv_name"
+
+```commandline
+python -m venv venv_name
+```
+
 * Activate the virtual environment (on Windows):
-  <br>`venv_name\Scripts\activate`
+
+```commandline
+venv_name\Scripts\activate
+```
+
 * When you're done working on your project, deactivate the virtual
   environment:
-  <br>`deactivate - exits venv`
-* !!! PyCharm provides an option to automatically activate the virtual
-  environment associated with a project whenever you open a terminal within the
-  IDE.
-  <br>`File>Settings>Tools>Terminal>Activate virtualenv` (check/uncheck)
+  <br>`deactivate - exits venv_name`
+
 * Whenever you want to continue working on your project, activate the virtual
   environment first:
-  `venv_name\Scripts\activate`
-* While your virtual environment is active, install Django and supporting 
-  packages to start working on the project.
-<br>[Back to top ⇧](#table-of-contents)
+
+```commandline
+venv_name\Scripts\activate
+```
+
+* !!! PyCharm provides an option to automatically activate the virtual
+  environment
+  associated with a project whenever you open a terminal within the IDE.
+  <br>`File>Settings>Tools>Terminal>Activate virtualenv (check/uncheck)`
+* While your virtual environment is active, go to the next step.
+
+2. Add Python interpreter to the project, clicking OK button to add
+   interpreter after choosing the path to it:
+
+```settings
+PyCharm > File > Settings > Project_name > Python Interpreter > Add
+Interpreter > absolute_path_to_your_project\venv_name
+```
+
+3. When deploying a Django project to Heroku, you will typically need to use a
+   web server to serve your application. Gunicorn (short for "Green Unicorn") is
+   a commonly used web server that is recommended for deploying Django
+   applications on Heroku. Heroku's platform expects the application to be run
+   using a web server that can handle incoming HTTP requests.
+
+   Gunicorn is one of the most popular choices because it is a production-ready
+   WSGI server (Web Server Gateway Interface) that can handle serving Django
+   applications efficiently and securely.
+
+   While your virtual environment is active, install Django and gunicorn using
+   pip. You don't need to install Django globally on your system.
+
+```commandline
+pip install 'django<4' gunicorn
+```
+
+4. Install supporting libraries (in this project psycopg2 was used to
+   connect to PostgreSQL):
+
+```commandline
+pip install dj_database_url==0.5.0 psycopg2 python-dotenv 
+```
+
+5. Install Cloudinary Libraries:
+
+```commandline
+pip install dj3-cloudinary-storage urllib3==1.26.15
+```
+
+6. If you need additional packages for your project, you can install them
+   while your virtual environment is active:
+
+```commandline
+pip install package_name_1 package_name_2 package_name_3 package_name_4
+```
+
+7. After installing all packages create requirements.txt file:
+
+```commandline
+pip freeze > requirements.txt
+```
+
+8. Create Project: Once you're in the desired directory, you can create your
+   Django project using the django-admin startproject command followed by the
+   project name. For example, if you want to name your project travelblog, you
+   can run:
+
+```commandline
+django-admin startproject travelblog .
+```
+
+- !!! The "." at the end indicates that the project should be created in the
+  current directory. This will create travelblog directory with the initial
+  project files.
+
+9. Create App (blog):
+
+```commandline
+python manage.py startapp blog
+```
+
+10. Add newly created app to the end of INSTALLED_APPS variable in settings.py:
+
+```python
+INSTALLED_APPS = [
+    'blog',
+]
+```
+
+11. Now that the empty project is created we need to connect external
+    [ElephantSQL](https://www.elephantsql.com/) database to it.
+
+12. ElephantSQL Setup
+
+- Go to [ElephantSQL](https://www.elephantsql.com/) and either create an
+  account or log in.
+- Click on 'Create New Instance' located in the top right corner of the screen.
+- Enter an Instance or Database name, select an appropriate Plan (the free
+  version will suffice), and click 'Select Region'.
+- Choose a region from the dropdown menu, click 'Review', and then click '
+  Create instance'.
+- Go back to the dashboard and click on the name of the instance you just
+  created.
+- In the URL section, click on the copy icon to copy the database URL.
+
+13. To hide sensitive data (such as the Django secret key) in a Django project
+    using the dotenv library, (was installed in p.4), you can follow these
+    steps:
+
+- In project's root directory create 2 files:
+  `.gitignore` and `.env`
+- In `.env` you'll store your sensitive data.
+- Place your SECRET_KEY value (from settings.py) and DATABASE_URL value (URL
+  from your remote third party database - elephantsql.com) in it:
+
+```python
+SECRET_KEY = my_secret_key
+DATABASE_URL = my_elephantsql_url
+```
+
+- !!! in DATABASE_URL in .env file insert port number:
+  <br>`...elephantsql.com:5432/...`
+
+14. Access to Environment Variables:
+
+- Open your Django project's settings.py file and import (at the top) the dotenv
+  and other supporting libraries:
+
+```python
+import os
+from pathlib import Path
+import dotenv
+
+dotenv.load_dotenv()
+import dj_database_url
+```
+
+- Use the os.environ dictionary to access the environment variables from the
+  .env file. For example, to access the secret key:
+  `SECRET_KEY = os.environ.get('SECRET_KEY')`
+
+
+- To access remote database (!replace the local database with a remote
+  database):
+
+```python
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
+```
+
+- Replace 'SECRET_KEY' with the actual name of the environment variable you
+  defined in your .env file (if needed).
+- It's crucial to add .env to your .gitignore file (also place it in root
+  directory) so that you don't accidentally commit sensitive data to version
+  control. Also add venv directory and local db to .gitignore:
+  <br>`.env`
+  <br>`venv_name/`
+- add this line to .gitignore if you occasionally run your django project before
+  cannecting it with the external
+  database:
+  <br>`db.sqlite3`
+
+
+- Usage of .env in Production: In production environments, you can manually set
+  environment variables using the server's configuration or a service like
+  Heroku's config vars.
+
+15. To ensure that the database schema is up-to-date and ready to accommodate
+    any models you define in the future, run this command:
+    `python manage.py migrate`
+
+
+16. Run Server in PyCharm for the first Test:
+    `current file (dropdown menu) > Edit Configuration > Add new configuration > Python`
+
+- Give any reasonable name to your configuration in the first top field (e.g.,
+  your project's name).
+  <br>`Script Path: enter path to the project's <manage.py> file`
+  <br>`Parameters: runserver`
+- Click OK to save configuration.
+- Now, each time you need to run your project, instead of running the
+  command `python manage.py runserver` in your
+  terminal, just click the green RUN button (or red square to stop it) in
+  PyCharm menu bar.
+
+17. Heroku setup:
+
+- Navigate to [Heroku](https://heroku.com) and create an account/log in.
+- Click 'New' in the top right and select 'Create New App'.
+- Enter an App name (must be unique), choose a region, and then click 'Create
+  app'.
+- Select 'Settings' in the menubar
+- Click 'Reveal Config Vars' and add the following:<br>
+    - DATABASE_URL: the DATABASE_URL copied from .env (p.13)
+    - SECRET_KEY: The SECRET_KEY copied from .env
+    - PORT: 8000
+    - DISABLE_COLLECTSTATIC: 1 (temporary step, will be removed
+      before deployment)
+
+18. Procfile: Create a file named Procfile (without any file extension) in your
+    project's root directory. The Procfile tells Heroku how to run your
+    application. Inside the Procfile, add the following line (inserting your
+    project's name):
+    <br>`web: gunicorn your_project_name.wsgi:application`
+
+
+19. Add to ALLOWED_HOSTS in settings.py:
+
+- First go to 'Settings' tab of your newly created Heroku app.
+- Go to the 'Domains' line and copy url that goes just after `https://`
+- Go to settings.py file of your project, add to the allowed hosts your
+  local domain and paste the url you copied in the previous step:
+
+```python
+ALLOWED_HOSTS = ["127.0.0.1", "your_full_heroku_project_name.herokuapp.com"]
+```
+
+20. Create a new repository on GitHub to which you will push your local
+    repository.
+21. In terminal window go to your project's root folder and initialise your
+    project in git:
+    `git init`
+22. Move your project to the staging area:
+    `git add .`
+23. Commit your project:
+    `git commit -m 'your commit message'`
+24. Push your project to GitHub:
+    <br>`git remote add origin https://github.com/your_github_user_name/your_project_name.git`
+    <br>`git branch -M main`
+    <br>`git push -u origin main`
+    (Next time when you want to push your commit to GitHub, just run the
+    command `git push`.)
+25. First deployment to Heroku.
+
+- Click 'Deploy' in the menubar tab then 'GitHub' under 'Deployment method'
+- In "Deployment method" select GitHub, chose the repository you want to deploy
+  and click 'Connect'
+- Scroll down and click 'Deploy Branch' or choose 'Enable Automatic Deploys' to
+  complete the process.
+- To launch your site after deployment, click 'Open app' button in the
+  top right corner of Heroku dashboard.
+
+26. In case of any Heroku errors after deployment go to the terminal and:
+
+- login to heroku terminal using command:
+  <br>`heroku login -i`
+- in case you have Multi-Factor Authentication, use API key from your
+  Heroku Account settings as a password;
+- run the command:
+  <br>`heroku logs --app=your_heroku_app_name`
+- find and resolve the issue;
+- commit your changes again and deploy it to Heroku (if you have chosen
+  'Manual deploy').
+
+27. !!! Important: to avoid any extra charges, in your Heroku app go to
+    'Resources' tab and remove Add-ons.
+
+## Creating structure for static and template files.
+
+- For this django project, all static files (CSS, JavaScript, images) and
+  templates (HTML files) were organized in a conventional directory
+  structure:
+
+```lua
+my_project/
+|-- my_project_name/
+|   |-- __init__.py
+|   |-- settings.py
+|   |-- urls.py
+|   |-- asgi.py
+|   `-- wsgi.py
+|-- my_app/
+|   |-- migrations/
+|   |-- static/
+|   |   `-- my_app_name/
+|   |       |-- css/
+|   |       |   `-- style.css
+|   |       |-- js/
+|   |       |   `-- script.js
+|   |       |-- img/
+|   |       |   `-- logo.png
+|   |       `-- favicon.ico
+|   |-- templates/
+|   |   `-- my_app_name/
+|   |       |-- home.html
+|   |       `-- other_template.html
+|   |-- __init__.py
+|   |-- admin.py
+|   |-- apps.py
+|   |-- models.py
+|   |-- tests.py
+|   `-- views.py
+|-- manage.py
+|-- static/
+|   |-- css/
+|   |   |-- style.css
+|   |-- img/
+|   |   |-- favicon.png
+|   |-- js/
+|       |-- base.js
+|-- templates/
+|   |-- base.html
+|-- venv/
+`-- requirements.txt
+```
+
+- my_project_name/static/my_app_name/: This directory contains all static
+  files for the specific app. Each app within a Django project can have its own
+  static files.
+- my_app_name/templates/: This directory contains all HTML templates for the
+  specific app. Similarly, each app can have its own templates.
+- static/: This is the directory where Django collects static files from
+  different apps during the collectstatic command. It's often used in production
+  to serve static files.
+- templates/: This is a common directory for global templates that are shared
+  across multiple apps. For example, a base template (base.html) is placed
+  here.
 
 
 
