@@ -58,8 +58,9 @@ Here is the live version of my project</a>
 5. [Creating empty django project in PyCharm and deploying it to Heroku](#creating-empty-django-project-in-pycharm-and-deploying-it-to-heroku)
 6. [Creating structure for static and template files](#creating-structure-for-static-and-template-files)
 7. [Get static and media files stored on Cloudinary](#get-static-and-media-files-stored-on-cloudinary)
-8. [Deploying finished django project to Heroku](#deploying-finished-django-project-to-heroku)
-9. [Cloning and Forking Repository](#cloning-and-forking-repository)
+8. [Finished product and responsive design](#finished-product-and-responsive-design)
+9. [Deploying finished django project to Heroku](#deploying-finished-django-project-to-heroku)
+10. [Cloning and Forking Repository](#cloning-and-forking-repository)
     1. [Cloning the Repository](#cloning-the-repository)
     2. [Forking the Repository](#forking-the-repository)
 
@@ -982,6 +983,38 @@ TEMPLATES = [
   `static/img` folders and sub-folders to it.
   <br>[Back to top ⇧](#table-of-contents)
 
+## Finished product and responsive design.
+
+- This site was created using the Bootstrap library, which ensures responsive
+  design across all project layouts.
+- Below, the most crucial layouts of the project are presented for laptop and
+  mobile screen sizes.
+- Screenshots of browser window were made by means of [Awesome Screenshot 
+  Plugin](https://www.awesomescreenshot.com/)
+- To capture full sized screenshots from Chrome DevTool without a browser
+  extension:
+    * Go to Chrome DevTool (`F12` or `right-click > Inspect` in your Chrome
+      browser window).
+    * Trigger device mode, for example, by emulating an iPhone.
+    * Open Command Menu (shortcut: `Cmd + Shift + P` or `Ctrl + Shift + P` in
+      Windows)
+    * Select 'Capture full-size screenshot.' The screenshot you capture will
+      match the exact device dimensions of the iPhone.
+
+| Page                       | Desktop           | Mobile            |
+|----------------------------| ----------------- | ----------------- |
+| Home page                  | ![Desktop](assets/readme_files/finished_product/home_page_l.png) | ![Mobile](assets/readme_files/finished_product/home_page_m.png) |
+| Post Details Page          | ![Desktop](assets/readme_files/finished_product/post_details_page_l.png) | ![Mobile](assets/readme_files/finished_product/post_details_page_m.png) |
+| Nav Bar Mobile             |  | ![Mobile](assets/readme_files/finished_product/nav_bar_m.png) |
+| Update Post Page           | ![Desktop](assets/readme_files/finished_product/update_post_page_l.png) | ![Mobile](assets/readme_files/finished_product/update_post_page_m.png) |
+| Show Country Page          | ![Desktop](assets/readme_files/finished_product/show_country_page_l.png) | ![Mobile](assets/readme_files/finished_product/show_country_page_m.png) |
+| Show Searched Results page | ![Desktop](assets/readme_files/finished_product/show_searched_results_page_l.png) | ![Mobile](assets/readme_files/finished_product/show_searched_results_page_m.png) |
+| Author Bio Page            | ![Desktop](assets/readme_files/finished_product/author_bio_page_l.png) | ![Mobile](assets/readme_files/finished_product/author_bio_page_m.png) |
+| Edit Details Page          | ![Desktop](assets/readme_files/finished_product/edit_details_page_l.png) | ![Mobile](assets/readme_files/finished_product/edit_details_page_m.png) |
+| Update Profile Page        | ![Desktop](assets/readme_files/finished_product/update_profile_page_l.png) | ![Mobile](assets/readme_files/finished_product/update_profile_page_m.png) |
+| About Page                 | ![Desktop](assets/readme_files/finished_product/about_page_l.png) | ![Mobile](assets/readme_files/finished_product/about_page_m.png) |
+<br>[Back to top ⇧](#table-of-contents)
+
 ## Deploying finished django project to Heroku.
 
 - Switch your project to production mode by updating the `DEBUG` setting
@@ -1055,3 +1088,5 @@ forking methods.
   using both cloning and forking methods, allowing you to make changes to the
   code and collaborate with other developers on the project.
   <br>[Back to top ⇧](#table-of-contents)
+
+

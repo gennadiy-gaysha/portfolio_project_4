@@ -182,12 +182,21 @@ body {
     color: #253A47;
 }
 
-.form-width, .alert{
+.form-width {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.alert {
     width: 70%;
 }
 
+.form-heading {
+    padding-left: 5%;
+}
+
 .form-login-width{
-    width: 25%;
+    width: 50%;
 }
 
 #searched-table{
