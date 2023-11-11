@@ -18,7 +18,9 @@ Explore fascinating travelogues, leave your thoughts, and unearth comprehensive
 country
 details effortlessly through our convenient search feature. Join us in
 celebrating the
-joy of exploration and discovery!
+joy of exploration and discovery!<br>
+<a href="https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/" target="_blank">
+Here is the live version of my project</a>
 
 ## Table of Contents
 
@@ -57,7 +59,9 @@ joy of exploration and discovery!
 6. [Creating structure for static and template files](#creating-structure-for-static-and-template-files)
 7. [Get static and media files stored on Cloudinary](#get-static-and-media-files-stored-on-cloudinary)
 8. [Deploying finished django project to Heroku](#deploying-finished-django-project-to-heroku)
-
+9. [Cloning and Forking Repository](#cloning-and-forking-repository)
+    1. [Cloning the Repository](#cloning-the-repository)
+    2. [Forking the Repository](#forking-the-repository)
 
 ## User Experience (UX)
 
@@ -1009,3 +1013,45 @@ TEMPLATES = [
   <br>`DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'`
 - Commit these changes and push them to GitHub.
 - Go to 'Deploy' tab in your Heroku app and deploy the project to Heroku.
+  <br>[Back to top ⇧](#table-of-contents)
+
+## Cloning and Forking Repository.
+
+To make changes to the code without affecting the original version stored in the
+repository you may create a local copy of the repository, through cloning and
+forking methods.
+
+### Cloning the Repository
+
+- Install Git on your local machine, if it is not already installed.
+- Navigate to the repository you want to clone in a web browser.
+- Click the "Clone or download" button and copy the repository's
+  URL (`https://github.com/gennadiy-gaysha/portfolio_project_3`) to your
+  clipboard.
+- Open a terminal or command prompt on your local machine.
+- Change to the directory where you want to clone the repository.
+- Type the
+  command `git clone https://github.com/gennadiy-gaysha/portfolio_project_3.git`
+  and press enter.
+- Wait for the repository to download to your local machine.
+- Once the repository is downloaded, you can make changes to the code and use
+  Git to manage and sync those changes with the original repository.
+  <br>[Back to top ⇧](#table-of-contents)
+
+- ### Forking the Repository
+
+- Navigate to the repository you want to fork in a web browser.
+- Click the "Fork" button in the top right corner of the page.
+- Select your account as the destination for the forked repository.
+- Wait for the repository to be forked to your account.
+- Once the repository is forked, you can clone it to your local machine using
+  the steps above for cloning a repository.
+- You can make changes to the code and commit those changes to your forked
+  repository. If you want to contribute those changes back to the original
+  repository, you can create a pull request from your forked repository to the
+  original repository.
+
+- These instructions should help you create a local copy of a code repository
+  using both cloning and forking methods, allowing you to make changes to the
+  code and collaborate with other developers on the project.
+  <br>[Back to top ⇧](#table-of-contents)
