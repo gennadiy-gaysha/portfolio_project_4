@@ -56,6 +56,8 @@ joy of exploration and discovery!
 5. [Creating empty django project in PyCharm and deploying it to Heroku](#creating-empty-django-project-in-pycharm-and-deploying-it-to-heroku)
 6. [Creating structure for static and template files](#creating-structure-for-static-and-template-files)
 7. [Get static and media files stored on Cloudinary](#get-static-and-media-files-stored-on-cloudinary)
+8. [Deploying finished django project to Heroku](#deploying-finished-django-project-to-heroku)
+
 
 ## User Experience (UX)
 
@@ -757,7 +759,8 @@ DATABASES = {
   database:
   <br>`db.sqlite3`
 
-- Usage of `.env` in Production: In production environments, you can manually set
+- Usage of `.env` in Production: In production environments, you can manually
+  set
   environment variables using the server's configuration or a service like
   Heroku's config vars.
 
@@ -903,9 +906,8 @@ my_project/
   static files.
 - my_app_name/templates/: This directory contains all HTML templates for the
   specific app. Similarly, each app can have its own templates.
-- static/: This is the directory where Django collects static files from
-  different apps during the collectstatic command. It's often used in production
-  to serve static files.
+- static/: Static files that are not tied to a specific app but are shared
+  across the entire project.
 - templates/: This is a common directory for global templates that are shared
   across multiple apps. For example, a base template (base.html) is placed
   here.
@@ -945,13 +947,15 @@ INSTALLED_APPS = [
   collecting static files. This is useful when you have static files that are
   not tied to a specific app but are shared across the entire project:
   <br>`STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]`
-  <br>This line below sets the absolute path to the directory where
-  `collectstatic`, a Django management command, will collect and store all the
-  static files from your project. In this code, it specifies that the collected
-  static files should be placed in the 'staticfiles' directory within the
-  project's base directory (BASE_DIR). This directory is typically used when
-  deploying a Django project to a production server, as it consolidates all the
-  static files in one location for efficient serving by the web server:
+  <br>This line below (!!! provided as a note for a standard Django project,
+  but not utilized in this project due to the use of Cloudinary storage) sets
+  the absolute path to the directory where `collectstatic`, a Django management
+  command, will collect and store all the static files from your project. In
+  this code, it specifies that the collected static files should be placed in
+  the 'staticfiles' directory within the project's base directory (BASE_DIR).
+  This directory is typically employed when deploying a Django project to a
+  production server to consolidate all the static files in one location for
+  efficient serving by the web server:
   <br>`STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')`
   <br>when running `python manage.py collectstatic` Django will
   automatically create the staticfiles directory (if it doesn't exist).
@@ -968,8 +972,40 @@ TEMPLATES = [
 ]
 ```
 
-- Create `media`, `static` and `templates` folders in root directory.
-- Include `img`, `css`, `js` subdirectories to `static` folder.
+- Create `media/`, `static/` and `templates/` folders in root directory.
+- Include `img/`, `css/`, `js/` subdirectories to `static` folder.
 - For each app created add `templates/app` and `static/js`, `static/css` and
   `static/img` folders and sub-folders to it.
   <br>[Back to top ⇧](#table-of-contents)
+
+## Deploying finished django project to Heroku.
+
+- Switch your project to production mode by updating the `DEBUG` setting
+  to `False` in the `settings.py` file:
+  <br>`DEBUG = False`
+  <br> In a production environment, setting DEBUG to False is crucial for
+  preventing the exposure of sensitive information and potential security
+  vulnerabilities. Specifically, detailed error pages and debugging information
+  will not be displayed to users, enhancing the overall security of your
+  application.
+- Set `X-Frame-Options` to `SAMEORIGIN`:
+  `X_FRAME_OPTIONS = 'SAMEORIGIN'`
+  The X-Frame-Options HTTP header is a security feature that helps prevent your
+  web pages from being embedded within an iframe.
+  When set to `SAMEORIGIN`, it allows the page to be displayed in a frame on the
+  same origin (same domain), but prevents it from being embedded on other
+  domains.
+  This helps mitigate the risk of clickjacking attacks where an attacker tricks
+  a user into interacting with a page within an iframe, potentially leading to
+  unintended actions.
+- !!! Important note: When we are using Cloudinary for handling static and
+  media files in our Django project, we typically don't need to run the
+  `collectstatic` command before deployment (`python manage.py collectstatic`).
+  Cloudinary takes care of storing and serving these files, so the traditional
+  process of collecting static files into a local directory (usually named
+  staticfiles) is not necessary. These two lines of code that we set above
+  in our `settings.py` file are responsible for that:
+  <br>`STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'`
+  <br>`DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'`
+- Commit these changes and push them to GitHub.
+- Go to 'Deploy' tab in your Heroku app and deploy the project to Heroku.
