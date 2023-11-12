@@ -987,6 +987,17 @@ TEMPLATES = [
   `static/img` folders and sub-folders to it.
   <br>[Back to top ⇧](#table-of-contents)
 
+## Populating Geonames country data in database.
+
+- [countryInfo.txt file](https://download.geonames.org/export/dump/countryInfo.txt)
+  was downloaded from [Geonames](https://download.geonames.org/export/dump/)
+- To read data from this textfile (assuming that it is structured with
+  tab-separated values) and save it to database (Country table), a
+  Django management command was created:
+  <br>`blog/management/commands/populate_countries.py`
+- After running the script `python manage.py populate_countries` all data
+  from the textfile were fetched and populated in Country database.
+
 ## Finished product and responsive design.
 
 - This site was created using the Bootstrap library, which ensures responsive
