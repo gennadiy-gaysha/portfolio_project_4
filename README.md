@@ -55,12 +55,13 @@ Here is the live version of my project</a>
     5. [Tools and Programs](#tools-and-programs)
 4. [Testing](#testing)
     1. [Go to TESTING.md]()
-5. [Creating empty django project in PyCharm and deploying it to Heroku](#creating-empty-django-project-in-pycharm-and-deploying-it-to-heroku)
-6. [Creating structure for static and template files](#creating-structure-for-static-and-template-files)
-7. [Get static and media files stored on Cloudinary](#get-static-and-media-files-stored-on-cloudinary)
-8. [Finished product and responsive design](#finished-product-and-responsive-design)
-9. [Deploying finished django project to Heroku](#deploying-finished-django-project-to-heroku)
-10. [Cloning and Forking Repository](#cloning-and-forking-repository)
+5. [Creating empty django project in PyCharm](#creating-empty-django-project-in-pycharm)
+6. [Deploying empty django project to Heroku](#deploying-empty-django-project-to-heroku)
+7. [Creating structure for static and template files](#creating-structure-for-static-and-template-files)
+8. [Get static and media files stored on Cloudinary](#get-static-and-media-files-stored-on-cloudinary)
+9. [Finished product and responsive design](#finished-product-and-responsive-design)
+10. [Deploying finished django project to Heroku](#deploying-finished-django-project-to-heroku)
+11. [Cloning and Forking Repository](#cloning-and-forking-repository)
     1. [Cloning the Repository](#cloning-the-repository)
     2. [Forking the Repository](#forking-the-repository)
 
@@ -612,7 +613,7 @@ focal point while also delivering an attractive layout for users.
 * The testing documentation can be found [here]().
   <br>[Back to top ⇧](#table-of-contents)
 
-## Creating empty django project in PyCharm and deploying it to Heroku.
+## Creating empty django project in PyCharm.
 
 1. Virtual environment:
 
@@ -786,8 +787,11 @@ DATABASES = {
   command `python manage.py runserver` in your
   terminal, just click the green RUN button (or red square to stop it) in
   PyCharm menu bar.
+  <br>[Back to top ⇧](#table-of-contents)
 
-17. Heroku setup:
+## Deploying empty django project to Heroku.
+
+1. Heroku setup:
 
 - Navigate to [Heroku](https://heroku.com) and create an account/log in.
 - Click 'New' in the top right and select 'Create New App'.
@@ -801,14 +805,14 @@ DATABASES = {
     - DISABLE_COLLECTSTATIC: 1 (temporary step, will be removed
       before deployment)
 
-18. Procfile: Create a file named Procfile (without any file extension) in your
-    project's root directory. The Procfile tells Heroku how to run your
-    application. Inside the Procfile, add the following line (inserting your
-    project's name):
-    <br>`web: gunicorn your_project_name.wsgi:application`
+2. Procfile: Create a file named Procfile (without any file extension) in your
+   project's root directory. The Procfile tells Heroku how to run your
+   application. Inside the Procfile, add the following line (inserting your
+   project's name):
+   <br>`web: gunicorn your_project_name.wsgi:application`
 
 
-19. Add to ALLOWED_HOSTS in settings.py:
+3. Add to ALLOWED_HOSTS in settings.py:
 
 - First go to 'Settings' tab of your newly created Heroku app.
 - Go to the 'Domains' line and copy url that goes just after `https://`
@@ -819,19 +823,19 @@ DATABASES = {
 ALLOWED_HOSTS = ["127.0.0.1", "your_full_heroku_project_name.herokuapp.com"]
 ```
 
-20. Create a new repository on GitHub to which you will push your local
-    repository.
-21. In terminal window go to your project's root folder and initialise your
-    project in git: `git init`
-22. Move your project to the staging area: `git add .`
-23. Commit your project: `git commit -m 'your commit message'`
-24. Push your project to GitHub:
-    <br>`git remote add origin https://github.com/your_github_user_name/your_project_name.git`
-    <br>`git branch -M main`
-    <br>`git push -u origin main`
-    (Next time when you want to push your commit to GitHub, just run the
-    command `git push`.)
-25. First deployment to Heroku.
+4. Create a new repository on GitHub to which you will push your local
+   repository.
+5. In terminal window go to your project's root folder and initialise your
+   project in git: `git init`
+6. Move your project to the staging area: `git add .`
+7. Commit your project: `git commit -m 'your commit message'`
+8. Push your project to GitHub:
+   <br>`git remote add origin https://github.com/your_github_user_name/your_project_name.git`
+   <br>`git branch -M main`
+   <br>`git push -u origin main`
+   (Next time when you want to push your commit to GitHub, just run the
+   command `git push`.)
+9. First deployment to Heroku.
 
 - Click 'Deploy' in the menubar tab then 'GitHub' under 'Deployment method'
 - In "Deployment method" select GitHub, chose the repository you want to deploy
@@ -841,7 +845,7 @@ ALLOWED_HOSTS = ["127.0.0.1", "your_full_heroku_project_name.herokuapp.com"]
 - To launch your site after deployment, click 'Open app' button in the
   top right corner of Heroku dashboard.
 
-26. In case of any Heroku errors after deployment go to the terminal and:
+10. In case of any Heroku errors after deployment go to the terminal and:
 
 - login to heroku terminal using command:
   <br>`heroku login -i`
@@ -853,7 +857,7 @@ ALLOWED_HOSTS = ["127.0.0.1", "your_full_heroku_project_name.herokuapp.com"]
 - commit your changes again and deploy it to Heroku (if you have chosen
   'Manual deploy').
 
-27. !!! Important: to avoid any extra charges, in your Heroku app go to
+11. !!! Important: to avoid any extra charges, in your Heroku app go to
     'Resources' tab and remove Add-ons.
     <br>[Back to top ⇧](#table-of-contents)
 
@@ -989,7 +993,7 @@ TEMPLATES = [
   design across all project layouts.
 - Below, the most crucial layouts of the project are presented for laptop and
   mobile screen sizes.
-- Screenshots of browser window were made by means of [Awesome Screenshot 
+- Screenshots of browser window were made by means of [Awesome Screenshot
   Plugin](https://www.awesomescreenshot.com/)
 - To capture full sized screenshots from Chrome DevTool without a browser
   extension:
@@ -1001,18 +1005,19 @@ TEMPLATES = [
     * Select 'Capture full-size screenshot.' The screenshot you capture will
       match the exact device dimensions of the iPhone.
 
-| Page                       | Desktop           | Mobile            |
-|----------------------------| ----------------- | ----------------- |
-| Home page                  | ![Desktop](assets/readme_files/finished_product/home_page_l.png) | ![Mobile](assets/readme_files/finished_product/home_page_m.png) |
-| Post Details Page          | ![Desktop](assets/readme_files/finished_product/post_details_page_l.png) | ![Mobile](assets/readme_files/finished_product/post_details_page_m.png) |
-| Nav Bar Mobile             |  | ![Mobile](assets/readme_files/finished_product/nav_bar_m.png) |
-| Update Post Page           | ![Desktop](assets/readme_files/finished_product/update_post_page_l.png) | ![Mobile](assets/readme_files/finished_product/update_post_page_m.png) |
-| Show Country Page          | ![Desktop](assets/readme_files/finished_product/show_country_page_l.png) | ![Mobile](assets/readme_files/finished_product/show_country_page_m.png) |
+| Page                       | Desktop                                                                           | Mobile                                                                           |
+|----------------------------|-----------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| Home page                  | ![Desktop](assets/readme_files/finished_product/home_page_l.png)                  | ![Mobile](assets/readme_files/finished_product/home_page_m.png)                  |
+| Post Details Page          | ![Desktop](assets/readme_files/finished_product/post_details_page_l.png)          | ![Mobile](assets/readme_files/finished_product/post_details_page_m.png)          |
+| Nav Bar Mobile             |                                                                                   | ![Mobile](assets/readme_files/finished_product/nav_bar_m.png)                    |
+| Update Post Page           | ![Desktop](assets/readme_files/finished_product/update_post_page_l.png)           | ![Mobile](assets/readme_files/finished_product/update_post_page_m.png)           |
+| Show Country Page          | ![Desktop](assets/readme_files/finished_product/show_country_page_l.png)          | ![Mobile](assets/readme_files/finished_product/show_country_page_m.png)          |
 | Show Searched Results page | ![Desktop](assets/readme_files/finished_product/show_searched_results_page_l.png) | ![Mobile](assets/readme_files/finished_product/show_searched_results_page_m.png) |
-| Author Bio Page            | ![Desktop](assets/readme_files/finished_product/author_bio_page_l.png) | ![Mobile](assets/readme_files/finished_product/author_bio_page_m.png) |
-| Edit Details Page          | ![Desktop](assets/readme_files/finished_product/edit_details_page_l.png) | ![Mobile](assets/readme_files/finished_product/edit_details_page_m.png) |
-| Update Profile Page        | ![Desktop](assets/readme_files/finished_product/update_profile_page_l.png) | ![Mobile](assets/readme_files/finished_product/update_profile_page_m.png) |
-| About Page                 | ![Desktop](assets/readme_files/finished_product/about_page_l.png) | ![Mobile](assets/readme_files/finished_product/about_page_m.png) |
+| Author Bio Page            | ![Desktop](assets/readme_files/finished_product/author_bio_page_l.png)            | ![Mobile](assets/readme_files/finished_product/author_bio_page_m.png)            |
+| Edit Details Page          | ![Desktop](assets/readme_files/finished_product/edit_details_page_l.png)          | ![Mobile](assets/readme_files/finished_product/edit_details_page_m.png)          |
+| Update Profile Page        | ![Desktop](assets/readme_files/finished_product/update_profile_page_l.png)        | ![Mobile](assets/readme_files/finished_product/update_profile_page_m.png)        |
+| About Page                 | ![Desktop](assets/readme_files/finished_product/about_page_l.png)                 | ![Mobile](assets/readme_files/finished_product/about_page_m.png)                 |
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ## Deploying finished django project to Heroku.
@@ -1035,6 +1040,12 @@ TEMPLATES = [
   This helps mitigate the risk of clickjacking attacks where an attacker tricks
   a user into interacting with a page within an iframe, potentially leading to
   unintended actions.
+- Commit these changes and push them to GitHub.
+- Navigate to your app on [Heroku](https://heroku.com) and select 'Settings'
+  in the menubar.
+- Click 'Reveal Config Vars' and delete the following:
+  <br>`PORT: 8000`
+  <br>`DISABLE_COLLECTSTATIC: 1`
 - !!! Important note: When we are using Cloudinary for handling static and
   media files in our Django project, we typically don't need to run the
   `collectstatic` command before deployment (`python manage.py collectstatic`).
@@ -1044,7 +1055,6 @@ TEMPLATES = [
   in our `settings.py` file are responsible for that:
   <br>`STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'`
   <br>`DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'`
-- Commit these changes and push them to GitHub.
 - Go to 'Deploy' tab in your Heroku app and deploy the project to Heroku.
   <br>[Back to top ⇧](#table-of-contents)
 
@@ -1063,8 +1073,8 @@ forking methods.
   clipboard.
 - Open a terminal or command prompt on your local machine.
 - Change to the directory where you want to clone the repository.
-- Type the
-  command `git clone https://github.com/gennadiy-gaysha/portfolio_project_3.git`
+- Type the command
+  `git clone https://github.com/gennadiy-gaysha/portfolio_project_3.git`
   and press enter.
 - Wait for the repository to download to your local machine.
 - Once the repository is downloaded, you can make changes to the code and use
