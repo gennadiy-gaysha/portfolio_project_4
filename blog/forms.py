@@ -27,7 +27,8 @@ class PostForm(forms.ModelForm):
         """
         super(PostForm, self).__init__(*args, **kwargs)
         countries = Country.objects.all().order_by('country_name')
-        self.fields['status'].choices = [(0, 'Save as draft'), (1, 'Send to moderation')]
+        self.fields['status'].choices = [(0, 'Save as draft'),
+                                         (1, 'Send to moderation')]
         self.fields['country'].queryset = countries
 
     class Meta:
@@ -43,7 +44,8 @@ class PostForm(forms.ModelForm):
 
         """
         model = Post
-        fields = ('country', 'title', 'featured_image', 'excerpt', 'content', 'status')
+        fields = (
+        'country', 'title', 'featured_image', 'excerpt', 'content', 'status')
 
         widgets = {
             'country': forms.Select(choices=countries_list,
@@ -53,14 +55,22 @@ class PostForm(forms.ModelForm):
             'featured_image': forms.FileInput(
                 attrs={'class': 'form-control-file'}),
             'content': SummernoteWidget(attrs={'class': 'form-control'}),
-            'excerpt': forms.Textarea(attrs={'class': 'form-control', 'style': 'height: 120px'}),
+            'excerpt': forms.Textarea(
+                attrs={'class': 'form-control', 'style': 'height: 120px'}),
             'status': forms.Select(
                 attrs={'class': 'form-select', 'style': 'width: 100%'})
         }
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields[
+            'featured_image'].help_text = '<br><span style="color: green;">As the main post image, *.png or *.jpg files with a size of up to 10MB are accepted. <br>All files should only be in horizontal (landscape) orientation.</span>'
+
 
 class CommentForm(forms.ModelForm):
-    body = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'style': 'height: 150px'}))
+    body = forms.CharField(widget=forms.Textarea(
+        attrs={'class': 'form-control', 'style': 'height: 150px'}))
+
     class Meta:
         model = Comment
         fields = ['body']

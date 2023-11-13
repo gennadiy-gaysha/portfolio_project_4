@@ -59,13 +59,16 @@ Here is the live version of my project</a>
 6. [Deploying empty django project to Heroku](#deploying-empty-django-project-to-heroku)
 7. [Creating structure for static and template files](#creating-structure-for-static-and-template-files)
 8. [Get static and media files stored on Cloudinary](#get-static-and-media-files-stored-on-cloudinary)
-9. [Finished product and responsive design](#finished-product-and-responsive-design)
-10. [Deploying finished django project to Heroku](#deploying-finished-django-project-to-heroku)
-11. [Cloning and Forking Repository](#cloning-and-forking-repository)
+9. [Populating Geonames country data in database](#populating-geonames-country-data-in-database)
+11. [Finished product and responsive design](#finished-product-and-responsive-design)
+12. [Deploying finished django project to Heroku](#deploying-finished-django-project-to-heroku)
+13. [Cloning and Forking Repository](#cloning-and-forking-repository)
     1. [Cloning the Repository](#cloning-the-repository)
     2. [Forking the Repository](#forking-the-repository)
+14. [Credits](#credits)
+15. [Acknowledgements](#acknowledgements)
 
-## User Experience (UX)
+## User Experience (UX).
 
 ### Project Goals:
 
@@ -75,6 +78,7 @@ Management, Search and Filtering, and User Management, represent distinct
 aspects of the travel blog application. Each section within the project goals is
 designed to address specific requirements related to these epics, ensuring a
 cohesive and efficient implementation of the application.
+
 <br>[Back to top ⇧](#table-of-contents)
 
 #### Admin Management:
@@ -88,7 +92,8 @@ cohesive and efficient implementation of the application.
   enhanced control and organization.
 - Implement a user-friendly interface for managing the 'About Us' page
   within the admin panel.
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 #### Post Management:
 
@@ -101,7 +106,8 @@ cohesive and efficient implementation of the application.
   content management.
 - Enable users to like and comment on posts, fostering engagement and
   interaction.
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 #### Search and Filtering:
 
@@ -109,7 +115,8 @@ cohesive and efficient implementation of the application.
   relevant information quickly.
 - Categorize posts by the author's name and location to facilitate efficient
   searching and filtering.
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 #### User Management:
 
@@ -121,7 +128,8 @@ cohesive and efficient implementation of the application.
 - Provide comprehensive user profile creation and management capabilities for a
   personalized user experience.
 - Enable users to view their profiles and manage them as needed.
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ### User stories:
 
@@ -166,7 +174,8 @@ seamless and intuitive navigation experience for the site's users.
 * The header, footer, and navigation bar maintain consistency across all pages.
 * Upon registering an account and creating their profile, users can add extra
   content to the site.
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Database models:
 
@@ -295,7 +304,8 @@ For the purpose of this project relational database
   the default.
 - **Created On:** This field stores the date and time when the 'About' content
   was created. By default, it takes the current time as the creation time.
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Color scheme:
 
@@ -326,7 +336,8 @@ focal point while also delivering an attractive layout for users.
 - The main font used on the site is Roboto, with a sans-serif font as a
   fallback in case the main font is not imported correctly.
 - Lato was used for the logo design.
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ## Features.
 
@@ -335,7 +346,8 @@ focal point while also delivering an attractive layout for users.
 * The website was built with a mobile-centric approach.
 * The website was developed to ensure optimal performance across various
   devices, including mobile phones, tablets, etc.
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Navigation Bar & Footer:
 
@@ -374,7 +386,8 @@ focal point while also delivering an attractive layout for users.
 * The footer includes the TravelBlog trademark, which is linked to the main
   page, and links to various social media channels.
   ![Travelblog Footer image](assets/readme_files/footer.png)
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Home Page:
 
@@ -391,7 +404,8 @@ focal point while also delivering an attractive layout for users.
   This provides clear feedback for the user.
 
   ![Travelblog Home Page image](assets/readme_files/home_page.png)
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Post Details Page:
 
@@ -412,7 +426,8 @@ focal point while also delivering an attractive layout for users.
   post author, enabling them to edit or delete the post.
 * The post author is unable to like their own posts or leave a comment on them.
   ![Travelblog Post Details Page image](assets/readme_files/post_details_page_author.png)
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Create Post Page:
 
@@ -428,7 +443,8 @@ focal point while also delivering an attractive layout for users.
 * If the user doesn't have a profile, they are kindly asked to create one if
   they wish to have the ability to publish their posts or comments.
   ![Travelblog Create Post Warning Page image](assets/readme_files/create_post_false_page.png)
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Update Post Page:
 
@@ -436,7 +452,8 @@ focal point while also delivering an attractive layout for users.
   Draft', 'Awaiting approval', or 'Published').
 * All updated posts must be approved by the Admin before they are published.
   ![Travelblog Update Post Page image](assets/readme_files/update_post_page.png)
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Delete Post Page:
 
@@ -445,7 +462,8 @@ focal point while also delivering an attractive layout for users.
 * Before deleting the post, the user is asked to confirm this action since
   this action can not be undone.
   ![Travelblog delete Post Page image](assets/readme_files/delete_post_page.png)
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Show Country Page:
 
@@ -455,7 +473,8 @@ focal point while also delivering an attractive layout for users.
 * This page includes a brief country description, the country's flag, an
   interactive Google map, and a Wikipedia link.
   ![Travelblog Show Country Page image](assets/readme_files/show_country_page.png)
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Author bio page:
 
@@ -468,7 +487,8 @@ focal point while also delivering an attractive layout for users.
 * At the bottom of this page, you can find all the user's published posts,
   each linked to its corresponding [post details](#post-details-page) page.
   ![Travelblog Author Bio Page image](assets/readme_files/author_bio_page.png)
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Authentication Pages:
 
@@ -488,14 +508,16 @@ focal point while also delivering an attractive layout for users.
 * Enables the user to modify their first name, last name, and email.
 * After creation, the user is unable to change their username.
   ![Travelblog Edit Details Page image](assets/readme_files/edit_details_page.png)
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Change Password Page:
 
 * Enables the user to change their password, requiring them to provide their old
   password for confirmation before proceeding.
   ![Travelblog Change Password Page image](assets/readme_files/change_password_page.png)
-  <br>[Back to top ⇧](#table-of-contents)
+  
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Create User Profile Page:
 
@@ -506,13 +528,15 @@ focal point while also delivering an attractive layout for users.
   dropdown fields for selecting 'Home country' and 'Gender', 'Date of birth'
   field (featuring an interactive date picker calendar), and more.
   ![Travelblog Create Profile Page image](assets/readme_files/create_profile_page.png)
-  <br>[Back to top ⇧](#table-of-contents)
+  
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Update User Profile Page:
 
 * After creating their profile, users can update it at any time if needed.
   ![Travelblog Update Profile Page image](assets/readme_files/update_profile_page.png)
-  <br>[Back to top ⇧](#table-of-contents)
+  
+<br>[Back to top ⇧](#table-of-contents)
 
 ### About Page:
 
@@ -520,7 +544,8 @@ focal point while also delivering an attractive layout for users.
 * Enables the site admin to create or update the 'About' page.
 * Includes a default image option.
   ![Travelblog About Page image](assets/readme_files/about_page.png)
-  <br>[Back to top ⇧](#table-of-contents)
+  
+<br>[Back to top ⇧](#table-of-contents)
 
 ## Technologies Used.
 
@@ -530,7 +555,8 @@ focal point while also delivering an attractive layout for users.
 * [CSS3](https://en.wikipedia.org/wiki/CSS)
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
-  <br>[Back to top ⇧](#table-of-contents)
+  
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Libraries and Frameworks:
 
@@ -545,7 +571,8 @@ focal point while also delivering an attractive layout for users.
 * [jQuery 3.6.0 datepicker widget](https://jqueryui.com/datepicker/) was
   integrated as part of the JavaScript library to streamline the process of
   writing less JavaScript code.
-  <br>[Back to top ⇧](#table-of-contents)
+  
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Packages Installed:
 
@@ -562,13 +589,15 @@ focal point while also delivering an attractive layout for users.
 * [Cloudinary](https://cloudinary.com/) was utilized as an image management
   solution, facilitating the storage, manipulation, and delivery of images for
   the website.
-  <br>[Back to top ⇧](#table-of-contents)
+  
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Database Management:
 
 * [Elephant PostgreSQL](https://www.elephantsql.com/) database instance was
   set up to be accessed in the production environment by Heroku.
-  <br>[Back to top ⇧](#table-of-contents)
+  
+<br>[Back to top ⇧](#table-of-contents)
 
 ### Tools and Programs:
 
@@ -606,12 +635,14 @@ focal point while also delivering an attractive layout for users.
   the country flag image and respective Wikipedia country page.
 * [Lorem Ipsum](https://www.lipsum.com/) was employed to generate placeholder
   text for post content and excerpt.
-  <br>[Back to top ⇧](#table-of-contents)
+  
+<br>[Back to top ⇧](#table-of-contents)
 
-## Testing:
+## Testing.
 
 * The testing documentation can be found [here]().
-  <br>[Back to top ⇧](#table-of-contents)
+  
+<br>[Back to top ⇧](#table-of-contents)
 
 ## Creating empty django project in PyCharm.
 
@@ -787,7 +818,8 @@ DATABASES = {
   command `python manage.py runserver` in your
   terminal, just click the green RUN button (or red square to stop it) in
   PyCharm menu bar.
-  <br>[Back to top ⇧](#table-of-contents)
+  
+<br>[Back to top ⇧](#table-of-contents)
 
 ## Deploying empty django project to Heroku.
 
@@ -859,7 +891,8 @@ ALLOWED_HOSTS = ["127.0.0.1", "your_full_heroku_project_name.herokuapp.com"]
 
 11. !!! Important: to avoid any extra charges, in your Heroku app go to
     'Resources' tab and remove Add-ons.
-    <br>[Back to top ⇧](#table-of-contents)
+    
+<br>[Back to top ⇧](#table-of-contents)
 
 ## Creating structure for static and template files.
 
@@ -920,11 +953,12 @@ my_project/
 - templates/: This is a common directory for global templates that are shared
   across multiple apps. For example, a base template (base.html) is placed
   here.
-  <br>[Back to top ⇧](#table-of-contents)
+  
+<br>[Back to top ⇧](#table-of-contents)
 
 ## Get static and media files stored on Cloudinary.
 
-### Cloudinary setup.
+### Cloudinary setup:
 
 - Visit [Cloudinary website](https://cloudinary.com/)
 - Click on the Sign-Up For Free button.
@@ -985,7 +1019,8 @@ TEMPLATES = [
 - Include `img/`, `css/`, `js/` subdirectories to `static` folder.
 - For each app created add `templates/app` and `static/js`, `static/css` and
   `static/img` folders and sub-folders to it.
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ## Populating Geonames country data in database.
 
@@ -997,6 +1032,8 @@ TEMPLATES = [
   <br>`blog/management/commands/populate_countries.py`
 - After running the script `python manage.py populate_countries` all data
   from the textfile were fetched and populated in Country database.
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ## Finished product and responsive design.
 
@@ -1067,7 +1104,8 @@ TEMPLATES = [
   <br>`STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'`
   <br>`DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'`
 - Go to 'Deploy' tab in your Heroku app and deploy the project to Heroku.
-  <br>[Back to top ⇧](#table-of-contents)
+
+<br>[Back to top ⇧](#table-of-contents)
 
 ## Cloning and Forking Repository.
 
@@ -1075,7 +1113,7 @@ To make changes to the code without affecting the original version stored in the
 repository you may create a local copy of the repository, through cloning and
 forking methods.
 
-### Cloning the Repository
+### Cloning the Repository:
 
 - Install Git on your local machine, if it is not already installed.
 - Navigate to the repository you want to clone in a web browser.
@@ -1090,9 +1128,10 @@ forking methods.
 - Wait for the repository to download to your local machine.
 - Once the repository is downloaded, you can make changes to the code and use
   Git to manage and sync those changes with the original repository.
-  <br>[Back to top ⇧](#table-of-contents)
 
-- ### Forking the Repository
+<br>[Back to top ⇧](#table-of-contents)
+
+- ### Forking the Repository:
 
 - Navigate to the repository you want to fork in a web browser.
 - Click the "Fork" button in the top right corner of the page.
@@ -1108,6 +1147,69 @@ forking methods.
 - These instructions should help you create a local copy of a code repository
   using both cloning and forking methods, allowing you to make changes to the
   code and collaborate with other developers on the project.
-  <br>[Back to top ⇧](#table-of-contents)
 
+<br>[Back to top ⇧](#table-of-contents)
 
+## Credits.
+
+### Code:
+
+- Code for the `home page` and `product details page` is taken
+  from [Code Institute](https://codeinstitute.net/)'s 'I Think Therefore I
+  Blog' walkthrough project. Before implementing, this code was revised and
+  amended to satisfy project's needs:
+    - `Post model` was enhanced to ensure proper relationships with other
+      models in the project.
+    - Links to the `Country page` and `Author bio page` have been added to both
+      post cards on the `home page` and the `product details page`.
+    - Features to filter posts by country and display the total number of
+      filtered/unfiltered posts have been added to the `home page`.
+    - Styles were applied to the images on the post cards on the `home page` to
+      ensure consistent dimensions, regardless of the varying sizes of the
+      uploaded images.
+    - `Update post`, `Delete post`, and `Home` buttons have been incorporated
+      into the product details page.
+    - The system now prevents a post author from leaving a comment or liking
+      their own post.
+    - The resubmission issue occurring when reloading the page after leaving a
+      comment has been resolved by implementing a JavaScript code to clear the
+      form.
+- [Stack Overflow](https://stackoverflow.com/),
+  [W3Schools](https://www.w3schools.com/),
+  [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+  and comprehensive [Django](https://docs.djangoproject.com/en/4.2/)
+  documentation were used for inspiration and sometimes to gain a
+  better understanding of the implemented code.
+
+### Content:
+
+- Dummy text paragraphs were generated
+  using [Lorem Ipsum](https://www.lipsum.com/) text generator to simulate and
+  fill spaces in the content for design or testing purposes.
+
+### Media:
+
+- TravelBlog brand and favicon images were created
+  on [Canva](https://www.canva.com/)by the developer.
+- About page images and default post image were taken from
+  [Lara Jameson](https://www.pexels.com/@lara-jameson/)
+- Sample post images were taken from:
+    - [FOX](https://www.pexels.com/@fox-58267/)
+    - [DomJ](https://www.pexels.com/@dom-j-7304/)
+    - [Burak AYDIN](https://www.pexels.com/@erbapjr/)
+    - [Tiana](https://www.pexels.com/@tiana-18128/)
+    - [Carlos Pernalete Tua](https://www.pexels.com/@carlos-pernalete-tua-210498/)
+
+<br>[Back to top ⇧](#table-of-contents)
+
+## Acknowledgements.
+
+- My partner for her unwavering love, support, and encouragement throughout this
+  project. Her belief in me has been a driving force, and I could not have done
+  it without her.
+- My tutor, Marcel, for his priceless feedback and guidance.
+- Code Institute and their fantastic Slack community for their constant support
+  and providing me with the essential knowledge and resources that I needed to
+  successfully finish this project.
+
+<br>[Back to top ⇧](#table-of-contents)
