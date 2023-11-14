@@ -55,7 +55,9 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-image: url('../blog/img/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .card {

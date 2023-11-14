@@ -43,9 +43,9 @@
                                 </div>
                             </div>
                             <a href="{% url 'post-details' slug=post.slug %}"
-                               class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
+                               class="post-link post-list-title">
+                                <h5 class="card-title mt-2">{{ post.title | truncatechars:30 | title }}</h5>
+                                <p class="card-text">{{ post.excerpt | truncatechars:40 }}</p>
                             </a>
                             <hr/>
                             <p class="card-text text-muted h6">{{ post.created_on}}
