@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import user_logged_in, user_logged_out
 from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordChangeView
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
@@ -173,6 +174,15 @@ class UpdateProfile(generic.UpdateView):
     model = UserProfile
     form_class = UserProfileForm
     template_name = 'registration/update_profile.html'
+
+    def get(self, request, *args, **qwargs):
+        userprofile = self.get_object()
+        # Checks if the user is authenticated and has the permission to
+        # change the post
+        if not request.user.is_authenticated or not request.user == \
+                                                    userprofile.user:
+            raise PermissionDenied # Triggers permission_denied view
+        return super().get(request, *args, **qwargs)
 
     def get_object(self, queryset=None):
         # this line extracts the username from the URL

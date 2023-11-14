@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse_lazy, reverse
@@ -168,6 +169,14 @@ class UpdatePost(UpdateView):
     form_class = PostForm
     template_name = 'blog/update_post.html'
 
+    def get(self, request, *args, **qwargs):
+        post = self.get_object()
+        # Checks if the user is authenticated and has the permission to
+        # change the post
+        if not request.user.is_authenticated or not request.user == post.author:
+            raise PermissionDenied # Triggers permission_denied view
+        return super().get(request, *args, **qwargs)
+
     def form_valid(self, form):
         """
         The method is executed when the submitted form data is valid. It saves the
@@ -276,21 +285,21 @@ class ShowCountry(generic.DetailView):
     template_name = 'blog/show_country.html'
 
 
-def permission_denied(request,  *args, **kwargs):
+def permission_denied(request, *args, **kwargs):
     """
     Renders a custom 403 error page
     """
     return render(request, '403.html', status=403)
 
 
-def page_not_found(request,  *args, **kwargs):
+def page_not_found(request, *args, **kwargs):
     """
     Renders a custom 404 error page
     """
     return render(request, '404.html', status=404)
 
 
-def server_error(request,  *args, **kwargs):
+def server_error(request, *args, **kwargs):
     """
     Renders a custom 500 error page
     """

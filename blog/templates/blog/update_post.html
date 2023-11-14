@@ -8,7 +8,6 @@
 
 {% block content %}
 <div class="container">
-    {% if user.is_authenticated and user.id == post.author.id %}
     <br>
     <h1 class="form-heading">Update post</h1>
     <form method="post" enctype="multipart/form-data">
@@ -21,9 +20,5 @@
         </div>
     </form>
     <br>
-    {% else %}
-    <br><br>
-    <h1>You are not authorized to update this post</h1>
-    {% endif %}
 </div>
 {% endblock content %}
