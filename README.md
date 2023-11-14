@@ -319,7 +319,7 @@ contrasting colors.
 **The colors used in the website are as follows:**
 
 - background color for all pages: #F9FAFC
-- background color for the nav bar and the footer: #445261
+- background color for the nav bar and the footer: #253A47
 - logo colors: #FFA500 and #23BBBB
 - post card colors: #23BBBB and #445261
 - button colors: #6C757D and #198754
@@ -1118,12 +1118,12 @@ forking methods.
 - Install Git on your local machine, if it is not already installed.
 - Navigate to the repository you want to clone in a web browser.
 - Click the "Clone or download" button and copy the repository's
-  URL (`https://github.com/gennadiy-gaysha/portfolio_project_3`) to your
+  URL (`https://github.com/gennadiy-gaysha/portfolio_project_4`) to your
   clipboard.
 - Open a terminal or command prompt on your local machine.
 - Change to the directory where you want to clone the repository.
 - Type the command
-  `git clone https://github.com/gennadiy-gaysha/portfolio_project_3.git`
+  `git clone https://github.com/gennadiy-gaysha/portfolio_project_4.git`
   and press enter.
 - Wait for the repository to download to your local machine.
 - Once the repository is downloaded, you can make changes to the code and use
