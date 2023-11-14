@@ -73,11 +73,11 @@ Here is the live version of my project</a>
 ### Project Goals:
 
 The project aims to achieve a set of well-defined goals, each falling under one
-of the four primary epics. These epics, namely Admin Management, Post
-Management, Search and Filtering, and User Management, represent distinct
-aspects of the travel blog application. Each section within the project goals is
-designed to address specific requirements related to these epics, ensuring a
-cohesive and efficient implementation of the application.
+of the five primary epics. These epics, namely Admin Management, Post
+Management, Search and Filtering, User Management and Error Handling represent
+distinct aspects of the travel blog application. Each section within the project
+goals is designed to address specific requirements related to these epics,
+ensuring a cohesive and efficient implementation of the application.
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -131,6 +131,21 @@ cohesive and efficient implementation of the application.
 
 <br>[Back to top ⇧](#table-of-contents)
 
+#### Error Handling:
+
+- Implement a robust and user-friendly error handling system to enhance the
+  overall user experience on the platform.
+- This includes creating custom error pages for scenarios like access denial (
+  403 Forbidden), page not found (404 Not Found), and internal server errors (
+  500 Internal Server Error).
+- These pages should provide clear and informative messages, guiding users on
+  how to proceed or reassuring them during unexpected issues.
+- Ensure users feel supported and informed, even when encountering errors,
+  contributing to a positive and professional user interaction with the
+  application.
+
+<br>[Back to top ⇧](#table-of-contents)
+
 ### User stories:
 
 Prior to commencing the project, a comprehensive compilation of 19 user stories
@@ -139,28 +154,28 @@ effectively addressing their expectations for the travel blog site. Based on the
 project's structure and the significance of each user story, they were organized
 in a sequence that is presented in the project development strategy table.
 
-| No | Title                                    | User Story                                                                                                                                                                                                                                 | Epic                 | Tag         |
-|----|------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------|-------------|
-| 1  | Paginated List of Posts                  | As a user I can view a paginated list of posts so that I can easily find and access various blog entries                                                                                                                                   | Post Management      | MUST HAVE   |
-| 2  | Content Moderation for Admin             | As a site Admin I can monitor and manage user-generated content so that maintain a safe and high-quality platform                                                                                                                          | Admin Management     | MUST HAVE   |
-| 3  | Blog Content Management for Admin        | As a site admin I can create, read, update, make drafts and delete posts using admin panel so that I can manage my own blog content                                                                                                        | Admin Management     | MUST HAVE   |
-| 4  | Country and Comment Management for Admin | As a site admin I can manage countries and comments within the platform so that I could oversee user interactions and ensure a safe and engaging community environment                                                                     | Admin Management     | MUST HAVE   |
-| 5  | Create New Blog Posts                    | As a user I can create new blog posts with text and images so that I can share my experiences and insights with others                                                                                                                     | Post Management      | MUST HAVE   |
-| 6  | Open and Read a Post                     | As a user I can open and read a post so that I could delve into the content and explore its details                                                                                                                                        | Post Management      | MUST HAVE   |
-| 7  | Edit and Delete Posts                    | As a user I can edit and delete my own posts so that I have control over the content I publish and can keep it up to date                                                                                                                  | Post Management      | MUST HAVE   |
-| 8  | Account Registration Functionality       | As a user I can register and create account so that I can access exclusive features and personalized content                                                                                                                               | User Management      | MUST HAVE   |
-| 9  | User Management Controls                 | As a site Admin I can manage user accounts so that I could ensure platform integrity and user compliance                                                                                                                                   | Admin Management     | MUST HAVE   |
-| 10 | Secure Login and Logout Mechanism        | As a user I can log in and log out securely so that so that my account remain protected and accessible only by me                                                                                                                          | User Management      | MUST HAVE   |
-| 11 | User Profile Creation and Management     | As a user I can create, update and personalize my profile after registration so that I can share my preferences and information with the community in a customized manner                                                                  | User Management      | MUST HAVE   |
-| 12 | User Profile Viewing Capability          | As a user I can see other users' profiles so that I can connect and engage with other members of the community, fostering collaboration and interaction                                                                                    | User Management      | SHOULD HAVE |
-| 13 | Password Change Feature                  | As a user I can change password so that I can maintain the security of my account and information.                                                                                                                                         | User Management      | SHOULD HAVE |
-| 14 | Categorize Posts by Location             | As a user I can utilize a system for categorizing and filtering posts by country so that I can easily navigate and explore content related to specific locations                                                                           | Search and Filtering | SHOULD HAVE |
-| 15 | Country Information Search Feature       | As a user I can quickly search and access brief information about a specific country so that I can gather essential details without extensive navigation or research                                                                       | Search and Filtering | SHOULD HAVE |
-| 16 | Display About Us Information             | As a user I can view the About Us page so that I can stay informed about the mission, and understand the platform's purpose and offerings                                                                                                  | Post Management      | MUST HAVE   |
+| No | Title                                    | User Story                                                                                                                                                                                                                     | Epic                 | Tag         |
+|----|------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------|-------------|
+| 1  | Paginated List of Posts                  | As a user I can view a paginated list of posts so that I can easily find and access various blog entries                                                                                                                       | Post Management      | MUST HAVE   |
+| 2  | Content Moderation for Admin             | As a site Admin I can monitor and manage user-generated content so that maintain a safe and high-quality platform                                                                                                              | Admin Management     | MUST HAVE   |
+| 3  | Blog Content Management for Admin        | As a site admin I can create, read, update, make drafts and delete posts using admin panel so that I can manage my own blog content                                                                                            | Admin Management     | MUST HAVE   |
+| 4  | Country and Comment Management for Admin | As a site admin I can manage countries and comments within the platform so that I could oversee user interactions and ensure a safe and engaging community environment                                                         | Admin Management     | MUST HAVE   |
+| 5  | Create New Blog Posts                    | As a user I can create new blog posts with text and images so that I can share my experiences and insights with others                                                                                                         | Post Management      | MUST HAVE   |
+| 6  | Open and Read a Post                     | As a user I can open and read a post so that I could delve into the content and explore its details                                                                                                                            | Post Management      | MUST HAVE   |
+| 7  | Edit and Delete Posts                    | As a user I can edit and delete my own posts so that I have control over the content I publish and can keep it up to date                                                                                                      | Post Management      | MUST HAVE   |
+| 8  | Account Registration Functionality       | As a user I can register and create account so that I can access exclusive features and personalized content                                                                                                                   | User Management      | MUST HAVE   |
+| 9  | User Management Controls                 | As a site Admin I can manage user accounts so that I could ensure platform integrity and user compliance                                                                                                                       | Admin Management     | MUST HAVE   |
+| 10 | Secure Login and Logout Mechanism        | As a user I can log in and log out securely so that so that my account remain protected and accessible only by me                                                                                                              | User Management      | MUST HAVE   |
+| 11 | User Profile Creation and Management     | As a user I can create, update and personalize my profile after registration so that I can share my preferences and information with the community in a customized manner                                                      | User Management      | MUST HAVE   |
+| 12 | User Profile Viewing Capability          | As a user I can see other users' profiles so that I can connect and engage with other members of the community, fostering collaboration and interaction                                                                        | User Management      | SHOULD HAVE |
+| 13 | Password Change Feature                  | As a user I can change password so that I can maintain the security of my account and information.                                                                                                                             | User Management      | SHOULD HAVE |
+| 14 | Categorize Posts by Location             | As a user I can utilize a system for categorizing and filtering posts by country so that I can easily navigate and explore content related to specific locations                                                               | Search and Filtering | SHOULD HAVE |
+| 15 | Country Information Search Feature       | As a user I can quickly search and access brief information about a specific country so that I can gather essential details without extensive navigation or research                                                           | Search and Filtering | SHOULD HAVE |
+| 16 | Display About Us Information             | As a user I can view the About Us page so that I can stay informed about the mission, and understand the platform's purpose and offerings                                                                                      | Post Management      | MUST HAVE   |
 | 17 | Manage About Us Page in the Admin Panel  | As a site admin I can I can manage and update the About Us page through an intuitive interface within the Django admin panel so that the TravelBlog mission, purpose, and latest information are accurately presented to the site visitors | Admin Management     | MUST HAVE   |
-| 18 | Like and Comment on Posts                | As a user I can like and comment on blog posts so that I can engage with the community, express my thoughts, and show appreciation for interesting content                                                                                 | Post Management      | SHOULD HAVE |
-| 19 | Categorize Posts by Author's Name        | As a user I can utilize a system for categorizing and filtering posts by author's name so that I can easily navigate and explore content related to specific author                                                                        | Search and Filtering | WON'T HAVE  |
-
+| 18 | Like and Comment on Posts                | As a user I can like and comment on blog posts so that I can engage with the community, express my thoughts, and show appreciation for interesting content                                                                     | Post Management      | SHOULD HAVE |
+| 19 | User-Friendly Error Pages                | As a user I can see friendly error pages when something goes wrong on the site so that I can better understand and navigate issues that might occur                                                                        | Error Handling       | SHOULD HAVE |
+| 20 | Categorize Posts by Author's Name        | As a user I can utilize a system for categorizing and filtering posts by author's name so that I can easily navigate and explore content related to specific author                                                            | Search and Filtering | WON'T HAVE  |
 <br>[Back to top ⇧](#table-of-contents)
 
 ### General structure:
@@ -516,7 +531,7 @@ focal point while also delivering an attractive layout for users.
 * Enables the user to change their password, requiring them to provide their old
   password for confirmation before proceeding.
   ![Travelblog Change Password Page image](assets/readme_files/change_password_page.png)
-  
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ### Create User Profile Page:
@@ -528,14 +543,14 @@ focal point while also delivering an attractive layout for users.
   dropdown fields for selecting 'Home country' and 'Gender', 'Date of birth'
   field (featuring an interactive date picker calendar), and more.
   ![Travelblog Create Profile Page image](assets/readme_files/create_profile_page.png)
-  
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ### Update User Profile Page:
 
 * After creating their profile, users can update it at any time if needed.
   ![Travelblog Update Profile Page image](assets/readme_files/update_profile_page.png)
-  
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ### About Page:
@@ -544,7 +559,7 @@ focal point while also delivering an attractive layout for users.
 * Enables the site admin to create or update the 'About' page.
 * Includes a default image option.
   ![Travelblog About Page image](assets/readme_files/about_page.png)
-  
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ## Technologies Used.
@@ -555,7 +570,7 @@ focal point while also delivering an attractive layout for users.
 * [CSS3](https://en.wikipedia.org/wiki/CSS)
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
-  
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ### Libraries and Frameworks:
@@ -571,7 +586,7 @@ focal point while also delivering an attractive layout for users.
 * [jQuery 3.6.0 datepicker widget](https://jqueryui.com/datepicker/) was
   integrated as part of the JavaScript library to streamline the process of
   writing less JavaScript code.
-  
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ### Packages Installed:
@@ -589,14 +604,14 @@ focal point while also delivering an attractive layout for users.
 * [Cloudinary](https://cloudinary.com/) was utilized as an image management
   solution, facilitating the storage, manipulation, and delivery of images for
   the website.
-  
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ### Database Management:
 
 * [Elephant PostgreSQL](https://www.elephantsql.com/) database instance was
   set up to be accessed in the production environment by Heroku.
-  
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ### Tools and Programs:
@@ -635,13 +650,13 @@ focal point while also delivering an attractive layout for users.
   the country flag image and respective Wikipedia country page.
 * [Lorem Ipsum](https://www.lipsum.com/) was employed to generate placeholder
   text for post content and excerpt.
-  
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ## Testing.
 
 * The testing documentation can be found [here]().
-  
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ## Creating empty django project in PyCharm.
@@ -818,7 +833,7 @@ DATABASES = {
   command `python manage.py runserver` in your
   terminal, just click the green RUN button (or red square to stop it) in
   PyCharm menu bar.
-  
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ## Deploying empty django project to Heroku.
@@ -891,7 +906,7 @@ ALLOWED_HOSTS = ["127.0.0.1", "your_full_heroku_project_name.herokuapp.com"]
 
 11. !!! Important: to avoid any extra charges, in your Heroku app go to
     'Resources' tab and remove Add-ons.
-    
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ## Creating structure for static and template files.
@@ -953,7 +968,7 @@ my_project/
 - templates/: This is a common directory for global templates that are shared
   across multiple apps. For example, a base template (base.html) is placed
   here.
-  
+
 <br>[Back to top ⇧](#table-of-contents)
 
 ## Get static and media files stored on Cloudinary.
