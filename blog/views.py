@@ -64,7 +64,8 @@ class PostList(generic.ListView):
                 key for the PostFilter object.
         """
         context = super().get_context_data(**kwargs)
-        context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())
+        context['filter'] = PostFilter(self.request.GET,
+                                       queryset=self.get_queryset())
         return context
 
 
@@ -79,7 +80,8 @@ class PostDetails(View):
 
         return render(request, 'blog/post_details.html',
                       {'post': post, 'comments': comments,
-                       'liked': liked, 'comment_form': CommentForm(), 'commented': False}, )
+                       'liked': liked, 'comment_form': CommentForm(),
+                       'commented': False}, )
 
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=2)
@@ -102,7 +104,8 @@ class PostDetails(View):
 
         return render(request, 'blog/post_details.html',
                       {'post': post, 'comments': comments,
-                       'liked': liked, 'comment_form': CommentForm(), 'commented': True}, )
+                       'liked': liked, 'comment_form': CommentForm(),
+                       'commented': True}, )
 
 
 class PostLike(View):
@@ -114,6 +117,7 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post-details', args=[slug]))
+
 
 class CreatePost(LoginRequiredMixin, CreateView):
     """
@@ -204,7 +208,8 @@ class DraftList(LoginRequiredMixin, generic.ListView):
         by the creation date in descending order.
         """
         user = self.request.user
-        return Post.objects.filter(author=user, status=0).order_by('-created_on')
+        return Post.objects.filter(author=user, status=0).order_by(
+            '-created_on')
 
 
 class PublishedList(LoginRequiredMixin, generic.ListView):
@@ -217,7 +222,8 @@ class PublishedList(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         user = self.request.user
-        return Post.objects.filter(author=user, status=2).order_by('-created_on')
+        return Post.objects.filter(author=user, status=2).order_by(
+            '-created_on')
 
 
 class ModerationList(LoginRequiredMixin, generic.ListView):
@@ -230,7 +236,8 @@ class ModerationList(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         user = self.request.user
-        return Post.objects.filter(author=user, status=1).order_by('-created_on')
+        return Post.objects.filter(author=user, status=1).order_by(
+            '-created_on')
 
 
 class DeletePost(generic.DeleteView):
@@ -267,3 +274,24 @@ def search_country(request):
 class ShowCountry(generic.DetailView):
     model = Country
     template_name = 'blog/show_country.html'
+
+
+def permission_denied(request,  *args, **kwargs):
+    """
+    Renders a custom 403 error page
+    """
+    return render(request, '403.html', status=403)
+
+
+def page_not_found(request,  *args, **kwargs):
+    """
+    Renders a custom 404 error page
+    """
+    return render(request, '404.html', status=404)
+
+
+def server_error(request,  *args, **kwargs):
+    """
+    Renders a custom 500 error page
+    """
+    return render(request, '500.html', status=500)

@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from blog import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
@@ -24,3 +26,8 @@ urlpatterns = [
     path('account/', include('django.contrib.auth.urls')),
     path('account/', include('accounts.urls')),
 ]
+
+handler403 = views.permission_denied
+handler404 = views.page_not_found
+handler500 = views.server_error
+
