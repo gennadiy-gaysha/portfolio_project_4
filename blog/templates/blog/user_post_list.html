@@ -16,11 +16,13 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
+        <div class="col-lg-3 col-md-12 pt-1 ms-3">
+            <p class="mt-4 lead">Total number of posts: <strong class="hello-user">{{ page_obj.paginator.count }}</strong></p>
+        </div>
 
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-                {% if post_list %}
                 {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
@@ -59,9 +61,6 @@
             <div class="row">
                 {% endif %}
                 {% endfor %}
-                {% else %}
-                <h1>No posts found</h1>
-                {% endif %}
             </div>
         </div>
     </div>
