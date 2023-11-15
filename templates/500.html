@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>500</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+<title>Internal server error</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="card mb-3 mt-5">
+        <div class="row g-0">
+            <div class="card-body">
+                <h5 class="card-title">Oops! Something went wrong on our end.</h5>
+                <p class="card-text">Our team has been notified, and we're working to fix it.
+                    Let's get you back on track:</p>
+                <a href="/" class="btn btn-outline-success">Go to Homepage</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

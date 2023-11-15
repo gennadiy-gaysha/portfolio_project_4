@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>403</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block title %}
+<title>Access denied</title>
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="card mb-3 mt-5">
+        <div class="row g-0">
+
+            <h5 class="card-header">Access denied</h5>
+            <div class="card-body">
+                <h5 class="card-title">Sorry, you don't have permission to access this page.</h5>
+                <p class="card-text">If you believe this is an error, please contact the administrator.
+                    Let's get you back on track:</p>
+                <a href="/" class="btn btn-outline-success">Go to Homepage</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
