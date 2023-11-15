@@ -61,7 +61,8 @@ Here is the live version of my project</a>
 7. [Creating structure for static and template files](#creating-structure-for-static-and-template-files)
 8. [Get static and media files stored on Cloudinary](#get-static-and-media-files-stored-on-cloudinary)
 9. [Populating Geonames country data in database](#populating-geonames-country-data-in-database)
-11. [Finished product and responsive design](#finished-product-and-responsive-design)
+10. [Finished product and responsive design](#finished-product-and-responsive-design)
+11. [Features to be implemented](#features-to-be-implemented)
 12. [Deploying finished django project to Heroku](#deploying-finished-django-project-to-heroku)
 13. [Cloning and Forking Repository](#cloning-and-forking-repository)
     1. [Cloning the Repository](#cloning-the-repository)
@@ -1117,6 +1118,30 @@ TEMPLATES = [
 | Edit Details Page          | ![Desktop](assets/readme_files/finished_product/edit_details_page_l.png)          | ![Mobile](assets/readme_files/finished_product/edit_details_page_m.png)          |
 | Update Profile Page        | ![Desktop](assets/readme_files/finished_product/update_profile_page_l.png)        | ![Mobile](assets/readme_files/finished_product/update_profile_page_m.png)        |
 | About Page                 | ![Desktop](assets/readme_files/finished_product/about_page_l.png)                 | ![Mobile](assets/readme_files/finished_product/about_page_m.png)                 |
+
+<br>[Back to top ⇧](#table-of-contents)
+
+## Features to be implemented.
+
+While planning for the long-term development of the project, several features
+have been identified to enhance the user experience. It's important to note that
+these features are considered valuable but haven't been implemented in the
+current stage. The decision to postpone their development stems from the need to
+prioritize crucial site features and the recognition that their execution would
+demand a substantial time commitment or a level of programming expertise that is
+currently under development.
+
+- Add Bootstrap-style pagination to the `home page` with Previous, page numbers,
+  and Next links.
+- Add the functionality to filter posts by the author on the home page and
+  provide the ability to apply it either in conjunction with filtering posts by
+  country or separately.
+- Enable users to respond to comments made by other users in the comments
+  section.
+- Enable users to sign up / log in using their social accounts.
+- Create functionality for automatically sending emails to users to confirm
+  changes in their account.
+- Enable users to reset their password in case they forgot it.
 
 <br>[Back to top ⇧](#table-of-contents)
 
