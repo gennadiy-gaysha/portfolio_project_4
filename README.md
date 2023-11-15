@@ -45,8 +45,9 @@ Here is the live version of my project</a>
     11. [Edit Details Page](#edit-details-page)
     12. [Change Password Page](#change-password-page)
     13. [Create User Profile Page](#create-user-profile-page)
-    14. [Update User Profile Page](#general)
-    15. [About Page](#general)
+    14. [Update User Profile Page](#update-user-profile-page)
+    15. [About Page](#about-page)
+    16. [Error Pages](#error-pages)
 3. [Technologies Used](#technologies-used)
     1. [Languages Used](#languages-used)
     2. [Libraries and Frameworks](#libraries-and-frameworks)
@@ -565,6 +566,36 @@ focal point while also delivering an attractive layout for users.
 * Enables the site admin to create or update the 'About' page.
 * Includes a default image option.
   ![Travelblog About Page image](assets/readme_files/about_page.png)
+
+<br>[Back to top ⇧](#table-of-contents)
+
+### Error Pages:
+
+#### 403 Forbidden Error Page:
+
+The custom 403 error page serves as a user-friendly response when a client
+attempts to access a resource for which they don't have the necessary
+permissions. It communicates a clear message that the user is not authorized to
+view the requested content and provides a link to redirect them to the homepage
+for navigation.
+![403 custom error page](assets/readme_files/403.png)
+
+#### 404 Not Found Error Page:
+
+The custom 404 error page delivers a helpful response when a user tries to
+access a page or resource that doesn't exist on the website. It presents a
+friendly message informing the user about the non-existent page and guides them
+back to the homepage for a seamless navigation experience.
+![403 custom error page](assets/readme_files/404.png)
+
+#### 500 Internal Server Error Page:
+
+The custom 500 error page is displayed when an unexpected server-side issue
+occurs. It conveys a message to the user that something went wrong on the
+server, apologizes for the inconvenience, and provides a link to return to the
+homepage. This page helps maintain a positive user experience by acknowledging
+the error and offering a way to continue exploring the site.
+![403 custom error page](assets/readme_files/500.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
