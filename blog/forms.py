@@ -30,6 +30,8 @@ class PostForm(forms.ModelForm):
         self.fields['status'].choices = [(0, 'Save as draft'),
                                          (1, 'Send to moderation')]
         self.fields['country'].queryset = countries
+        self.fields[
+            'featured_image'].help_text = '<br><span style="color: green;">As the main post image, *.png or *.jpg files with a size of up to 10MB are accepted. <br>All files should only be in horizontal (landscape) orientation.</span>'
 
     class Meta:
         """
@@ -61,10 +63,7 @@ class PostForm(forms.ModelForm):
                 attrs={'class': 'form-select', 'style': 'width: 100%'})
         }
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields[
-            'featured_image'].help_text = '<br><span style="color: green;">As the main post image, *.png or *.jpg files with a size of up to 10MB are accepted. <br>All files should only be in horizontal (landscape) orientation.</span>'
+
 
 
 class CommentForm(forms.ModelForm):
