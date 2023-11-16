@@ -55,7 +55,6 @@ Here is the live version of my project</a>
     4. [Database Management](#database-management)
     5. [Tools and Programs](#tools-and-programs)
 4. [Testing](#testing)
-    1. [Go to TESTING.md]()
 5. [Creating empty django project in PyCharm](#creating-empty-django-project-in-pycharm)
 6. [Deploying empty django project to Heroku](#deploying-empty-django-project-to-heroku)
 7. [Creating structure for static and template files](#creating-structure-for-static-and-template-files)
@@ -693,7 +692,10 @@ the error and offering a way to continue exploring the site.
 
 ## Testing.
 
-* The testing documentation can be found [here]().
+You can explore the testing procedures conducted for this project by referring
+to the dedicated [TESTING.md](TESTING.md) file (use CTRL + Click to open this
+link in a new tab/window). For targeted information, you can directly access
+specific sections of the file by clicking on the relevant headings below:
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -701,25 +703,27 @@ the error and offering a way to continue exploring the site.
 
 1. Virtual environment:
 
-* Create project directory and open it in PyCharm. Delete default main.py
-  file after opening in PyCharm.
-* Before creating a Django project, it's a good practice to create a virtual
-  environment for it. This isolates project's dependencies from the system-wide
-  Python installation. Go to the terminal and run the command:
-  <br>`python -m venv venv_name`
-* Activate the virtual environment (on Windows):
-  <br>`venv_name\Scripts\activate`
-* When you're done working on your project, deactivate the virtual
-  environment:
-  <br>`deactivate - exits venv_name`
-* Whenever you want to continue working on your project, activate the virtual
-  environment first:
-  <br>`venv_name\Scripts\activate`
-* !!! PyCharm provides an option to automatically activate the virtual
-  environment
-  associated with a project whenever you open a terminal within the IDE.
-  <br>`File>Settings>Tools>Terminal>Activate virtualenv (check/uncheck)`
-* While your virtual environment is active, go to the next step.
+    - Create project directory and open it in PyCharm. Delete default main.py
+      file after opening in PyCharm.
+    - Before creating a Django project, it's a good practice to create a virtual
+      environment for it. This isolates project's dependencies from the
+      system-wide
+      Python installation. Go to the terminal and run the command:
+      <br>`python -m venv venv_name`
+    - Activate the virtual environment (on Windows):
+      <br>`venv_name\Scripts\activate`
+    - When you're done working on your project, deactivate the virtual
+      environment:
+      <br>`deactivate - exits venv_name`
+    - Whenever you want to continue working on your project, activate the
+      virtual
+      environment first:
+      <br>`venv_name\Scripts\activate`
+    - !!! PyCharm provides an option to automatically activate the virtual
+      environment
+      associated with a project whenever you open a terminal within the IDE.
+      <br>`File>Settings>Tools>Terminal>Activate virtualenv (check/uncheck)`
+    - While your virtual environment is active, go to the next step.
 
 2. Add Python interpreter to the project, clicking OK button to add
    interpreter after choosing the path to it:
@@ -747,7 +751,6 @@ the error and offering a way to continue exploring the site.
 5. Install Cloudinary Libraries:
    <br>`pip install dj3-cloudinary-storage urllib3==1.26.15`
 
-
 6. If you need additional packages for your project, you can install them
    while your virtual environment is active:
    <br>`pip install package_name_1 package_name_2 package_name_3`
@@ -761,16 +764,16 @@ the error and offering a way to continue exploring the site.
    can run:
    <br>`django-admin startproject travelblog .`
 
-- !!! The `.` at the end indicates that the project should be created in the
-  current directory. This will create travelblog directory with the initial
-  project files.
+    - !!! The `.` at the end indicates that the project should be created in the
+      current directory. This will create travelblog directory with the initial
+      project files.
 
 9. Create App (blog):
    <br>`python manage.py startapp blog`
 
 10. Add newly created app to the end of INSTALLED_APPS variable in settings.py:
 
-```python
+```
 INSTALLED_APPS = [
     'blog',
 ]
@@ -802,9 +805,9 @@ INSTALLED_APPS = [
 - Place your SECRET_KEY value (from settings.py) and DATABASE_URL value (URL
   from your remote third party database - elephantsql.com) in it:
 
-```python
-SECRET_KEY = my_secret_key
-DATABASE_URL = my_elephantsql_url
+```
+SECRET_KEY = 'my_secret_key'
+DATABASE_URL = 'my_elephantsql_url'
 ```
 
 - !!! in DATABASE_URL in `.env` file insert port number:
@@ -815,7 +818,7 @@ DATABASE_URL = my_elephantsql_url
 - Open your Django project's settings.py file and import (at the top) the dotenv
   and other supporting libraries:
 
-```python
+```
 import os
 from pathlib import Path
 import dotenv
@@ -831,7 +834,7 @@ import dj_database_url
 - To access remote database (!replace the local database with a remote
   database):
 
-```python
+```
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
@@ -1060,7 +1063,7 @@ INSTALLED_APPS = [
 - Tell Django where templates are stored:
   <br>`TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')`
 
-```python
+```
 TEMPLATES = [
     {
         'DIRS': [TEMPLATES_DIR],
@@ -1123,7 +1126,7 @@ TEMPLATES = [
 
 ## Features to be implemented.
 
-While planning for the long-term development of the project, several features
+While planning for the long-term development of the project, following features
 have been identified to enhance the user experience. It's important to note that
 these features are considered valuable but haven't been implemented in the
 current stage. The decision to postpone their development stems from the need to
@@ -1267,7 +1270,7 @@ forking methods.
 ### Media:
 
 - TravelBlog brand and favicon images were created
-  on [Canva](https://www.canva.com/)by the developer.
+  on [Canva](https://www.canva.com/) by the developer.
 - Background image was taken
   from [@lifeforstock](https://www.freepik.com/author/lifeforstock)
 - About page images and default post image were taken from
