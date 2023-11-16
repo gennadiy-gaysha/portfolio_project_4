@@ -3,24 +3,17 @@
 ![Travelblog mockup images](assets/readme_files/mockup_image.png)
 
 Welcome to our vibrant travel community! At our travel blog, we strive to create
-a
-space where passionate globetrotters can come together, share their adventures,
-and
-find inspiration for their next journey.
+a space where passionate globetrotters can come together, share their
+adventures, and find inspiration for their next journey.
 
 Whether you're an avid explorer or an armchair traveler, our platform offers an
-array
-of captivating travel narratives, insightful comments, and a seamless
-user-friendly
-interface.
+array of captivating travel narratives, insightful comments, and a seamless
+user-friendly interface.
 
 Explore fascinating travelogues, leave your thoughts, and unearth comprehensive
-country
-details effortlessly through our convenient search feature. Join us in
-celebrating the
-joy of exploration and discovery!<br>
-<a href="https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/" target="_blank">
-Here is the live version of my project</a>
+country details effortlessly through our convenient search feature. Join us in
+celebrating the joy of exploration and discovery!
+<br>[Here is the live version of my project](https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/)
 
 ## Table of Contents
 
@@ -1300,6 +1293,8 @@ forking methods.
 - My partner for her unwavering love, support, and encouragement throughout this
   project. Her belief in me has been a driving force, and I could not have done
   it without her.
+- Ma daughter Anna, who became the first beta tester of this website. Her
+  feedback and recommendations for improving the project are invaluable.
 - My tutor, Marcel, for his priceless feedback and guidance.
 - Code Institute and their fantastic Slack community for their constant support
   and providing me with the essential knowledge and resources that I needed to
