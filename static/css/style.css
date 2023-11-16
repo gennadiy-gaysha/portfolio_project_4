@@ -55,7 +55,7 @@ body {
 }
 
 .main-bg {
-    background-image: url('../blog/img/background.jpg');
+    background-image: url('https://res.cloudinary.com/dkglcxx4y/image/upload/v1700136635/static/blog/img/background.dcfdccda3b47.jpg');
     background-position: center;
     background-repeat: no-repeat;
 }
