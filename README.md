@@ -1158,7 +1158,7 @@ currently under development.
   vulnerabilities. Specifically, detailed error pages and debugging information
   will not be displayed to users, enhancing the overall security of your
   application.
-- Set `X-Frame-Options` to `SAMEORIGIN`:
+- Set `X-Frame-Options` to `SAMEORIGIN` just under the previous line:
   `X_FRAME_OPTIONS = 'SAMEORIGIN'`
   The X-Frame-Options HTTP header is a security feature that helps prevent your
   web pages from being embedded within an iframe.
