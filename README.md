@@ -66,8 +66,9 @@ Here is the live version of my project</a>
 13. [Cloning and Forking Repository](#cloning-and-forking-repository)
     1. [Cloning the Repository](#cloning-the-repository)
     2. [Forking the Repository](#forking-the-repository)
-14. [Credits](#credits)
-15. [Acknowledgements](#acknowledgements)
+14. [Known Bugs](#known-bugs)
+15. [Credits](#credits)
+16. [Acknowledgements](#acknowledgements)
 
 ## User Experience (UX).
 
@@ -1227,6 +1228,16 @@ forking methods.
 - These instructions should help you create a local copy of a code repository
   using both cloning and forking methods, allowing you to make changes to the
   code and collaborate with other developers on the project.
+
+<br>[Back to top ⇧](#table-of-contents)
+
+## Known Bugs.
+
+- For several small geographical entities that are not sovereign states—such as
+  the Falkland Islands, Bermuda, Antarctica, Cocos Islands, and the Isle of
+  Man—the capital city names are not being converted into coordinates.
+  Consequently, the map of these countries is not rendered on the '
+  show_country.html' page.
 
 <br>[Back to top ⇧](#table-of-contents)
 
