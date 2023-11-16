@@ -1,6 +1,6 @@
 # Travel blog
 
-![Travelblog mockup images](assets/readme_files/mockup_image.jpg)
+![Travelblog mockup images](assets/readme_files/mockup_image.png)
 
 Welcome to our vibrant travel community! At our travel blog, we strive to create
 a
