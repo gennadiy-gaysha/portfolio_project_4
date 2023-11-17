@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block title %}
+<title>About us</title>
+{% endblock title %}
+
 {% block content %}
 
 <div class="container-fluid my-4">
@@ -9,15 +14,15 @@
                 <div class="col-md-12">
                     <!-- The featured image URL goes in the src attribute -->
                     {% if "placeholder" in last_about.featured_image.url %}
-                    <img src="{% static 'about_default_image.jpg' %}" alt="About page default image" width="100%">
+                    <img src="{% static 'about_default_image.jpg' %}" alt="About page default image" style="max-width: 100%;">
                     {% else %}
-                    <img src="{{ last_about.featured_image.url }}" alt="About page featured image" width="100%">
+                    <img src="{{ last_about.featured_image.url }}" alt="About page featured image" style="max-width: 100%;">
                     {% endif %}
                 </div>
 
                 <div class="card-body">
                     <h3 class="card-title text-center mt-3 mb-4">{{ last_about.title }}</h3>
-                    <p class="card-text">{{ last_about.content|safe }}</p>
+                    <p class="card-text">{{ last_about.content|safe }}></p>
                 </div>
 
 
