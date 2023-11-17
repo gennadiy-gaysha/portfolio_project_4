@@ -174,7 +174,7 @@ class UpdatePost(UpdateView):
         # Checks if the user is authenticated and has the permission to
         # change the post
         if not request.user.is_authenticated or not request.user == post.author:
-            raise PermissionDenied # Triggers permission_denied view
+            raise PermissionDenied  # Triggers permission_denied view
         return super().get(request, *args, **qwargs)
 
     def form_valid(self, form):

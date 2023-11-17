@@ -265,3 +265,38 @@
 | 6  | Inclusion of helpful links or tips on error pages is crucial to assist visitors in navigating back to the main site or relevant sections.                     | passed |
 
 <br>[Back to top ⇧](#table-of-contents)
+
+## Code Validation.
+
+### HTML
+
+The [W3C Markup Validator](https://validator.w3.org/) service was used to
+validate the HTML code of the project in order to ensure there were no syntax
+errors.
+W3C Markup Validator found the following errors concerning index.html.
+
+The HTML code of the project was validated using
+the [W3C Markup Validator](https://validator.w3.org/) service to ensure 
+there were no syntax errors.
+The W3C Markup Validator identified the following errors in the 'index.html'
+file:
+
+
+W3C Markup Validator also found a great amount of errors in pages with user
+input. However, I found those errors to be coming from the Summernote editor.
+See example below:
+
+![Summernote HTML errors image](assets/testing_files/summernote_errors.jpg)
+
+### CSS
+
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) service was used to
+validate the CSS code of the project in order to ensure there were no syntax
+errors.
+
+W3C CSS Validator found no errors or warnings on my CSS.
+
+![CSS validation image](assets/testing_files/css_validation.png)
+
+[home](https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/)
+[post_details](https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/post/beauty-of-namibia-a-journey-into-the-heart-of-africa/)
