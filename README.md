@@ -1,8 +1,8 @@
-# Travel blog
+# TravelBlog
 
-![Travelblog mockup images](assets/readme_files/mockup_image.png)
+![TravelBlog mockup images](assets/readme_files/mockup_image.png)
 
-Welcome to our vibrant travel community! At our travel blog, we strive to create
+Welcome to our vibrant travel community! At our TravelBlog, we strive to create
 a space where passionate globetrotters can come together, share their
 adventures, and find inspiration for their next journey.
 
@@ -70,7 +70,7 @@ celebrating the joy of exploration and discovery!
 The project aims to achieve a set of well-defined goals, each falling under one
 of the five primary epics. These epics, namely Admin Management, Post
 Management, Search and Filtering, User Management and Error Handling represent
-distinct aspects of the travel blog application. Each section within the project
+distinct aspects of the TravelBlog application. Each section within the project
 goals is designed to address specific requirements related to these epics,
 ensuring a cohesive and efficient implementation of the application.
 
@@ -145,7 +145,7 @@ ensuring a cohesive and efficient implementation of the application.
 
 Prior to commencing the project, a comprehensive compilation of 19 user stories
 was developed to cater to the requirements of both the Admin and the User,
-effectively addressing their expectations for the travel blog site. Based on the
+effectively addressing their expectations for the TravelBlog site. Based on the
 project's structure and the significance of each user story, they were organized
 in a sequence that is presented in the project development strategy table.
 
@@ -180,7 +180,7 @@ The key component of the site is the navbar, which is structured to enable users
 to access any section of the site with minimal number of clicks. This ensures a
 seamless and intuitive navigation experience for the site's users.
 
-![Travelblog navbar structure](assets/readme_files/navbar_structure.png)
+![TravelBlog navbar structure](assets/readme_files/navbar_structure.png)
 
 * The header, footer, and navigation bar maintain consistency across all pages.
 * Upon registering an account and creating their profile, users can add extra
@@ -197,7 +197,7 @@ fields, please refer to the information provided below.
 For the purpose of this project relational database
 [ElephantSQL](https://www.elephantsql.com/) was used.
 
-![Travelblog database models](assets/readme_files/database_models.png)
+![TravelBlog database models](assets/readme_files/database_models.png)
 
 #### Inherited Django User Model:
 
@@ -377,9 +377,9 @@ focal point while also delivering an attractive layout for users.
 **Depending on the user status, nav bar has two different state:**
 
 1. Unauthorized user:
-   ![Travelblog Nvbar image Unauthorized](assets/readme_files/nav_unauthorized.png)
+   ![TravelBlog Navbar image Unauthorized](assets/readme_files/nav_unauthorized.png)
 2. Authorized user:
-   ![Travelblog Nvbar image Authorized](assets/readme_files/nav_authorized.png)
+   ![TravelBlog Navbar image Authorized](assets/readme_files/nav_authorized.png)
 
 * The 'My Profile' dropdown menu toggles between 'Create Profile' and 'Show
   Profile'/'Edit Profile' choices based on whether the user has created their
@@ -389,7 +389,7 @@ focal point while also delivering an attractive layout for users.
   paginated list of posts for each corresponding status.
 * The search country info window enables users to easily access country
   profiles.
-  ![Travelblog Search Bar image](assets/readme_files/search_country.png)
+  ![TravelBlog Search Bar image](assets/readme_files/search_country.png)
 * If the user clicks on the search bar without entering any text, a
   comprehensive list of all countries is displayed. Otherwise, a list of
   countries containing the user's search query in any part of the country name
@@ -397,11 +397,11 @@ focal point while also delivering an attractive layout for users.
   Each country in the list is linked to its profile. The search query is not
   case-sensitive.
 
-![Travelblog Country Searched Results image](assets/readme_files/show_searched_results_page.png)
+![TravelBlog Country Searched Results image](assets/readme_files/show_searched_results_page.png)
 
 * The footer includes the TravelBlog trademark, which is linked to the main
   page, and links to various social media channels.
-  ![Travelblog Footer image](assets/readme_files/footer.png)
+  ![TravelBlog Footer image](assets/readme_files/footer.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -419,7 +419,7 @@ focal point while also delivering an attractive layout for users.
   along with the date when the post was created and the total number of likes.
   This provides clear feedback for the user.
 
-  ![Travelblog Home Page image](assets/readme_files/home_page.png)
+  ![TravelBlog Home Page image](assets/readme_files/home_page.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -437,11 +437,11 @@ focal point while also delivering an attractive layout for users.
   user profile.
 * For better user experience, each comment contains the user's name, which is
   linked to their profile page, and the date the comment was created.
-  ![Travelblog Post Details Page image](assets/readme_files/post_details_page.png)
+  ![TravelBlog Post Details Page image](assets/readme_files/post_details_page.png)
 * Two buttons are available at the end of the post content for the authorized
   post author, enabling them to edit or delete the post.
 * The post author is unable to like their own posts or leave a comment on them.
-  ![Travelblog Post Details Page image](assets/readme_files/post_details_page_author.png)
+  ![TravelBlog Post Details Page image](assets/readme_files/post_details_page_author.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -455,10 +455,10 @@ focal point while also delivering an attractive layout for users.
   available), 'Excerpt', 'Content' (featuring the embedded Summernote WYSIWYG
   Editor), and a dropdown 'Status' list to save the post as Draft for future
   editing or send it for Moderation.
-  ![Travelblog Create Post Page image](assets/readme_files/create_post_true_page.png)
+  ![TravelBlog Create Post Page image](assets/readme_files/create_post_true_page.png)
 * If the user doesn't have a profile, they are kindly asked to create one if
   they wish to have the ability to publish their posts or comments.
-  ![Travelblog Create Post Warning Page image](assets/readme_files/create_post_false_page.png)
+  ![TravelBlog Create Post Warning Page image](assets/readme_files/create_post_false_page.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -467,7 +467,7 @@ focal point while also delivering an attractive layout for users.
 * Authors can update their posts at any time regardless of their status ('
   Draft', 'Awaiting approval', or 'Published').
 * All updated posts must be approved by the Admin before they are published.
-  ![Travelblog Update Post Page image](assets/readme_files/update_post_page.png)
+  ![TravelBlog Update Post Page image](assets/readme_files/update_post_page.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -477,7 +477,7 @@ focal point while also delivering an attractive layout for users.
   Draft', 'Awaiting approval', or 'Published').
 * Before deleting the post, the user is asked to confirm this action since
   this action can not be undone.
-  ![Travelblog delete Post Page image](assets/readme_files/delete_post_page.png)
+  ![TravelBlog delete Post Page image](assets/readme_files/delete_post_page.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -488,7 +488,7 @@ focal point while also delivering an attractive layout for users.
   search country result page.
 * This page includes a brief country description, the country's flag, an
   interactive Google map, and a Wikipedia link.
-  ![Travelblog Show Country Page image](assets/readme_files/show_country_page.png)
+  ![TravelBlog Show Country Page image](assets/readme_files/show_country_page.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -502,7 +502,7 @@ focal point while also delivering an attractive layout for users.
   data from the user's profile.
 * At the bottom of this page, you can find all the user's published posts,
   each linked to its corresponding [post details](#post-details-page) page.
-  ![Travelblog Author Bio Page image](assets/readme_files/author_bio_page.png)
+  ![TravelBlog Author Bio Page image](assets/readme_files/author_bio_page.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -523,7 +523,7 @@ focal point while also delivering an attractive layout for users.
 
 * Enables the user to modify their first name, last name, and email.
 * After creation, the user is unable to change their username.
-  ![Travelblog Edit Details Page image](assets/readme_files/edit_details_page.png)
+  ![TravelBlog Edit Details Page image](assets/readme_files/edit_details_page.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -531,7 +531,7 @@ focal point while also delivering an attractive layout for users.
 
 * Enables the user to change their password, requiring them to provide their old
   password for confirmation before proceeding.
-  ![Travelblog Change Password Page image](assets/readme_files/change_password_page.png)
+  ![TravelBlog Change Password Page image](assets/readme_files/change_password_page.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -543,14 +543,14 @@ focal point while also delivering an attractive layout for users.
   image (with three default images available for different genders), 'Bio',
   dropdown fields for selecting 'Home country' and 'Gender', 'Date of birth'
   field (featuring an interactive date picker calendar), and more.
-  ![Travelblog Create Profile Page image](assets/readme_files/create_profile_page.png)
+  ![TravelBlog Create Profile Page image](assets/readme_files/create_profile_page.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
 ### Update User Profile Page:
 
 * After creating their profile, users can update it at any time if needed.
-  ![Travelblog Update Profile Page image](assets/readme_files/update_profile_page.png)
+  ![TravelBlog Update Profile Page image](assets/readme_files/update_profile_page.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -559,7 +559,7 @@ focal point while also delivering an attractive layout for users.
 * Provides relevant details about the website's purpose and goals.
 * Enables the site admin to create or update the 'About' page.
 * Includes a default image option.
-  ![Travelblog About Page image](assets/readme_files/about_page.png)
+  ![TravelBlog About Page image](assets/readme_files/about_page.png)
 
 <br>[Back to top ⇧](#table-of-contents)
 
@@ -1293,7 +1293,7 @@ forking methods.
 - My partner for her unwavering love, support, and encouragement throughout this
   project. Her belief in me has been a driving force, and I could not have done
   it without her.
-- Ma daughter Anna, who became the first beta tester of this website. Her
+- My daughter Anna, who became the first beta tester of this website. Her
   feedback and recommendations for improving the project are invaluable.
 - My tutor, Marcel, for his priceless feedback and guidance.
 - Code Institute and their fantastic Slack community for their constant support
