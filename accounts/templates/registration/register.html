@@ -14,7 +14,7 @@
     <form method="post">
         <div class="form-group form-width">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form }}
             <button class="btn btn-outline-success">Register</button>
         </div>
     </form>

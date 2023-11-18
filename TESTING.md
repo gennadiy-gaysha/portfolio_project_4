@@ -234,7 +234,7 @@
 | 4  | The country management system supports the addition of new countries and the editing of existing country information, such as names, descriptions, and related data.               | passed |
 | 5  | The comment management system displays comments with relevant metadata, such as timestamps, user information, and associated post details, for efficient moderation and oversight. | passed |
 
-- As a **site admin** I can **I can manage and update the About Us page through
+- As a **site admin** I can **manage and update the About Us page through
   an intuitive interface within the Django admin panel** so that **the
   travelblog mission, purpose, and latest information are accurately presented
   to the site visitors**
