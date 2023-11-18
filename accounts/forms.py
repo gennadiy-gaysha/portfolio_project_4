@@ -55,6 +55,7 @@ class RegisterForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['password1'].widget.attrs.update({'class': 'form-control'})
+        self.fields['password1'].help_text = '<p><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></p>'
         self.fields['password2'].widget.attrs.update({'class': 'form-control'})
         self.fields[
             'username'].help_text = '<span style="color: green">Disclaimer: Once ' \
