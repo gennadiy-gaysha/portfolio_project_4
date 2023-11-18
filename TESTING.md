@@ -270,33 +270,54 @@
 
 ### HTML
 
-The [W3C Markup Validator](https://validator.w3.org/) service was used to
-validate the HTML code of the project in order to ensure there were no syntax
-errors.
-W3C Markup Validator found the following errors concerning index.html.
+The [W3C Markup Validator](https://validator.w3.org/) service was utilized to
+validate the HTML code of the project, ensuring the absence of syntax errors.
+Given that pages requiring authorization are not retrievable, the validation was
+conducted solely on templates accessible without authorization. All errors in
+the developer code were fixed, except for those stemming from third-party
+packages (e.g., Summernote) that necessitate user input. Please see the list of
+screenshots below for further details.
 
-The HTML code of the project was validated using
-the [W3C Markup Validator](https://validator.w3.org/) service to ensure 
-there were no syntax errors.
-The W3C Markup Validator identified the following errors in the 'index.html'
-file:
+- Home page:
+  <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/`
+  ![home.html](assets/testing_files/home.png)
 
+- Post Details page:
+  <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/post/beauty-of-namibia-a-journey-into-the-heart-of-africa/`
+  ![post_details.html](assets/testing_files/post_details.png)
 
-W3C Markup Validator also found a great amount of errors in pages with user
-input. However, I found those errors to be coming from the Summernote editor.
-See example below:
+- Author Bio page:
+  <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/account/author_bio/travelblog`
+  ![author_bio.html](assets/testing_files/author_bio.png)
 
-![Summernote HTML errors image](assets/testing_files/summernote_errors.jpg)
+- Show Country page:
+  <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/germany/`
+  ![show_country.html](assets/testing_files/show_country.png)
+
+- About page:
+  <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/about/`
+  ![about_page.html](assets/testing_files/about_page.png)
+
+- Login page:
+  <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/account/login/`
+  ![login.html](assets/testing_files/login.png)
+
+- Register page:
+  <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/account/register/`
+  ![register.html](assets/testing_files/register.png)
 
 ### CSS
 
-[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) service was used to
+service was used to
 validate the CSS code of the project in order to ensure there were no syntax
 errors.
 
 W3C CSS Validator found no errors or warnings on my CSS.
 
-![CSS validation image](assets/testing_files/css_validation.png)
+The W3C CSS Validator
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) service was employed
+to validate the CSS code of the project, ensuring the absence of syntax errors.
+W3C CSS Validator identified no errors or warnings in project's CSS file.
 
-[home](https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/)
-[post_details](https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/post/beauty-of-namibia-a-journey-into-the-heart-of-africa/)
+![CSS validation image](assets/testing_files/css_validator.png)
+
