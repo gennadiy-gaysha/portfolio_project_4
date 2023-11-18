@@ -55,14 +55,23 @@ class RegisterForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['password1'].help_text = ''
+        self.fields['password1'].help_text = '* Your password can’t be ' \
+                                             'too ' \
+                                             'similar to your other personal ' \
+                                             'information.<br>* Your password ' \
+                                             'must contain at least 8 ' \
+                                             'characters.<br>* Your password ' \
+                                             'can’t be a commonly used ' \
+                                             'password.<br>* Your password ' \
+                                             'can’t be entirely numeric.'
         self.fields['password1'].widget.attrs.update({'class': 'form-control'})
-        self.fields[
-            'password1'].help_text = '<ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul>'
         self.fields['password2'].widget.attrs.update({'class': 'form-control'})
         self.fields[
-            'username'].help_text = '<span style="color: green">Disclaimer: Once ' \
-                                    'created, you cannot change your username.</span><br><span>Required. ' \
-                                    '20 characters or fewer. Letters, digits and @/./+/-/_ only.</span>'
+            'username'].help_text = '<span>*Required. 150 characters or ' \
+                                    'fewer. Letters, digits and @/./+/-/_ ' \
+                                    'only.</span><br><span style="color: green">*Disclaimer: ' \
+                                    'Once created, you cannot change your ' \
+                                    'username.</span>'
 
 
 class EditDetailsForm(UserChangeForm):
