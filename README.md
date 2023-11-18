@@ -1231,8 +1231,16 @@ forking methods.
   Man—the capital city names are not being converted into coordinates.
   Consequently, the map of these countries is not rendered on the '
   show_country.html' page.
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) indicates an error
+  in the Django-inherited helper text for 'password1' in the registration form:
+  ![register.html](assets/readme_files/register.png)
+  However, no errors were found in the rendered code (Chrome DevTools >
+  Sources tab):
+  `<p><label for="id_password1">Password:</label> <input type="password" name="password1" autocomplete="new-password" class="form-control" required id="id_password1"> <span class="helptext"><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></span></p>`
 
-<br>[Back to top ⇧](#table-of-contents)
+  To address the W3C CSS Validator warning, I rewrote the Django inherit helper
+  text, removing `<ul>` and `<li>` tags.
+  <br>[Back to top ⇧](#table-of-contents)
 
 ## Credits.
 
