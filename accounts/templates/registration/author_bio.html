@@ -34,7 +34,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ author.first_name }}
                         {{ author.last_name }}</h5>
-                    <p class="card-text">{{ userprofile.bio|safe }}</p>
+                    <div class="card-text">{{ userprofile.bio|safe }}</div>
                     <p class="card-text">Home country:
                         <span style="text-transform: uppercase;">
                             {{ userprofile.home_country }}</span>
