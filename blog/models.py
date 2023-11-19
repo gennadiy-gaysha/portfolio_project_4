@@ -39,22 +39,23 @@ class Country(models.Model):
         """
         Save method of the model is being overriden. Inside the save method,
         the condition if the slug is not already set is checked.
-        If it's blank, a slug from the title is generated using slugify and then
-        saved in the model. This ensures that the slug is automatically created
-        from the title when a new Country instance is created.
+        If it's blank, a slug from the title is generated using slugify and
+        then saved in the model. This ensures that the slug is automatically
+        created from the title when a new Country instance is created.
         """
         if not self.slug:
             self.slug = slugify(self.country_name)
-        # explicitly calling the save method with super(Country, self).save(*args, **kwargs)
-        # (instead of self.save() of the current instance) ensures avoiding recursion issue
+        # explicitly calling the save method with super(Country, self)
+        # .save(*args, **kwargs) (instead of self.save() of the current
+        # instance) ensures avoiding recursion issue
         super().save(*args, **kwargs)
 
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    # Related_name='blog_posts' specifies the name to use for the reverse relation from
-    # the User model back to the Post model.
+    # Related_name='blog_posts' specifies the name to use for the reverse
+    # relation from the User model back to the Post model.
     # user.blog_posts.all() - retrieves all the Post instances
     # that have that specific User instance as their author
     author = models.ForeignKey(User, on_delete=models.CASCADE,
@@ -88,9 +89,9 @@ class Post(models.Model):
         """
         Save method of the model is being overriden. Inside the save method,
         the condition if the slug is not already set is checked.
-        If it's blank, a slug from the title is generated using slugify and then
-        saved in the model. This ensures that the slug is automatically created
-        from the title when a new Post instance is created.
+        If it's blank, a slug from the title is generated using slugify and
+        then saved in the model. This ensures that the slug is automatically
+        created from the title when a new Post instance is created.
         """
         if not self.slug:
             self.slug = slugify(self.title)

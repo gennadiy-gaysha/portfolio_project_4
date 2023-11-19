@@ -96,7 +96,8 @@
 | 3  | The posts are systematically organized for user convenience and efficient scanning.            | passed |
 | 4  | Clicking on a post title from the list leads the user to a detailed view of the selected post. | passed |
 
-- As a **user** I can **create new blog posts with text and images** so that **I
+- As a **user** I can **create new blog posts with text and images** so that *
+  *I
   can share my experiences and insights with others**
 
 | No | Functionality                                                                                                                                                                 | Result |
@@ -117,7 +118,8 @@
 | 2  | After publication, users retain the ability to edit their posts for updates or delete them entirely if needed.                               | passed |
 
 - As a **user** I can **like and comment on blog posts** so that **I can engage
-  with the community, express my thoughts, and show appreciation for interesting
+  with the community, express my thoughts, and show appreciation for
+  interesting
   content**
 
 | No | Functionality                                                                                                                                     | Result |
@@ -152,7 +154,8 @@
 
 ### Epic: Search and Filtering.
 
-- As a **user** I can **utilize a system for categorizing and filtering posts by
+- As a **user** I can **utilize a system for categorizing and filtering posts
+  by
   country** so that **I can easily navigate and explore content related to
   specific locations**
 
@@ -178,8 +181,10 @@
 | 4  | Search results provide accurate and up-to-date information obtained from reliable data sources.                                                       | passed |
 | 5  | The search feature is responsive, providing a seamless experience across different devices and maintaining consistent usability.                      | passed |
 
-- As a **user** I can **utilize a system for categorizing and filtering posts by
-  author's name** so that **I can easily navigate and explore content related to
+- As a **user** I can **utilize a system for categorizing and filtering posts
+  by
+  author's name** so that **I can easily navigate and explore content related
+  to
   specific author**
 
 | No | Functionality                                                                                                                               | Result |
@@ -211,7 +216,8 @@
 | 2  | The site Admin has oversight and management capabilities for user activities, including post and personal profile creation, editing, and deletion. | passed |
 | 3  | The system ensures a secure and reliable authentication process for user access and data protection.                                               | passed |
 
-- As a **site admin** I can **create, read, update, make drafts and delete posts
+- As a **site admin** I can **create, read, update, make drafts and delete
+  posts
   using admin panel** so that **I can manage my own blog content**
 
 | No | Functionality                                                                                                                            | Result |
@@ -272,10 +278,10 @@
 
 The [W3C Markup Validator](https://validator.w3.org/) service was utilized to
 validate the HTML code of the project, ensuring the absence of syntax errors.
-Given that pages requiring authorization are not retrievable, the validation was
-conducted solely on templates accessible without authorization. All errors in
-the developer code were fixed, except for those stemming from third-party
-packages (e.g., Summernote) that necessitate user input. Please see the list of
+Given that pages requiring authorization are not retrievable, the validation
+was
+conducted solely on templates accessible without authorization. All identified
+errors in the developer code have been fixed. Please refer to the list of
 screenshots below for further details.
 
 - Home page:
@@ -308,16 +314,19 @@ screenshots below for further details.
 
 ### CSS
 
-service was used to
-validate the CSS code of the project in order to ensure there were no syntax
-errors.
-
-W3C CSS Validator found no errors or warnings on my CSS.
-
 The W3C CSS Validator
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) service was employed
 to validate the CSS code of the project, ensuring the absence of syntax errors.
 W3C CSS Validator identified no errors or warnings in project's CSS file.
 
 ![CSS validation image](assets/testing_files/css_validator.png)
+
+### PEP8
+
+All Python files in the `travelblog directory` and the `travelblog app` have
+been passed through the 
+[Code Institute PEP8 Linter](https://pep8ci.herokuapp.com/). All errors were 
+fixed, and the message "Results: All clear, no errors found" was obtained for 
+all files.
+
 

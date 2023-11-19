@@ -1,5 +1,6 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, \
+    PasswordChangeForm
 from django.contrib.auth.models import User
 from django_summernote.widgets import SummernoteWidget
 
@@ -55,21 +56,21 @@ class RegisterForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['password1'].help_text = ''
-        self.fields['password1'].help_text = '* Your password can’t be ' \
-                                             'too ' \
-                                             'similar to your other personal ' \
-                                             'information.<br>* Your password ' \
-                                             'must contain at least 8 ' \
-                                             'characters.<br>* Your password ' \
-                                             'can’t be a commonly used ' \
-                                             'password.<br>* Your password ' \
-                                             'can’t be entirely numeric.'
+        self.fields[
+            'password1'].help_text = "* Your password can’t be too similar " \
+                                     "to your other personal information." \
+                                     "<br>* Your password must contain at " \
+                                     "least 8 characters.<br>* Your " \
+                                     "password can’t be a commonly used " \
+                                     "#password.<br>* Your password can’t " \
+                                     "be entirely numeric."
         self.fields['password1'].widget.attrs.update({'class': 'form-control'})
         self.fields['password2'].widget.attrs.update({'class': 'form-control'})
         self.fields[
             'username'].help_text = '<span>*Required. 150 characters or ' \
                                     'fewer. Letters, digits and @/./+/-/_ ' \
-                                    'only.</span><br><span style="color: green">*Disclaimer: ' \
+                                    'only.</span><br><span style="color: ' \
+                                    'green">*Disclaimer: ' \
                                     'Once created, you cannot change your ' \
                                     'username.</span>'
 
@@ -98,8 +99,9 @@ class EditDetailsForm(UserChangeForm):
         self.fields['username'].widget.attrs.update(
             {'class': 'form-control', 'readonly': True})
         self.fields[
-            'username'].help_text = '<span style="color: green">Disclaimer: Once ' \
-                                    'created, you cannot change your username.</span>'
+            'username'].help_text = '<span style="color: green">Disclaimer: ' \
+                                    'Once created, you cannot change your ' \
+                                    'username.</span>'
 
 
 class ChangePasswordForm(PasswordChangeForm):
@@ -109,50 +111,65 @@ class ChangePasswordForm(PasswordChangeForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['old_password'].widget.attrs.update({'class': 'form-control'})
-        self.fields['new_password1'].widget.attrs.update({'class': 'form-control'})
-        self.fields['new_password2'].widget.attrs.update({'class': 'form-control'})
+        self.fields['old_password'].widget.attrs.update(
+            {'class': 'form-control'})
+        self.fields['new_password1'].widget.attrs.update(
+            {'class': 'form-control'})
+        self.fields['new_password2'].widget.attrs.update(
+            {'class': 'form-control'})
 
 
 class UserProfileForm(forms.ModelForm):
     """
-    A form used for creating and updating user profiles. Additionally, the widgets
-    attribute customizes the appearance and behavior of the form fields, such as
-    defining the type of input for each field along with associated attributes for
-    controlling their presentation.
-
+    A form used for creating and updating user profiles. Additionally, the
+    widget attribute customizes the appearance and behavior of the form fields,
+    such as defining the ty pe of input for each field along with associated
+    attributes for controlling their presentation.
     Attributes:
-    model: The model associated with the form, in this case, the UserProfile model.
-    fields: A tuple indicating the specific fields from the UserProfile model to be
-    included in the form.
-    widgets: A dictionary containing the various widget attributes for each form field
-
+    model: The model associated with the form, in this case, the UserProfile
+    model. fields: A tuple indicating the specific fields from the UserProfile
+    model to b included in the form.
+    widgets: A dictionary containing the various widget attributes for each
+    form field
     Methods:
-    __init__: Initializes the form, setting up the help text for the 'date_of_birth' field, providing instructions
-    for the expected date format. The super function is called, which refers to the superclass and initializes the
-    form with any additional arguments passed to it.
+    __init__: Initializes the form, setting up the help text for the
+    'date_of_birth' field, providing instructions for the expected date
+    format. The super function is called, which refers to the superclass and
+    initializes the form with any additional arguments passed to it.
     """
-    home_country = forms.ModelChoiceField(queryset=Country.objects.all().order_by('country_name'),
-                                          widget=forms.Select(attrs={'class': 'form-select'}))
+    home_country = forms.ModelChoiceField(
+        queryset=Country.objects.all().order_by('country_name'),
+        widget=forms.Select(attrs={'class': 'form-select'}))
+
     class Meta:
         model = UserProfile
-        fields = ('profile_picture', 'bio', 'home_country', 'gender', 'date_of_birth',
-                  'instagram_profile', 'twitter_profile', 'facebook_profile',
-                  'linkedin_profile')
+        fields = (
+            'profile_picture', 'bio', 'home_country', 'gender',
+            'date_of_birth',
+            'instagram_profile', 'twitter_profile', 'facebook_profile',
+            'linkedin_profile')
 
         widgets = {
-            'profile_picture': forms.FileInput(attrs={'class': 'form-control-file'}),
+            'profile_picture': forms.FileInput(
+                attrs={'class': 'form-control-file'}),
             'bio': SummernoteWidget(),
             'gender': forms.Select(attrs={'class': 'form-select'}),
-            'date_of_birth': forms.DateInput(attrs={'class': 'form-control', 'id': 'datepicker', 'name': 'date_of_birth'}),
-            'instagram_profile': forms.URLInput(attrs={'class': 'form-control'}),
+            'date_of_birth': forms.DateInput(
+                attrs={'class': 'form-control', 'id': 'datepicker',
+                       'name': 'date_of_birth'}),
+            'instagram_profile': forms.URLInput(
+                attrs={'class': 'form-control'}),
             'twitter_profile': forms.URLInput(attrs={'class': 'form-control'}),
-            'facebook_profile': forms.URLInput(attrs={'class': 'form-control'}),
-            'linkedin_profile': forms.URLInput(attrs={'class': 'form-control'}),
+            'facebook_profile': forms.URLInput(
+                attrs={'class': 'form-control'}),
+            'linkedin_profile': forms.URLInput(
+                attrs={'class': 'form-control'}),
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields[
-            'date_of_birth'].help_text = '<span style="color: green;">YYYY-MM-DD ' \
-                                         '(please, follow this date format)</span>'
+            'date_of_birth'].help_text = '<span style="color: green;">' \
+                                         'YYYY-MM-DD ' \
+                                         '(please, follow this date format)' \
+                                         '</span>'

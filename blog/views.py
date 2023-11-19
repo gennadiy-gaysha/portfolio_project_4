@@ -173,15 +173,16 @@ class UpdatePost(UpdateView):
         post = self.get_object()
         # Checks if the user is authenticated and has the permission to
         # change the post
-        if not request.user.is_authenticated or not request.user == post.author:
+        if not request.user.is_authenticated \
+                or not request.user == post.author:
             raise PermissionDenied  # Triggers permission_denied view
         return super().get(request, *args, **qwargs)
 
     def form_valid(self, form):
         """
-        The method is executed when the submitted form data is valid. It saves the
-        updated post and then redirects the user to the post-details page for the updated
-        post.
+        The method is executed when the submitted form data is valid. It saves
+        the updated post and then redirects the user to the post-details page
+        for the updated post.
 
         Args:
         form: The form that has valid data.
@@ -200,8 +201,10 @@ class DraftList(LoginRequiredMixin, generic.ListView):
     View for displaying a list of drafts authored by the logged-in user.
 
     Attributes:
-    model: The model to be used for retrieving draft posts, in this case, the Post model.
-    template_name: The template used for rendering the draft list, 'blog/draft.html'.
+    model: The model to be used for retrieving draft posts, in this case, the
+    Post model.
+    template_name: The template used for rendering the draft list,
+    'blog/draft.html'.
     paginate_by: The number of items to include per page in the pagination.
     """
     model = Post
@@ -210,11 +213,12 @@ class DraftList(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         """
-        Method to retrieve the queryset of draft posts authored by the logged-in user.
+        Method to retrieve the queryset of draft posts authored by the
+        logged-in user.
 
         Returns:
-        A queryset filtered by the current user and posts with status 0 (drafts), ordered
-        by the creation date in descending order.
+        A queryset filtered by the current user and posts with status 0
+        (drafts), ordered by the creation date in descending order.
         """
         user = self.request.user
         return Post.objects.filter(author=user, status=0).order_by(
@@ -254,11 +258,12 @@ class DeletePost(generic.DeleteView):
     A generic view for deleting a blog post.
 
     Attributes:
-    model: The model to be used for deleting the post, in this case, the Post model.
-    template_name: The template used for rendering the confirmation page for deleting
-    the post, 'blog/delete_post.html'.
-    success_url: The URL to redirect to after the successful deletion of the post,
-    using the reverse_lazy method.
+    model: The model to be used for deleting the post, in this case, the Post
+    model.
+    template_name: The template used for rendering the confirmation page for
+    deleting the post, 'blog/delete_post.html'.
+    success_url: The URL to redirect to after the successful deletion of the
+    post, using the reverse_lazy method.
     """
     model = Post
     template_name = 'blog/delete_post.html'
@@ -274,7 +279,8 @@ def search_country(request):
         searched_country = request.POST.get('searched-country')
         countries = Country.objects.filter(
             country_name__icontains=searched_country).order_by('country_name')
-        context = {'searched_country': searched_country, 'countries': countries}
+        context = {'searched_country': searched_country,
+                   'countries': countries}
         return render(request, 'blog/show_searched_results.html', context)
     else:
         return render(request, 'blog/show_searched_results.html')
