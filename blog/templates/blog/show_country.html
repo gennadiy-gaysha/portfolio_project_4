@@ -2,6 +2,7 @@
 
 {% load static %}
 {% load humanize %}
+{% load underscore_filter %}
 
 {% block title %}
 <title>Show country</title>
@@ -46,7 +47,8 @@
                     <p class="card-text">Phone: {{ country.phone }}</p>
                     <p class="card-text">Languages: {{ country.languages|upper }}</p>
                     <hr>
-                    <a href="https://en.wikipedia.org/wiki/{{ country.country_name|lower }}" target="_blank"><img
+                    <a
+                            href="https://en.wikipedia.org/wiki/{{ country.country_name|lower|underscore }}" target="_blank"><img
                             src="{% static 'blog/img/wiki.png' %}" class="img-fluid rounded-start" id="wiki"
                             alt="Wikipedia link for {{ country.country_name }}"></a>
                 </div>

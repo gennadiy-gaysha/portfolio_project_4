@@ -146,7 +146,8 @@ ensuring a cohesive and efficient implementation of the application.
 Prior to commencing the project, a comprehensive compilation of 19 user stories
 was developed to cater to the requirements of both the Admin and the User,
 effectively addressing their expectations for the TravelBlog site. Based on the
-project's structure and the significance of each user story, they were organized
+project's structure and the significance of each user story, they were
+organized
 in a sequence that is presented in the project development strategy table.
 
 | No | Title                                    | User Story                                                                                                                                                                                                                                 | Epic                 | Tag         |
@@ -176,7 +177,8 @@ in a sequence that is presented in the project development strategy table.
 
 ### General structure:
 
-The key component of the site is the navbar, which is structured to enable users
+The key component of the site is the navbar, which is structured to enable
+users
 to access any section of the site with minimal number of clicks. This ensures a
 seamless and intuitive navigation experience for the site's users.
 
@@ -203,13 +205,16 @@ For the purpose of this project relational database
 
 - **Username:** This is the user's unique username and is used for
   identification purposes.
-- **Email:** It represents the user's email address, which is also unique and is
+- **Email:** It represents the user's email address, which is also unique and
+  is
   frequently used for authentication and communication.
-- **Password:** It stores the user's password, which is secured and encrypted in
+- **Password:** It stores the user's password, which is secured and encrypted
+  in
   the database.
 - **First Name and Last Name:** These fields store the user's first name and
   last name, respectively.
-- **Date Joined:** This field records the date when the user joined the platform
+- **Date Joined:** This field records the date when the user joined the
+  platform
   or when their account was created.
 - **Is Active:** This Boolean field indicates whether the user's account is
   active or not. If it is set to True, the account is active; otherwise, it is
@@ -229,15 +234,18 @@ For the purpose of this project relational database
 - **Slug:** The unique slug field is used to identify the post.
 - **Author:** This field represents the author of the post and is linked to the
   User model.
-- **Updated On:** The date and time are automatically set every time the post is
+- **Updated On:** The date and time are automatically set every time the post
+  is
   updated.
 - **Content:** This field stores the content of the post as provided by the
   author.
 - **Status:** It is an integer field that stores the status of the post,
   selected from predefined choices.
-- **Featured Image:** This field is used to store the image related to the post,
+- **Featured Image:** This field is used to store the image related to the
+  post,
   using CloudinaryField.
-- **Excerpt:** It stores a brief excerpt related to the post, and it can be left
+- **Excerpt:** It stores a brief excerpt related to the post, and it can be
+  left
   blank.
 - **Created On:** The date and time are set automatically at the post's
   creation.
@@ -248,7 +256,8 @@ For the purpose of this project relational database
 
 #### Country Model:
 
-- **ISO, ISO3, ISO Numeric, FIPS:** These fields store specific codes associated
+- **ISO, ISO3, ISO Numeric, FIPS:** These fields store specific codes
+  associated
   with the country.
 - **Country Name:** This unique field stores the name of the country.
 - **Slug:** A unique slug is assigned to each country to identify it.
@@ -308,7 +317,8 @@ For the purpose of this project relational database
 
 - **Title:** This field allows for a maximum of 200 characters for the title,
   with the option for it to be left blank.
-- **Content:** It is a field that stores the detailed content or information for
+- **Content:** It is a field that stores the detailed content or information
+  for
   the 'About' section. The text can be as long as needed.
 - **Featured Image:** This field utilizes Cloudinary to store the image for
   the 'About' section. If no image is provided, a placeholder image is used as
@@ -321,7 +331,8 @@ For the purpose of this project relational database
 ### Color scheme:
 
 The color scheme palette for the project was created using the
-[Colors](https://coolors.co/), which involved the selection of complementary and
+[Colors](https://coolors.co/), which involved the selection of complementary
+and
 contrasting colors.
 
 To provide a complete representation, the first color in the Primary Colors
@@ -473,7 +484,8 @@ focal point while also delivering an attractive layout for users.
 
 ### Delete Post Page:
 
-* Authors can also delete their posts at any time, regardless of their status ('
+* Authors can also delete their posts at any time, regardless of their
+  status ('
   Draft', 'Awaiting approval', or 'Published').
 * Before deleting the post, the user is asked to confirm this action since
   this action can not be undone.
@@ -498,7 +510,8 @@ focal point while also delivering an attractive layout for users.
   [home page](#home-page) and through the
   [post details](#post-details-page) page.
 * The page displays the user's uploaded image (with three default images
-  available for different genders), the user's name, a short user bio, and other
+  available for different genders), the user's name, a short user bio, and
+  other
   data from the user's profile.
 * At the bottom of this page, you can find all the user's published posts,
   each linked to its corresponding [post details](#post-details-page) page.
@@ -529,7 +542,8 @@ focal point while also delivering an attractive layout for users.
 
 ### Change Password Page:
 
-* Enables the user to change their password, requiring them to provide their old
+* Enables the user to change their password, requiring them to provide their
+  old
   password for confirmation before proceeding.
   ![TravelBlog Change Password Page image](assets/readme_files/change_password_page.png)
 
@@ -699,7 +713,8 @@ specific sections of the file by clicking on the relevant headings below:
 
     - Create project directory and open it in PyCharm. Delete default main.py
       file after opening in PyCharm.
-    - Before creating a Django project, it's a good practice to create a virtual
+    - Before creating a Django project, it's a good practice to create a
+      virtual
       environment for it. This isolates project's dependencies from the
       system-wide
       Python installation. Go to the terminal and run the command:
@@ -725,7 +740,8 @@ specific sections of the file by clicking on the relevant headings below:
    Interpreter > absolute_path_to_your_project\venv_name`
 
 3. When deploying a Django project to Heroku, you will typically need to use a
-   web server to serve your application. Gunicorn (short for "Green Unicorn") is
+   web server to serve your application. Gunicorn (short for "Green Unicorn")
+   is
    a commonly used web server that is recommended for deploying Django
    applications on Heroku. Heroku's platform expects the application to be run
    using a web server that can handle incoming HTTP requests.
@@ -758,7 +774,8 @@ specific sections of the file by clicking on the relevant headings below:
    can run:
    <br>`django-admin startproject travelblog .`
 
-    - !!! The `.` at the end indicates that the project should be created in the
+    - !!! The `.` at the end indicates that the project should be created in
+      the
       current directory. This will create travelblog directory with the initial
       project files.
 
@@ -809,7 +826,8 @@ DATABASE_URL = 'my_elephantsql_url'
 
 14. Access to Environment Variables:
 
-- Open your Django project's settings.py file and import (at the top) the dotenv
+- Open your Django project's settings.py file and import (at the top) the
+  dotenv
   and other supporting libraries:
 
 ```
@@ -841,7 +859,8 @@ DATABASES = {
   control. Also add venv directory and local db to `.gitignore`:
   <br>`.env`
   <br>`venv_name/`
-- add this line to .gitignore if you occasionally run your django project before
+- add this line to .gitignore if you occasionally run your django project
+  before
   cannecting it with the external
   database:
   <br>`db.sqlite3`
@@ -1034,7 +1053,8 @@ INSTALLED_APPS = [
   Place this code snippets under the STATIC_URL:
   <br>`STATICFILES_STORAGE = 'cloudinary_storage.storage.
   StaticHashedCloudinaryStorage'`
-  <br>This line below defines a list of additional directories where Django will
+  <br>This line below defines a list of additional directories where Django
+  will
   look for static files. In this case, it specifies that the 'static' directory
   within the project's base directory (BASE_DIR) should be considered when
   collecting static files. This is useful when you have static files that are
@@ -1121,14 +1141,18 @@ TEMPLATES = [
 ## Features to be implemented.
 
 While planning for the long-term development of the project, following features
-have been identified to enhance the user experience. It's important to note that
+have been identified to enhance the user experience. It's important to note
+that
 these features are considered valuable but haven't been implemented in the
-current stage. The decision to postpone their development stems from the need to
+current stage. The decision to postpone their development stems from the need
+to
 prioritize crucial site features and the recognition that their execution would
-demand a substantial time commitment or a level of programming expertise that is
+demand a substantial time commitment or a level of programming expertise that
+is
 currently under development.
 
-- Add Bootstrap-style pagination to the `home page` with Previous, page numbers,
+- Add Bootstrap-style pagination to the `home page` with Previous, page
+  numbers,
   and Next links.
 - Add the functionality to filter posts by the author on the home page and
   provide the ability to apply it either in conjunction with filtering posts by
@@ -1156,7 +1180,8 @@ currently under development.
   `X_FRAME_OPTIONS = 'SAMEORIGIN'`
   The X-Frame-Options HTTP header is a security feature that helps prevent your
   web pages from being embedded within an iframe.
-  When set to `SAMEORIGIN`, it allows the page to be displayed in a frame on the
+  When set to `SAMEORIGIN`, it allows the page to be displayed in a frame on
+  the
   same origin (same domain), but prevents it from being embedded on other
   domains.
   This helps mitigate the risk of clickjacking attacks where an attacker tricks
@@ -1183,7 +1208,8 @@ currently under development.
 
 ## Cloning and Forking Repository.
 
-To make changes to the code without affecting the original version stored in the
+To make changes to the code without affecting the original version stored in
+the
 repository you may create a local copy of the repository, through cloning and
 forking methods.
 
@@ -1240,6 +1266,14 @@ forking methods.
 
   To address the W3C CSS Validator warning, I rewrote the Django inherit helper
   text, removing `<ul>` and `<li>` tags.
+- Although the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) did 
+  not find any errors on `show_country.html` for countries with a single-word 
+  name, an error was identified for complex country names. This issue is 
+  connected to the way the link to the Wikipedia page is assembled. To 
+  eliminate this validation error, the custom `underscore_filter` was 
+  created to add the underscore symbol `_` between the words in complex
+  country names. After applying the filter, the error disappeared.
+
   <br>[Back to top ⇧](#table-of-contents)
 
 ## Credits.
@@ -1298,7 +1332,8 @@ forking methods.
 
 ## Acknowledgements.
 
-- My partner for her unwavering love, support, and encouragement throughout this
+- My partner for her unwavering love, support, and encouragement throughout
+  this
   project. Her belief in me has been a driving force, and I could not have done
   it without her.
 - My daughter Anna, who became the first beta tester of this website. Her
