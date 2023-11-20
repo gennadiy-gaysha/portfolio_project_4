@@ -154,6 +154,12 @@ class CreatePost(LoginRequiredMixin, CreateView):
         messages.success(self.request, 'Post created successfully.')
         return super().form_valid(form)
 
+    def form_invalid(self, form):
+        for field, errors in form.errors.items():
+            for error in errors:
+                messages.error(self.request, f'Error in {field}: {error}')
+                return super().form_invalid(form)
+
 
 class UpdatePost(UpdateView):
     """
@@ -194,6 +200,12 @@ class UpdatePost(UpdateView):
         post.save()
         messages.success(self.request, 'Post updated successfully.')
         return redirect('post-details', slug=post.slug)
+
+    def form_invalid(self, form):
+        for field, errors in form.errors.items():
+            for error in errors:
+                messages.error(self.request, f'Error in {field}: {error}')
+                return super().form_invalid(form)
 
 
 class DraftList(LoginRequiredMixin, generic.ListView):

@@ -13,10 +13,10 @@
     - [Epic: Admin Management](#epic-admin-management)
     - [Epic: Error Handling](#epic-error-handling)
 2. [Code Validation](#code-validation)
-   - [HTML](#html)
-   - [CSS](#css)
-   - [Python](#python)
-   - [JavaScript](#javascript)
+    - [HTML](#html)
+    - [CSS](#css)
+    - [Python](#python)
+    - [JavaScript](#javascript)
 3. [Accessibility](#accessibility)
 4. [Tools Testing](#tools-testing)
 5. [Manual Testing](#manual-testing)
@@ -340,3 +340,34 @@ tool for assessing the quality of JavaScript code, to check the integrity of
 the site's JavaScript implementation. The analysis revealed no errors in the
 code.
 <br>[Back to top ⇧](#table-of-contents)
+
+## Accessibility.
+
+## Tools Testing.
+
+### Chrome DevTools.
+
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/) were used
+  during the development process to test, explore, and modify HTML elements and
+  CSS styles, while also looking for errors in the JS code.
+
+### Responsiveness.
+
+- [responsivedesignchecker.com](https://www.responsivedesignchecker.com/)
+  was used to check responsiveness of the site pages across different devices.
+
+## Manual Testing.
+
+### Browser Compatibility
+
+- All site functions work correctly and the same in browsers that have
+  different engines, i.e. Chrome, Firefox and Safari:
+
+ Browser         | Outcome                                                                               | Pass/Fail 
+-----------------|---------------------------------------------------------------------------------------|-----------
+ Google Chrome   | No problems related to the appearance, responsiveness or functionality of the website | Pass      
+ Safari          | No problems related to the appearance, responsiveness or functionality of the website | Pass      
+ Mozilla Firefox | No problems related to the appearance, responsiveness or functionality of the website | Pass      
+ Microsoft Edge  | No problems related to the appearance, responsiveness or functionality of the website | Pass
+
+### Testing Style And Functionality

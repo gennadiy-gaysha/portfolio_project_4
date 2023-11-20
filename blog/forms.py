@@ -56,12 +56,14 @@ class PostForm(forms.ModelForm):
             'country': forms.Select(choices=countries_list,
                                     attrs={'class': 'form-select',
                                            'style': 'width: 100%'}),
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={'class': 'form-control',
+               'placeholder': 'Write your post title here'}),
             'featured_image': forms.FileInput(
                 attrs={'class': 'form-control-file'}),
             'content': SummernoteWidget(attrs={'class': 'form-control'}),
             'excerpt': forms.Textarea(
-                attrs={'class': 'form-control', 'style': 'height: 120px'}),
+                attrs={'class': 'form-control', 'style': 'height: 120px',
+               'placeholder': 'Write your short summary or teaser here'}),
             'status': forms.Select(
                 attrs={'class': 'form-select', 'style': 'width: 100%'})
         }
@@ -71,7 +73,8 @@ class PostForm(forms.ModelForm):
 
 class CommentForm(forms.ModelForm):
     body = forms.CharField(widget=forms.Textarea(
-        attrs={'class': 'form-control', 'style': 'height: 150px'}))
+        attrs={'class': 'form-control', 'style': 'height: 150px',
+               'placeholder': 'Please leave your comment here'}))
 
     class Meta:
         model = Comment
