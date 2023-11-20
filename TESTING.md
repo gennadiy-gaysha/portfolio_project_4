@@ -13,6 +13,10 @@
     - [Epic: Admin Management](#epic-admin-management)
     - [Epic: Error Handling](#epic-error-handling)
 2. [Code Validation](#code-validation)
+   - [HTML](#html)
+   - [CSS](#css)
+   - [Python](#python)
+   - [JavaScript](#javascript)
 3. [Accessibility](#accessibility)
 4. [Tools Testing](#tools-testing)
 5. [Manual Testing](#manual-testing)
@@ -274,7 +278,7 @@
 
 ## Code Validation.
 
-### HTML
+### HTML.
 
 The [W3C Markup Validator](https://validator.w3.org/) service was utilized to
 validate the HTML code of the project, ensuring the absence of syntax errors.
@@ -312,7 +316,7 @@ screenshots below for further details.
   <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/account/register/`
   ![register.html](assets/testing_files/register.png)
 
-### CSS
+### CSS.
 
 The W3C CSS Validator
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) service was employed
@@ -321,12 +325,18 @@ W3C CSS Validator identified no errors or warnings in project's CSS file.
 
 ![CSS validation image](assets/testing_files/css_validator.png)
 
-### PEP8
+### Python.
 
 All Python files in the `travelblog directory` and the `travelblog app` have
-been passed through the 
-[Code Institute PEP8 Linter](https://pep8ci.herokuapp.com/). All errors were 
-fixed, and the message "Results: All clear, no errors found" was obtained for 
+been passed through the
+[Code Institute PEP8 Linter](https://pep8ci.herokuapp.com/). All errors were
+fixed, and the message "Results: All clear, no errors found" was obtained for
 all files.
 
+### JavaScript.
 
+[JShint JavaScript Code Quality Tool](https://jshint.com/) was employed as
+tool for assessing the quality of JavaScript code, to check the integrity of
+the site's JavaScript implementation. The analysis revealed no errors in the
+code.
+<br>[Back to top ⇧](#table-of-contents)

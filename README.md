@@ -1266,14 +1266,16 @@ forking methods.
 
   To address the W3C CSS Validator warning, I rewrote the Django inherit helper
   text, removing `<ul>` and `<li>` tags.
-- Although the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) did 
-  not find any errors on `show_country.html` for countries with a single-word 
-  name, an error was identified for complex country names. This issue is 
-  connected to the way the link to the Wikipedia page is assembled. To 
-  eliminate this validation error, the custom `underscore_filter` was 
-  created to add the underscore symbol `_` between the words in complex
-  country names. After applying the filter, the error disappeared.
-
+- Although the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) did
+  not find any errors on `show_country.html` page for countries with a 
+  single-word name, an error was identified for complex country names:
+  ![show_complex_counry_error.png](assets/testing_files/show_complex_counry_error.png)
+  This issue is connected to the way the link to the Wikipedia page is
+  assembled. To eliminate this validation error, the custom
+  `underscore_filter` was created to add the underscore symbol `_` between the
+  words in complex country names. After applying the filter, the error
+  disappeared:
+  ![show_complex_country_ok.png](assets/testing_files/show_complex_country_ok.png)
   <br>[Back to top ⇧](#table-of-contents)
 
 ## Credits.

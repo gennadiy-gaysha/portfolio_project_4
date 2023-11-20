@@ -68,47 +68,48 @@
 ></script>
 
 <script>
-    function initMap() {
-<!--converts addresses into geographic coordinates-->
-    let geocoder = new google.maps.Geocoder();
-    let countryName = "{{country.country_name}}";
-    let capitalName = "{{country.capital}}"; // Replace with the desired capital city name
+function initMap() {
+  //converts addresses into geographic coordinates
+  let geocoder = new google.maps.Geocoder();
+  let countryName = "{{country.country_name}}";
+  let capitalName = "{{country.capital}}";
 
-<!--converts the country name into geographic coordinates-->
-    geocoder.geocode({ address: countryName }, function (results, status) {
-      if (status === "OK") {
+  //converts the country name into geographic coordinates
+  geocoder.geocode({ address: countryName }, function (results, status) {
+    if (status === "OK") {
+      //extracts the country's coordinates from the results
+      let countryCoordinates = results[0].geometry.location;
 
-    <!--extracts the country's coordinates from the results-->
-        let countryCoordinates = results[0].geometry.location;
+      //converts the capital city name into geographic coordinates
+      geocoder.geocode({ address: capitalName }, function (results, status) {
+        if (status === "OK") {
+          //extracts the capital's coordinates from the results
+          let capitalCoordinates = results[0].geometry.location;
 
-   <!--converts the capital city name into geographic coordinates-->
-        geocoder.geocode({ address: capitalName }, function (results, status) {
-          if (status === "OK") {
-        <!--extracts the capital's coordinates from the results-->
-            let capitalCoordinates = results[0].geometry.location;
+          //creates a new google.maps.Map object and initializes it
+          let map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 3,
+            center: countryCoordinates,
+          });
 
-        <!--creates a new google.maps.Map object and initializes it-->
-            let map = new google.maps.Map(document.getElementById("map"), {
-              zoom: 3,
-              center: countryCoordinates,
-            });
-
-        <!--specifies the position as the capital's coordinates and associating it with the map-->
-            let marker = new google.maps.Marker({
-              position: capitalCoordinates,
-              map: map,
-            });
-          } else {
-            console.log("Geocode was not successful for the following reason: " + status);
-          }
-        });
-      } else {
-        console.log("Geocode was not successful for the following reason: " + status);
-      }
-    });
-  }
-
-
+          //specifies the position as the capital's coordinates and associating it with the map
+          let marker = new google.maps.Marker({
+            position: capitalCoordinates,
+            map: map,
+          });
+        } else {
+          console.log(
+            "Geocode was not successful for the following reason: " + status
+          );
+        }
+      });
+    } else {
+      console.log(
+        "Geocode was not successful for the following reason: " + status
+      );
+    }
+  });
+}
 </script>
 
 {% endblock script %}
