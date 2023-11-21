@@ -67,7 +67,7 @@ class RegisterForm(UserCreationForm):
         self.fields['password1'].widget.attrs.update({'class': 'form-control'})
         self.fields['password2'].widget.attrs.update({'class': 'form-control'})
         self.fields[
-            'username'].help_text = '<span>*Required. 150 characters or ' \
+            'username'].help_text = '<span>*Required. 20 characters or ' \
                                     'fewer. Letters, digits and @/./+/-/_ ' \
                                     'only.</span><br><span style="color: ' \
                                     'green">*Disclaimer: ' \

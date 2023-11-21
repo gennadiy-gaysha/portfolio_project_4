@@ -20,6 +20,26 @@
 3. [Accessibility](#accessibility)
 4. [Tools Testing](#tools-testing)
 5. [Manual Testing](#manual-testing)
+    1. [Browser Compatibility](#browser-compatibility)
+    2. [Testing Style And Functionality](#testing-style-and-functionality)
+
+    - [Navigation bar](#navigation-bar)
+    - [Search Country field](#search-country-field)
+    - [Footer](#footer)
+    - [Home page](#home-page)
+    - [Post Details page](#post-details-page)
+    - [User Profile page](#user-profile-page)
+    - [Country page](#country-page)
+    - [Create New Post page](#create-new-post-page)
+    - [Update Post page](#update-post-page)
+    - [Register page](#register-page)
+    - [Create Profile page](#create-profile-page)
+    - [Update Profile page](#update-profile-page)
+    - [Edit details page](#edit-details-page)
+    - [Change Password page](#change-password-page)
+    - [Login page](#login-page)
+    - [About page](#about-page)
+    - [Error pages](#error-pages)
 
 ***
 
@@ -85,7 +105,6 @@
 | 2  | The profile page may exhibit fundamental user information, including the username, profile picture, and bio, contingent upon the details submitted by the user. | passed |
 | 3  | Users are able to peruse posts authored by the profile owner directly on the profile page.                                                                      | passed |
 | 4  | Users are restricted from altering information on profiles belonging to other users.                                                                            | passed |
-
 <br>[Back to top ⇧](#table-of-contents)
 
 ### Epic: Post Management.
@@ -153,7 +172,6 @@
 |----|----------------------------------------------------------------------------------------------------------------------------|--------|
 | 1  | The About page prominently showcases the "title," "content," and "featured_image" for the website visitor.                 | passed |
 | 2  | The displayed About information is well-formatted and responsive, ensuring optimal visibility across various screen sizes. | passed |
-
 <br>[Back to top ⇧](#table-of-contents)
 
 ### Epic: Search and Filtering.
@@ -198,7 +216,6 @@
 | 3  | Each post prominently displays the author's name, providing users with a clear indication of the post's authorship.                         | passed |
 | 4  | The interface for selecting authors is intuitive and responsive, ensuring a seamless user experience across different devices.              | passed |
 | 5  | The system integrates smoothly with the existing post categorization and filtering functionalities, ensuring compatibility and ease of use. | passed |
-
 <br>[Back to top ⇧](#table-of-contents)
 
 ### Epic: Admin Management.
@@ -256,7 +273,6 @@
 | 3  | Admins can effortlessly add, edit, or delete About entries using the Django admin panel.                                | passed |
 | 4  | The admin panel provides options for managing the "title," "content," and "featured_image" fields for each About entry. | passed |
 | 5  | The admin interface is intuitive and user-friendly, ensuring admins can handle About entries with ease and efficiency.  | passed |
-
 <br>[Back to top ⇧](#table-of-contents)
 
 ### Epic: Error Handling.
@@ -273,7 +289,6 @@
 | 4  | Verify that when an error occurs, the website correctly displays the corresponding special page, ensuring it is visually appealing and easily comprehensible. | passed |
 | 5  | Error pages should maintain consistency with the overall style and design aesthetics of the website.                                                          | passed |
 | 6  | Inclusion of helpful links or tips on error pages is crucial to assist visitors in navigating back to the main site or relevant sections.                     | passed |
-
 <br>[Back to top ⇧](#table-of-contents)
 
 ## Code Validation.
@@ -358,16 +373,266 @@ code.
 
 ## Manual Testing.
 
-### Browser Compatibility
+### Browser Compatibility.
 
 - All site functions work correctly and the same in browsers that have
   different engines, i.e. Chrome, Firefox and Safari:
 
- Browser         | Outcome                                                                               | Pass/Fail 
------------------|---------------------------------------------------------------------------------------|-----------
- Google Chrome   | No problems related to the appearance, responsiveness or functionality of the website | Pass      
- Safari          | No problems related to the appearance, responsiveness or functionality of the website | Pass      
- Mozilla Firefox | No problems related to the appearance, responsiveness or functionality of the website | Pass      
- Microsoft Edge  | No problems related to the appearance, responsiveness or functionality of the website | Pass
+| Browser         | Outcome                                                                               | Pass/Fail |
+|-----------------|---------------------------------------------------------------------------------------|-----------|
+| Google Chrome   | No problems related to the appearance, responsiveness or functionality of the website | Pass      |
+| Safari          | No problems related to the appearance, responsiveness or functionality of the website | Pass      |
+| Mozilla Firefox | No problems related to the appearance, responsiveness or functionality of the website | Pass      |
+| Microsoft Edge  | No problems related to the appearance, responsiveness or functionality of the website | Pass      |
 
 ### Testing Style And Functionality
+
+#### Navigation bar
+
+| Element                                        | Users                               | Test          | Outcome                                                                                               | Pass/Fail |
+|------------------------------------------------|-------------------------------------|---------------|-------------------------------------------------------------------------------------------------------|-----------|
+| Main logo link                                 | All                                 | Functionality | Clicking the link redirects to the Home page.                                                         | Pass      |
+|                                                |                                     | Style         | n/a                                                                                                   | n/a       |
+| Register link                                  | Unauthorized                        | Functionality | Clicking the link redirects to the Register page                                                      | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| Login link                                     | Unauthorized                        | Functionality | Clicking the link redirects to the Login page                                                         | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| About link                                     | All                                 | Functionality | Clicking the link redirects to the About page                                                         | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| Welcoming message                              | Unauthorized                        | Functionality | Impersonal greeting                                                                                   | Pass      |
+|                                                | Authorized                          |               | Personal greeting by username                                                                         | Pass      |
+| New post                                       | Authorized, created profile already | Functionality | Clicking the link redirects to the Create New Post page                                               | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| New post                                       | Authorized, without profile         | Functionality | Clicking the link redirects to the Create User Profile First page                                     |           |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      |           |
+| My posts                                       | Authorised as a post author         | Functionality | Clicking the drop-down item expands the dropdown menu                                                 | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| My posts > Dropdown menu > Drafts              | Authorised as a post author         | Functionality | Clicking the link redirects to the paginated list of user’s Draft posts                               | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| My posts > Dropdown menu > Awaiting moderation | Authorised as a post author         | Functionality | Clicking the link redirects to the paginated list of user’s Awaiting moderation posts                 | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| My posts > Dropdown menu > Published           | Authorised as a post author         | Functionality | Clicking the link redirects to the paginated list of user’s Published posts                           | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| My profile                                     | Authorized                          | Functionality | Clicking the drop-down item expands the dropdown menu                                                 | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| My profile > Dropdown menu > Create profile    | Authorized, without profile         | Functionality | Clicking the link redirects to the Create Profile page                                                | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| My profile > Dropdown menu > Show profile      | Authorized, created profile already | Functionality | Clicking the link redirects to the Show Profile page                                                  | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| My profile > Dropdown menu > Update profile    | Authorized, created profile already | Functionality | Clicking the link redirects to the Update Profile page                                                | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| My profile > Dropdown menu > Edit details      | Authorized                          | Functionality | Clicking the link redirects to the Edit Details page                                                  | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| My profile > Dropdown menu > Change password   | Authorized                          | Functionality | Clicking the link redirects to the Change Password page                                               | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+| Logout link                                    | Authorized                          | Functionality | Clicking the link redirects to the Logout page Flash message with confirmation of logout is displayed | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected                                                                      | Pass      |
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Search Country field
+
+| Element       | Users | Test          | Outcome                                                                                                                 | Pass/Fail |
+|---------------|-------|---------------|-------------------------------------------------------------------------------------------------------------------------|-----------|
+| Input field   | All   | Functionality | Placeholder "Search country info" is shown as expected Text can be entered in the field                                 | Pass      |
+|               |       | Style         | Focus effect working as expected                                                                                        | Pass      |
+| Search button | All   | Functionality | Clicking the button redirects to the Search Results page  The input text is posted to the search results page correctly | Pass      |
+|               |       | Style         | Hover effect working as expected                                                                                        | Pass      |
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Footer
+
+| Element        | Users | Test          | Outcome                                                      | Pass/Fail |
+|----------------|-------|---------------|--------------------------------------------------------------|-----------|
+| Logo link      | All   | Functionality | Clicking the link redirects to the Home page                 | Pass      |
+|                |       | Style         | Hover effect working as expected                             | Pass      |
+| Facebook icon  | All   | Functionality | Clicking the link will open Facebook page on a separate tab  | Pass      |
+|                |       | Style         | Hover effect working as expected                             | Pass      |
+| Twitter icon   | All   | Functionality | Clicking the link will open Twitter page on a separate tab   | Pass      |
+|                |       | Style         | Hover effect working as expected                             | Pass      |
+| Instagram icon | All   | Functionality | Clicking the link will open Instagram page on a separate tab | Pass      |
+|                |       | Style         | Hover effect working as expected                             | Pass      |
+| LinkedIn icon  | All   | Functionality | Clicking the link open LinkedIn page on a separate tab       | Pass      |
+|                |       | Style         | Hover effect working as expected                             | Pass      |
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Home page
+
+| Element                        | Users | Test          | Outcome                                                                                                 | Pass/Fail |
+|--------------------------------|-------|---------------|---------------------------------------------------------------------------------------------------------|-----------|
+| Dropdown select filter         | All   | Functionality | Clicking the drop-down item expands the list of countries to choose from                                | Pass      |
+|                                |       | Style         | Hover effect working as expected                                                                        | Pass      |
+| Filter button                  | All   | Functionality | Clicking the button redirects to the page with a paginated list of filtered posts                       | Pass      |
+|                                |       | Style         | Hover effect working as expected                                                                        | Pass      |
+| Total number of posts sign     | All   | Functionality | Display the actual number of posts in the user's query.                                                 | Pass      |
+|                                |       | Style         | Number of posts is highlighted as expected                                                              | Pass      |
+| Paginated list of posts        | All   | Functionality | Three posts per page are displayed as expected                                                          | Pass      |
+|                                |       | Style         | Styles apply to the list of post as expected                                                            | Pass      |
+| Pagination button              | All   | Functionality | Clicking the button redirects to the next paginated page                                                | Pass      |
+|                                |       | Style         | Hover effect working as expected                                                                        | Pass      |
+| Post card > User name          | All   | Functionality | Clicking the button redirects to the Author Profile page                                                | Pass      |
+|                                |       | Style         | Hover effect working as expected                                                                        | Pass      |
+| Post card > Country name       | All   | Functionality | Clicking the button redirects to the Country page                                                       | Pass      |
+|                                |       | Style         | Hover effect working as expected                                                                        | Pass      |
+| Post card > Title+excerpt      | All   | Functionality | Clicking the button redirects to the Post Details page Post title and excerpt are truncated as expected | Pass      |
+|                                |       | Style         | Hover effect working as expected                                                                        | Pass      |
+| Post card > post creation date | All   | Functionality | n/a                                                                                                     | Pass      |
+|                                |       | Style         | Hover effect working as expected                                                                        | Pass      |
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Post Details page
+
+| Element                                        | Users                                                                        | Test          | Outcome                                                                                                                                                                                    | Pass/Fail |
+|------------------------------------------------|------------------------------------------------------------------------------|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| Post head                                      | All                                                                          | Functionality | Post title and excerpt are truncated as expected                                                                                                                                           | Pass      |
+|                                                |                                                                              | Style         | All styles applied as expected                                                                                                                                                             | Pass      |
+| Post body                                      | All                                                                          | Functionality | Post body is displayed as expected                                                                                                                                                         | Pass      |
+|                                                |                                                                              | Style         | All styles applied as expected                                                                                                                                                             | Pass      |
+| Post head > User name                          | All                                                                          | Functionality | Clicking the link redirects to the Author Profile page                                                                                                                                     | Pass      |
+|                                                |                                                                              | Style         | Hover effect working as expected                                                                                                                                                           | Pass      |
+| Post head > Country name                       | All                                                                          | Functionality | Clicking the link redirects to the Country page                                                                                                                                            | Pass      |
+|                                                |                                                                              | Style         | Hover effect working as expected                                                                                                                                                           | Pass      |
+| Home button                                    | All                                                                          | Functionality | Clicking the button redirects to the Home page                                                                                                                                             | Pass      |
+|                                                |                                                                              | Style         | Hover effect working as expected                                                                                                                                                           | Pass      |
+| Update Post button                             | Authorized post author                                                       | Functionality | Clicking the button redirects to the Update Post page                                                                                                                                      | Pass      |
+|                                                |                                                                              | Style         | Hover effect working as expected                                                                                                                                                           | Pass      |
+| Delete Post button                             | Authorized post author                                                       | Functionality | Clicking the button redirects to the Deletion Warning page                                                                                                                                 | Pass      |
+|                                                |                                                                              | Style         | Hover effect working as expected                                                                                                                                                           | Pass      |
+| Like button                                    | Authorized, regardless of the post’s author                                  | Functionality | Clicking the button increases the number of likes by one if the user has not clicked it before  Clicking the button decreases the number of likes by one if the user has clicked it before | Pass      |
+|                                                |                                                                              | Style         | Hover effect working as expected                                                                                                                                                           | Pass      |
+| Comment icon                                   | All                                                                          | Functionality | A number of approved comments displayed correctly                                                                                                                                          | Pass      |
+|                                                |                                                                              | Style         | n/a                                                                                                                                                                                        | Pass      |
+| Leave comments section > Leave a comment field | Authorized, that have created their profile  regardless of the post’s author | Functionality | Placeholder "Please leave your comment here" is shown as expected  Text can be entered in the field                                                                                        | Pass      |
+|                                                |                                                                              | Style         | Hover effect working as expected                                                                                                                                                           | Pass      |
+| Leave comments section > Submit button         | Authorized, that have created their profile  regardless of the post’s author | Functionality | Clicking the button submits the post for approval  Flash message with confirmation of submission is displayed                                                                              | Pass      |
+|                                                |                                                                              | Style         | Hover effect working as expected                                                                                                                                                           | Pass      |
+| Comments section > commentor name              | All                                                                          | Functionality | Clicking the link redirects to the Commentor’s Profile page                                                                                                                                | Pass      |
+|                                                |                                                                              | Style         | Hover effect working as expected                                                                                                                                                           | Pass      |
+<br>[Back to top ⇧](#table-of-contents)
+
+#### User Profile page
+
+| Element                 | Users                             | Test          | Outcome                                                                                                                                                        | Pass/Fail |
+|-------------------------|-----------------------------------|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| Image                   | All                               | Functionality | Default image, depending on user’s gender displayed correctly Uploaded image displayed correctly                                                               | Pass      |
+|                         |                                   | Style         | Image width is equal for all users’ profiles                                                                                                                   | Pass      |
+| Profile data            | All                               | Functionality | All user’s data rendered correctly                                                                                                                             | Pass      |
+|                         |                                   | Style         | All user’s data are capitalized                                                                                                                                | Pass      |
+| Follow me links         | All                               | Functionality | If the user has at least one social account, a sign ‘Follow me’ with the link to their social account is displayed                                             | Pass      |
+|                         |                                   | Style         | All user’s data are capitalized                                                                                                                                | Pass      |
+| List of published posts | All                               | Functionality | A list of the user's published posts, along with the country described and the creation date is displayed The post title is the link to the Post Details page  | Pass      |
+|                         |                                   | Style         | Hover effect working as expected                                                                                                                               | Pass      |
+| Update Profile button   | Authorised users on their profile | Functionality | Clicking the button redirects to the User Profile (author_bio) page                                                                                            | Pass      |
+|                         |                                   | Style         | Hover effect working as expected                                                                                                                               | Pass      |
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Country page
+
+| Element              | Users | Test          | Outcome                                                                                                        | Pass/Fail |
+|----------------------|-------|---------------|----------------------------------------------------------------------------------------------------------------|-----------|
+| Flag Image           | All   | Functionality | Flag image corresponds to the country profile                                                                  | Pass      |
+|                      |       | Style         | Flag image width is equal for all countries                                                                    | Pass      |
+| Country Google map   | All   | Functionality | Country map corresponds to the country profile The marker corresponds to the capital of the respective country | Pass      |
+|                      |       | Style         | Scale is the same for all maps of countries                                                                    | Pass      |
+| Country data         | All   | Functionality | All country data corresponds to the country profile                                                            | Pass      |
+|                      |       | Style         | Styles applied as expected                                                                                     | Pass      |
+| Wikipedia logo image | All   | Functionality | Clicking the image (link) redirects to the respective Wikipedia page for country profile                       | Pass      |
+|                      |       | Style         | Styles applied as expected                                                                                     | Pass      |
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Create New Post page
+
+| Element                           | Users                                       | Test          | Outcome                                                                                                                     | Pass/Fail |
+|-----------------------------------|---------------------------------------------|---------------|-----------------------------------------------------------------------------------------------------------------------------|-----------|
+| Country dropdown list             | Authorized, that have created their profile | Functionality | Clicking the dropdown button makes a list of countries to choose from appear                                                | Pass      |
+|                                   |                                             | Functionality | Validation occurs, highlighting the field, if it is left empty                                                              | Pass      |
+|                                   |                                             | Style         | By hovering over the dropdown button, a floating hint appears                                                               | Pass      |
+| Title input                       | Authorized, that have created their profile | Functionality | Text can be entered into the field                                                                                          | Pass      |
+|                                   |                                             | Functionality | Validation occurs, highlighting the field, if it is left empty                                                              | Pass      |
+|                                   |                                             | Style         | Focus effect working as expected.                                                                                           | Pass      |
+| Upload image (Choose file) button | Authorized, that have created their profile | Functionality | Clicking the button allows the user to upload their own main post image Otherwise a default main post image will be applied | Pass      |
+|                                   |                                             | Style         | Hover effect working as expected                                                                                            | Pass      |
+| Excerpt input                     | Authorized, that have created their profile | Functionality | Text can be entered into the field  Optional field, allowed to be left empty                                                | Pass      |
+|                                   |                                             | Style         | Focus effect working as expected.                                                                                           | Pass      |
+| Content input                     | Authorized, that have created their profile | Functionality | Summernote editor displayed correctly  Text can be entered into the field                                                   | Pass      |
+|                                   |                                             | Functionality | Validation occurs (flash message & warning message) if the field is left empty                                              | Pass      |
+|                                   |                                             | Style         | Focus effect working as expected Styled correctly by Summernote CSS code                                                    | Pass      |
+| Status dropdown list              | Authorized, that have created their profile | Functionality | Clicking the dropdown button makes a list of two statuses appear: “Save as draft” and “Send to moderation”                  | Pass      |
+|                                   |                                             | Style         | Hovering over the dropdown button makes a floating hint appear                                                              | Fail      |
+| Create post button                | Authorized, that have created their profile | Functionality | Clicking the button redirects to the Post Details page                                                                      | Pass      |
+|                                   |                                             | Style         | Hovering over the dropdown button makes a floating hint appear                                                              | Pass      |
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Update Post page
+
+| Element                           | Users                       | Test          | Outcome                                                                                                                                                                         | Pass/Fail |
+|-----------------------------------|-----------------------------|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| Country dropdown list             | Authorised                  | Functionality | The option in the field is being pre-populated correctly The option can be edited                                                                                               | Pass      |
+|                                   |                             | Functionality | Validation occurs, highlighting the field, if it is left empty                                                                                                                  | Pass      |
+|                                   |                             | Style         | Hovering over the dropdown button makes a floating hint appear                                                                                                                  | Pass      |
+| Title input                       | Authorised as a post author | Functionality | The text in the field is being pre-populated correctly The text can be edited                                                                                                   | Pass      |
+|                                   |                             | Functionality | Validation occurs, highlighting the field, if it is left empty                                                                                                                  | Pass      |
+|                                   |                             | Style         | Focus effect working as expected                                                                                                                                                | Pass      |
+| Upload image (Choose file) button | Authorised as a post author | Functionality | Clicking the button allows the user to upload another main post image If no image is chosen again, the default main post image will be applied                                  | Pass      |
+|                                   |                             | Style         | Hover effect working as expected                                                                                                                                                | Pass      |
+| Excerpt input                     | Authorised as a post author | Functionality | Text can be entered into the field  Optional field, allowed to be left empty                                                                                                    | Pass      |
+|                                   |                             | Style         | Focus effect working as expected                                                                                                                                                | Pass      |
+| Content input                     | Authorised as a post author | Functionality | Summernote editor displayed correctly The text in the field is being pre-populated correctly  The text can be edited                                                            | Pass      |
+|                                   |                             | Functionality | Validation occurs (flash message & warning message) if the field is left empty                                                                                                  | Pass      |
+|                                   |                             | Style         | Focus effect working as expected Styled correctly by Summernote CSS code                                                                                                        | Pass      |
+| Status dropdown list              | Authorised as a post author | Functionality | “Save as draft” option by default By clicking on this form field, a list of two statuses to choose from appears: 'Save as draft' and 'Send to moderation' Status can be changed | Pass      |
+|                                   |                             | Style         | Hovering over the dropdown button makes a floating hint appear                                                                                                                  | Fail      |
+| Create post button                | Authorised as a post author | Functionality | Clicking the button redirects to the Post Details page                                                                                                                          | Pass      |
+|                                   |                             | Style         | Hover effect working as expected                                                                                                                                                | Pass      |
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Register page
+
+| Element          | Users        | Test          | Outcome                                                                                                                                                                                                           | Pass/Fail |
+|------------------|--------------|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| Username input   | Unauthorised | Functionality | Text can be entered into the field Not more than 20 symbols allowed                                                                                                                                               | Pass      |
+|                  |              | Functionality | Validation occurs (highlighting the field plus pop-up info immage) if it is left empty or if an email is inputted in a format other than the correct one Displays flash message if the username already exists    | Pass      |
+|                  |              | Style         | Focus effect working as expected                                                                                                                                                                                  | Pass      |
+| Email input      | Unauthorised | Functionality | Text in email format can be entered into a field                                                                                                                                                                  | Pass      |
+|                  |              | Functionality | Validation occurs (highlighted field & pop-up message) if the field is left empty Displays flash message if the email already exists                                                                              | Pass      |
+|                  |              | Style         | Focus effect working as expected                                                                                                                                                                                  | Pass      |
+| First name input | Unauthorised | Functionality | Text can be entered in the field Not more than 50 symbols allowed                                                                                                                                                 | Pass      |
+|                  |              | Functionality | Validation occurs (highlighted field & pop-up message) if the field is left empty                                                                                                                                 | Pass      |
+|                  |              | Style         | Focus effect working as expected                                                                                                                                                                                  | Pass      |
+| Last name input  | Unauthorised | Functionality | Text can be entered in the field Not more than 50 symbols allowed                                                                                                                                                 | Pass      |
+|                  |              | Functionality | Validation occurs (highlighted field & pop-up message) if the field is left empty                                                                                                                                 | Pass      |
+|                  |              | Style         | Focus effect working as expected                                                                                                                                                                                  | Pass      |
+| Password         | Unauthorised | Functionality | Text can be entered into the field                                                                                                                                                                                | Pass      |
+|                  |              | Functionality | Validation occurs (highlighted field & pop-up message) if the field is left empty Validate input is a valid password  Displays message if password is not valid  Displays message if both passwords are not equal | Pass      |
+|                  |              | Style         | Focus effect working as expected                                                                                                                                                                                  | Pass      |
+| Register button  | Unauthorised | Functionality | Clicking the button redirects to the User Profile (author_bio) page                                                                                                                                               | Pass      |
+|                  |              | Style         | Hover effect working as expected                                                                                                                                                                                  | Pass      |
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Create Profile page
+
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Update Profile page
+
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Edit details page
+
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Change Password page
+
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Login page
+
+<br>[Back to top ⇧](#table-of-contents)
+
+#### About page
+
+<br>[Back to top ⇧](#table-of-contents)
+
+#### Error pages
+
+<br>[Back to top ⇧](#table-of-contents)
+
