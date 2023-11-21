@@ -151,7 +151,9 @@ class CreatePost(LoginRequiredMixin, CreateView):
         the standard behavior of the CreateView is executed.
         """
         form.instance.author = self.request.user
-        messages.success(self.request, 'Post created successfully.')
+        messages.success(self.request, 'Post created successfully. Please '
+                                       'await approval if you sent it to '
+                                       'moderation.')
         return super().form_valid(form)
 
     def form_invalid(self, form):
@@ -198,7 +200,9 @@ class UpdatePost(UpdateView):
         """
         post = form.instance
         post.save()
-        messages.success(self.request, 'Post updated successfully.')
+        messages.success(self.request, 'Post updated successfully. Please, '
+                                       'await approval if you sent it to '
+                                       'moderation')
         return redirect('post-details', slug=post.slug)
 
     def form_invalid(self, form):
