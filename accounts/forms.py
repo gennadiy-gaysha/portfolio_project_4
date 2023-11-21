@@ -89,6 +89,17 @@ class EditDetailsForm(UserChangeForm):
         widget=forms.TextInput({'class': 'form-control', 'readonly': True}),
         max_length=50)
 
+    def clean_email(self):
+        """
+        Cleans the email field and checks if the email already exists in the
+        User model. Raises a validation error if the email already exists.
+        """
+        email = self.cleaned_data['email']
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError(
+                'This email address is already in use.')
+        return email
+
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'email', 'last_login',
