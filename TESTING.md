@@ -40,7 +40,7 @@
     - [Login page](#login-page)
     - [About page](#about-page)
     - [Post Deletion page](#post-deletion-page)
-    - [Error pages](#error-pages)
+    - [Error And Warning pages](#error-and-warning-pages-)
 
 ***
 
@@ -756,17 +756,36 @@ code.
 
 [Back to top ⇧](#table-of-contents)
 
-#### Error pages
+#### Error and Warning pages. 
 
-To test the triggering of 403, 404, and 500 errors, a link to the homepage was
-used as the base for constructing triggering links. The link consists of the
-domain (herokuapp.com) and the subdomain name, which is the project's name (
-i.e., 'project-4-gennadiy-gaysha-3d98b941946a'):
+To test the triggering of Warning Pages or 403, 404 and 500 errors, a link to
+the homepage was used as the base for constructing triggering links. The link
+consists of the domain (herokuapp.com) and the subdomain name, which is the
+project's name (i.e., 'project-4-gennadiy-gaysha-3d98b941946a'):
 
 `https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/`
 
 The test was conducted by adding different URL patterns (endpoints) to the '
 base' under different conditions. The table below presents the test results:
+
+| Endpoint description                                     | URL pattern                       | Users                                                           | Triggering result         | Error status / message                    |
+|----------------------------------------------------------|-----------------------------------|-----------------------------------------------------------------|---------------------------|-------------------------------------------|
+| Random set of symbols                                    | nkjw6q3’#as/dF                    | All                                                             | Page not found            | 404                                       |
+| Endpoint that does not exist                             | edit_details/                     | All                                                             | Page not found            | 404                                       |
+| Random set of symbols                                    | nkjw6q3’#as                       | All                                                             | Page not found            | 404                                       |
+| Endpoint that does not exist (not from apps’ urls.py)    | some_other_endpoint/              | All                                                             | Page not found            | 405                                       |
+| Link to the Register page                                | accounts/register/                | Authorized                                                      | Warning                   | You have already registered your account! |
+| Link to the Edit Details page                            | accounts/edit_details/            | Unauthorized                                                    | Internal Server Error     | 500                                       |
+| Link to the Change Password page                         | accounts/change_password/         | Unauthorized                                                    | redirecting to Login page | n/a                                       |
+| Link to the Create Profile Page                          | accounts/create_profile/username/ | Unauthorized, Authorized that have name another than ‘username’ | Access denied             | 403                                       |
+| Link to the user’s Update Profile page                   | update_profile/username/          | Unauthorized, Authorised regardless the user                    | Access denied             | 403                                       |
+| Link to the user’s Update Profile page                   | update_profile/username/          | Authorised user without profile                                 | Internal Server Error     | 500                                       |
+| Create Post page                                         | create_post/                      | Unauthorized                                                    | redirecting to Login page | n/a                                       |
+| Create Post page                                         | create_post/                      | Authorised user without profile                                 | Warning                   | Create your User profile first!           |
+| Edit Post page                                           | update_post/post.slug/            | Unauthorized, Authorised regardless the post author             | Access denied             | 403                                       |
+| Link to the author’s ‘Draft’ list of posts               | draft_list/username/              | Unauthorized                                                    | Access denied             | 403                                       |
+| Link to the author’s ‘Awaiting moderation’ list of posts | moderation_list/username/         | Unauthorized                                                    | Access denied             | 403                                       |
+| Link to the author’s ‘Published’ list of posts           | published_list/username/          | Unauthorized                                                    | Access denied             | 403                                       |
 
 [Back to top ⇧](#table-of-contents)
 
