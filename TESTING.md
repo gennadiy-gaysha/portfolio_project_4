@@ -41,6 +41,7 @@
     - [About page](#about-page)
     - [Post Deletion page](#post-deletion-page)
     - [Error And Warning pages](#error-and-warning-pages)
+    - [Pagination](#pagination)
 
 ***
 
@@ -785,6 +786,23 @@ base' under different conditions. The table below presents the test results:
 | Link to the author’s ‘Draft’ list of posts               | /draft_list/username/              | Unauthorized                                                    | Access denied             | 403                                       |
 | Link to the author’s ‘Awaiting moderation’ list of posts | /moderation_list/username/         | Unauthorized                                                    | Access denied             | 403                                       |
 | Link to the author’s ‘Published’ list of posts           | /published_list/username/          | Unauthorized                                                    | Access denied             | 403                                       |
+
+[Back to top ⇧](#table-of-contents)
+
+#### Pagination.
+
+- General pagination for unfiltered posts works as expected, with posts
+  arranged in descending order based on their creation date.
+- To check pagination for posts filtered by country, seven instances of posts
+  about Norway (a randomly chosen country) were published by different users to
+  test three paginated pages. Posts are arranged in expected descending 
+  order based on their creation date. Paginating between pages does not 
+  reset the filter. The counter displays proper number of the filtered posts.
+- The same way pagination was checked for the published user's (`travelblog`) 
+  posts (My posts > Published). Posts are arranged in expected descending 
+  order based on their creation date. Paginating between pages does not 
+  reset the filter. The counter displays proper number of user's published 
+  posts.
 
 [Back to top ⇧](#table-of-contents)
 

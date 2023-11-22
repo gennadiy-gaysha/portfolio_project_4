@@ -579,7 +579,7 @@ focal point while also delivering an attractive layout for users.
 
 ### Error Pages:
 Testing results for Warning and Error pages you can find in
-[TESTING.md](TESTING.md#error-and-warning-pages-) file.
+[TESTING.md](TESTING.md#error-and-warning-pages) file.
 
 #### 403 Forbidden Error Page:
 
