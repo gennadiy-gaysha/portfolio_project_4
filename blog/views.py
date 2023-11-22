@@ -240,6 +240,13 @@ class DraftList(LoginRequiredMixin, generic.ListView):
         return Post.objects.filter(author=user, status=0).order_by(
             '-created_on')
 
+    def dispatch(self, request, *args, **kwargs):
+        username = kwargs.get('username', None)
+        if request.user.username != username or \
+                not request.user.is_authenticated:
+            raise PermissionDenied  # Triggers permission_denied view
+        return super().dispatch(request, *args, **kwargs)
+
 
 class PublishedList(LoginRequiredMixin, generic.ListView):
     """
@@ -254,6 +261,13 @@ class PublishedList(LoginRequiredMixin, generic.ListView):
         return Post.objects.filter(author=user, status=2).order_by(
             '-created_on')
 
+    def dispatch(self, request, *args, **kwargs):
+        username = kwargs.get('username', None)
+        if request.user.username != username or \
+                not request.user.is_authenticated:
+            raise PermissionDenied  # Triggers permission_denied view
+        return super().dispatch(request, *args, **kwargs)
+
 
 class ModerationList(LoginRequiredMixin, generic.ListView):
     """
@@ -262,6 +276,13 @@ class ModerationList(LoginRequiredMixin, generic.ListView):
     model = Post
     template_name = 'blog/user_post_list.html'
     paginate_by = 3
+
+    def dispatch(self, request, *args, **kwargs):
+        username = kwargs.get('username', None)
+        if request.user.username != username or \
+                not request.user.is_authenticated:
+            raise PermissionDenied  # Triggers permission_denied view
+        return super().dispatch(request, *args, **kwargs)
 
     def get_queryset(self):
         user = self.request.user

@@ -147,7 +147,8 @@ class CreateProfile(generic.CreateView):
         username = kwargs.get('username', None)
         # print(username)
         # print(request.user.username)
-        if request.user.username != username or request.user.is_authenticated:
+        if request.user.username != username or \
+                not request.user.is_authenticated:
             raise PermissionDenied  # Triggers permission_denied view
         return super().dispatch(request, *args, **kwargs)
 

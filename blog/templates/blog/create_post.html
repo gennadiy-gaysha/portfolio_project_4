@@ -10,15 +10,18 @@
 <div class="container">
     <br>
     {% if not user.userprofile %}
-    <h1>Create your User profile first!</h1>
+    <div class="alert alert-danger" role="alert">
+        Create your User profile first!
+    </div>
     <br>
-    <p class="form-width">Before writing your first thrilling post, please create
+    <span class="form-width">Before writing your first thrilling post, please
+        create
         your user profile to let other people know a little bit more about yourself.
         You can do this by either selecting <strong>My Profile</strong> >
         <strong>Create Profile</strong> on the
-        navbar or by clicking on the "Create your profile" button below.</p>
+        navbar or by clicking on the "Create your profile" button below.</span>
     <br>
-    <a class="btn btn-outline-success"
+    <a class="btn btn-outline-success mt-5"
        href="{% url 'create-profile' username=user.username %}">Create your profile</a>
     {% else %}
     <h1 class="form-heading">Create new post</h1>
