@@ -177,14 +177,14 @@ class UpdatePost(UpdateView):
     form_class = PostForm
     template_name = 'blog/update_post.html'
 
-    def get(self, request, *args, **qwargs):
+    def get(self, request, *args, **kwargs):
         post = self.get_object()
         # Checks if the user is authenticated and has the permission to
         # change the post
         if not request.user.is_authenticated \
                 or not request.user == post.author:
             raise PermissionDenied  # Triggers permission_denied view
-        return super().get(request, *args, **qwargs)
+        return super().get(request, *args, **kwargs)
 
     def form_valid(self, form):
         """

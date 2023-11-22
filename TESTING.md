@@ -107,7 +107,7 @@
 | 3  | Users are able to peruse posts authored by the profile owner directly on the profile page.                                                                      | passed |
 | 4  | Users are restricted from altering information on profiles belonging to other users.                                                                            | passed |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 ### Epic: Post Management.
 
@@ -175,7 +175,7 @@
 | 1  | The About page prominently showcases the "title," "content," and "featured_image" for the website visitor.                 | passed |
 | 2  | The displayed About information is well-formatted and responsive, ensuring optimal visibility across various screen sizes. | passed |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 ### Epic: Search and Filtering.
 
@@ -220,7 +220,7 @@
 | 4  | The interface for selecting authors is intuitive and responsive, ensuring a seamless user experience across different devices.              | passed |
 | 5  | The system integrates smoothly with the existing post categorization and filtering functionalities, ensuring compatibility and ease of use. | passed |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 ### Epic: Admin Management.
 
@@ -278,7 +278,7 @@
 | 4  | The admin panel provides options for managing the "title," "content," and "featured_image" fields for each About entry. | passed |
 | 5  | The admin interface is intuitive and user-friendly, ensuring admins can handle About entries with ease and efficiency.  | passed |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 ### Epic: Error Handling.
 
@@ -295,7 +295,7 @@
 | 5  | Error pages should maintain consistency with the overall style and design aesthetics of the website.                                                          | passed |
 | 6  | Inclusion of helpful links or tips on error pages is crucial to assist visitors in navigating back to the main site or relevant sections.                     | passed |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 ## Code Validation.
 
@@ -360,7 +360,7 @@ all files.
 tool for assessing the quality of JavaScript code, to check the integrity of
 the site's JavaScript implementation. The analysis revealed no errors in the
 code.
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 ## Accessibility.
 
@@ -434,7 +434,7 @@ code.
 | Logout link                                    | Authorized                          | Functionality | Clicking the link redirects to the Logout page. Flash message with confirmation of logout is displayed. | Pass      |
 |                                                |                                     | Style         | Hover effect working as expected.                                                                       | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Search Country field
 
@@ -445,7 +445,7 @@ code.
 | Search button | All   | Functionality | Clicking the button redirects to the Search Results page. The input text is posted to the search results page correctly. | Pass      |
 |               |       | Style         | Hover effect working as expected.                                                                                        | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Footer
 
@@ -462,7 +462,7 @@ code.
 | LinkedIn icon  | All   | Functionality | Clicking the link open LinkedIn page on a separate tab.       | Pass      |
 |                |       | Style         | Hover effect working as expected.                             | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Home page
 
@@ -487,7 +487,7 @@ code.
 | Post card > post creation date | All   | Functionality | n/a                                                                                                       | Pass      |
 |                                |       | Style         | Hover effect working as expected.                                                                         | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Post Details page
 
@@ -518,7 +518,7 @@ code.
 | Comments section > commentor name              | All                                                                          | Functionality | Clicking the link redirects to the Commentor’s Profile page.                                                                                                                                | Pass      |
 |                                                |                                                                              | Style         | Hover effect working as expected.                                                                                                                                                           | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### User Profile page
 
@@ -535,7 +535,7 @@ code.
 | Update Profile button   | Authorised users on their profile | Functionality | Clicking the button redirects to the update User Profile (author_bio) page.                                                                                     | Pass      |
 |                         |                                   | Style         | Hover effect working as expected.                                                                                                                               | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Country page
 
@@ -550,7 +550,7 @@ code.
 | Wikipedia logo image | All   | Functionality | Clicking the image (link) redirects to the respective Wikipedia page for country profile.                        | Pass      |
 |                      |       | Style         | Styles applied as expected.                                                                                      | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Create New Post page
 
@@ -574,7 +574,7 @@ code.
 | Create post button                | Authorized, that have created their profile | Functionality | Clicking the button redirects to the Post Details page. A flash message about the successful creation of the post and its submission for moderation occurs. | Pass      |
 |                                   |                                             | Style         | Hovering over the dropdown button makes a floating hint appear.                                                                                             | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Update Post page
 
@@ -624,7 +624,7 @@ code.
 | Register button  | Unauthorised | Functionality | Clicking the button redirects to the Login page. A flash message about the successful registration occurs.                                                                                                            | Pass      |
 |                  |              | Style         | Hover effect working as expected.                                                                                                                                                                                     | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Create Profile page
 
@@ -650,7 +650,7 @@ code.
 | Create Profile button             | Authorised, without profile | Functionality | Clicking the button redirects to the User Profile (author_bio) page. A flash message about the successful creation of the User Profile occurs.                                                                                                                                | Pass      |
 |                                   |                             | Style         | Hover effect working as expected.                                                                                                                                                                                                                                             | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Update Profile page
 
@@ -676,7 +676,7 @@ code.
 | Update Profile button             | Authorised | Functionality | Clicking the button redirects to the updated User Profile (author_bio) page.                                                                                                            | Pass      |
 |                                   |            | Style         | Hover effect working as expected.                                                                                                                                                       | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Edit details page
 
@@ -697,7 +697,7 @@ code.
 | Submit button    | Authorised | Functionality | Clicking the button redirects to the Home page. A flash message about the successful editing of the details occurs.                                            | Pass      |
 |                  |            | Style         | Hover effect working as expected.                                                                                                                              | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Change Password page
 
@@ -717,7 +717,7 @@ code.
 | Reject button                   | Authorised | Functionality | Clicking the button redirects to the Home page.                                                                    | Pass      |
 |                                 |            | Style         | Hover effect working as expected.                                                                                  | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Login page
 
@@ -732,31 +732,41 @@ code.
 | Login button   | Unauthorised | Functionality | Clicking the button redirects to the Home page. A flash message about the successful login is displayed. | Pass      |
 |                |              | Style         | Hover effect working as expected.                                                                        | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### About page
 
-| Element     | Users | Test          | Outcome                            | Pass/Fail |
-|-------------|-------|---------------|------------------------------------|-----------|
-| Page layout | All   | Functionality | The About page renders correctly.  | Pass      |
-|             |       | Style         | Style applied as expected.         | Pass      |
+| Element     | Users | Test          | Outcome                           | Pass/Fail |
+|-------------|-------|---------------|-----------------------------------|-----------|
+| Page layout | All   | Functionality | The About page renders correctly. | Pass      |
+|             |       | Style         | Style applied as expected.        | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Post Deletion page
 
-| Element            | Users                       | Test          | Outcome                                                                                                            | Pass/Fail |
-|--------------------|-----------------------------|---------------|--------------------------------------------------------------------------------------------------------------------|-----------|
-| Page content       | Authorised as a post author | Functionality | A deletion warning sign is displayed.                                                                              | Pass      |
-|                    |                             | Style         | Style applied as expected.                                                                                         | Fail      |
-| Delete Post button | Authorised as a post author | Functionality | Clicking the button redirects to the Home page. A flash message about the successful deletion of the post occurs.  | Pass      |
-|                    |                             | Style         | Hover effect working as expected.                                                                                  | Pass      |
-| Reject button      | Authorised as a post author | Functionality | Clicking the button redirects to the Post Details page.                                                            | Pass      |
-|                    |                             | Style         | Hover effect working as expected.                                                                                  | Pass      |
+| Element            | Users                       | Test          | Outcome                                                                                                           | Pass/Fail |
+|--------------------|-----------------------------|---------------|-------------------------------------------------------------------------------------------------------------------|-----------|
+| Page content       | Authorised as a post author | Functionality | A deletion warning sign is displayed.                                                                             | Pass      |
+|                    |                             | Style         | Style applied as expected.                                                                                        | Fail      |
+| Delete Post button | Authorised as a post author | Functionality | Clicking the button redirects to the Home page. A flash message about the successful deletion of the post occurs. | Pass      |
+|                    |                             | Style         | Hover effect working as expected.                                                                                 | Pass      |
+| Reject button      | Authorised as a post author | Functionality | Clicking the button redirects to the Post Details page.                                                           | Pass      |
+|                    |                             | Style         | Hover effect working as expected.                                                                                 | Pass      |
 
-<br>[Back to top ⇧](#table-of-contents)
+[Back to top ⇧](#table-of-contents)
 
 #### Error pages
 
-<br>[Back to top ⇧](#table-of-contents)
+To test the triggering of 403, 404, and 500 errors, a link to the homepage was
+used as the base for constructing triggering links. The link consists of the
+domain (herokuapp.com) and the subdomain name, which is the project's name (
+i.e., 'project-4-gennadiy-gaysha-3d98b941946a'):
+
+`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/`
+
+The test was conducted by adding different URL patterns (endpoints) to the '
+base' under different conditions. The table below presents the test results:
+
+[Back to top ⇧](#table-of-contents)
 

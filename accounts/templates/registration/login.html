@@ -9,14 +9,19 @@
 {% block content %}
 <div class="container">
     <br>
+    {% if user.is_authenticated %}
+    <div class="alert alert-danger" role="alert">
+        Before logging into another account, you should log out first!
+    </div>
+    <a class="btn btn-outline-success mt-3"
+                       href="{% url 'logout' %}">Logout</a>
+    {% else %}
     <h1>Logging in</h1>
-
 <!--    django built-in message framework-->
     {% if form.errors %}
     <p style="color: red;">Please, enter a correct username and password. Note that both
         fields can be case sensitive</p>
     {% endif %}
-
     <form method="post">
         <div class="form-group form-login-width">
             {% csrf_token %}
@@ -30,6 +35,7 @@
             <button class="btn btn-outline-success">Login</button>
         </div>
     </form>
+    {% endif %}
     <br>
 </div>
 {% endblock content %}

@@ -143,6 +143,14 @@ class CreateProfile(generic.CreateView):
     form_class = UserProfileForm
     template_name = 'registration/create_profile.html'
 
+    def dispatch(self, request, *args, **kwargs):
+        username = kwargs.get('username', None)
+        # print(username)
+        # print(request.user.username)
+        if request.user.username != username or request.user.is_authenticated:
+            raise PermissionDenied  # Triggers permission_denied view
+        return super().dispatch(request, *args, **kwargs)
+
     def form_valid(self, form):
         """
         Setting the user field of the profile to the currently logged-in user
@@ -178,14 +186,14 @@ class UpdateProfile(generic.UpdateView):
     form_class = UserProfileForm
     template_name = 'registration/update_profile.html'
 
-    def get(self, request, *args, **qwargs):
+    def get(self, request, *args, **kwargs):
         userprofile = self.get_object()
         # Checks if the user is authenticated and has the permission to
         # change the post
         if not request.user.is_authenticated or not request.user == \
                                                     userprofile.user:
             raise PermissionDenied # Triggers permission_denied view
-        return super().get(request, *args, **qwargs)
+        return super().get(request, *args, **kwargs)
 
     def get_object(self, queryset=None):
         # this line extracts the username from the URL

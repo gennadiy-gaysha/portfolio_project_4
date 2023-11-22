@@ -23,8 +23,8 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include('about.urls')),
     path('', include('blog.urls')),
-    path('account/', include('django.contrib.auth.urls')),
-    path('account/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
 
 handler403 = views.permission_denied
