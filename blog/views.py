@@ -306,6 +306,15 @@ class DeletePost(generic.DeleteView):
     template_name = 'blog/delete_post.html'
     success_url = reverse_lazy('home')
 
+    def get(self, request, *args, **kwargs):
+        post = self.get_object()
+        # Checks if the user is authenticated and has the permission to
+        # change the post
+        if not request.user.is_authenticated \
+                or not request.user == post.author:
+            raise PermissionDenied  # Triggers permission_denied view
+        return super().get(request, *args, **kwargs)
+
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, 'Post deleted successfully.')
         return super().delete(request, *args, **kwargs)
