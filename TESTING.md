@@ -319,7 +319,7 @@ screenshots below for further details.
   ![post_details.html](assets/testing_files/post_details.png)
 
 - Author Bio page:
-  <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/account/author_bio/travelblog`
+  <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/accounts/author_bio/travelblog`
   ![author_bio.html](assets/testing_files/author_bio.png)
 
 - Show Country page:
@@ -331,11 +331,11 @@ screenshots below for further details.
   ![about_page.html](assets/testing_files/about_page.png)
 
 - Login page:
-  <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/account/login/`
+  <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/accounts/login/`
   ![login.html](assets/testing_files/login.png)
 
 - Register page:
-  <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/account/register/`
+  <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/accounts/register/`
   ![register.html](assets/testing_files/register.png)
 
 ### CSS.
@@ -807,3 +807,9 @@ base' under different conditions. The table below presents the test results:
 
 [Back to top ⇧](#table-of-contents)
 
+| Posluga | Dane                                                                        | Srednie spozywanie | Aktualny Abschlagszahlung, EURO |
+|---------|-----------------------------------------------------------------------------|--------------------|---------------------------------|
+| Gaz     | Nr licznika:  621700252  Vertragskonto: 82797401  Vertragsnummer: 77923334  | 3                  | 101                             |
+| Prad    | Nr licznika: 90000003780  Vertragskonto: 82797401  Vertragsnummer: 77923321 | 50                 | 38                              |
+| Prad    | Nr licznika: 90000244013  Vertragskonto: 82794921  Vertragsnummer: 77912756 | 140                | 90                              |
+| Prad    | Nr licznika: 90000003698  Vertragskonto: 82759570  Vertragsnummer: 77753176 | 50                 | 38                              |

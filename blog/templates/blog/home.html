@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cloudinary %}
 
 {% block title %}
 <title>Home</title>
@@ -28,11 +29,9 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <img class="card-img-top"
-                                     src="{% static 'blog/img/default_post_image.jpg' %}" alt="Default post image">
+                                     src="{% static 'blog/img/default_post_image_2.png' %}" alt="Default post image">
                                 {% else %}
-                                <img class="card-img-top"
-                                     src=" {{ post.featured_image.url }}"
-                                     alt="Post image">
+                                {% cloudinary post.featured_image format='webp' width=1280 height=640 crop='fill' class='card-img-top' alt='Post image' %}
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author"><a href="{% url 'author-bio' author_name=post.author %}"
