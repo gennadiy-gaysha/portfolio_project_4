@@ -30,7 +30,7 @@
                 <img src="{% static 'blog/img/default_post_image.jpg' %}"
                      style="max-width: 100%;" alt="Default post image">
                 {% else %}
-                {% cloudinary post.featured_image format='webp' max_height=1200 crop='fill' class='card-img-top' alt='Post image' %}
+                {% cloudinary post.featured_image format='webp' style='max-height: 1200px;' crop='fill' class='card-img-top' alt='Post image' %}
 <!--                <img src="{{ post.featured_image.url }}"-->
 <!--                     style="max-width: 100%;" alt="Post image">-->
                 {% endif %}
