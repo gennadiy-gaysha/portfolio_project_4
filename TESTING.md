@@ -313,10 +313,22 @@ screenshots below for further details.
 - Home page:
   <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/`
   ![home.html](assets/testing_files/home.png)
+- To enhance the performance value in
+  the [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+  report, the `{% cloudinary %}` template was introduced to render formatted
+  images. It was observed that the Cloudinary template tag generates a
+  self-closing <img> tag with a trailing slash, which is considered a minor
+  error:
+
+  ![home.html](assets/testing_files/home_slash.png)
 
 - Post Details page:
   <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/post/beauty-of-namibia-a-journey-into-the-heart-of-africa/`
   ![post_details.html](assets/testing_files/post_details.png)
+- The 'trailing slash' issue occurred also after implementing
+  the `{% cloudinary %}` template on the `post_details.html` page:
+
+  ![post_details.html](assets/testing_files/post_details_slash.png)
 
 - Author Bio page:
   <br>`https://project-4-gennadiy-gaysha-3d98b941946a.herokuapp.com/accounts/author_bio/travelblog`
@@ -364,6 +376,31 @@ code.
 [Back to top ⇧](#table-of-contents)
 
 ## Accessibility.
+
+To assess web pages for performance, accessibility, progressive web app
+characteristics, and SEO,
+the [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) Chrome
+DevTools extension was employed for auditing. Presented below are the results of
+this testing for various pages.
+
+| Page                 | Lighthouse report                                                                 |
+|----------------------|-----------------------------------------------------------------------------------|
+| Home page            | ![Home page](assets/testing_files/lighthouse/home.png)                            |
+| Post Details page    | ![Post Details page](assets/testing_files/lighthouse/post_details.png)            |
+| User Profile page    | ![User Profile page](assets/testing_files/lighthouse/user_profile_page.png)       |
+| Country page         | ![Country page](assets/testing_files/lighthouse/country_page.png)                 |
+| Create New Post page | ![Create New Post page](assets/testing_files/lighthouse/create_post_page.png)     |
+| Update Post page     | ![Update Post page](assets/testing_files/lighthouse/update_post_page.png)         |
+| Register page        | ![Register page](assets/testing_files/lighthouse/register_page.png)               |
+| Create Profile page  | ![Create Profile page](assets/testing_files/lighthouse/create_profile_page.png)   |
+| Update Profile page  | ![Update Profile page](assets/testing_files/lighthouse/update_profile_page.png)   |
+| Edit details page    | ![Edit details page](assets/testing_files/lighthouse/edit_details_page.png)       |
+| Change Password page | ![Change Password page](assets/testing_files/lighthouse/change_password_page.png) |
+| Login page           | ![Login page](assets/testing_files/lighthouse/login_page.png)                     |
+| About page           | ![About page](assets/testing_files/lighthouse/about_page.png)                     |
+| Post Deletion page   | ![Post Deletion page](assets/testing_files/lighthouse/delete_post_page.png)       |
+
+[Back to top ⇧](#table-of-contents)
 
 ## Tools Testing.
 
@@ -796,13 +833,13 @@ base' under different conditions. The table below presents the test results:
   arranged in descending order based on their creation date.
 - To check pagination for posts filtered by country, seven instances of posts
   about Norway (a randomly chosen country) were published by different users to
-  test three paginated pages. Posts are arranged in expected descending 
-  order based on their creation date. Paginating between pages does not 
+  test three paginated pages. Posts are arranged in expected descending
+  order based on their creation date. Paginating between pages does not
   reset the filter. The counter displays proper number of the filtered posts.
-- The same way pagination was checked for the published user's (`travelblog`) 
-  posts (My posts > Published). Posts are arranged in expected descending 
-  order based on their creation date. Paginating between pages does not 
-  reset the filter. The counter displays proper number of user's published 
+- The same way pagination was checked for the published user's (`travelblog`)
+  posts (My posts > Published). Posts are arranged in expected descending
+  order based on their creation date. Paginating between pages does not
+  reset the filter. The counter displays proper number of user's published
   posts.
 
 [Back to top ⇧](#table-of-contents)
@@ -813,3 +850,7 @@ base' under different conditions. The table below presents the test results:
 | Prad    | Nr licznika: 90000003780  Vertragskonto: 82797401  Vertragsnummer: 77923321 | 50                 | 38                              |
 | Prad    | Nr licznika: 90000244013  Vertragskonto: 82794921  Vertragsnummer: 77912756 | 140                | 90                              |
 | Prad    | Nr licznika: 90000003698  Vertragskonto: 82759570  Vertragsnummer: 77753176 | 50                 | 38                              |
+
+
+
+
