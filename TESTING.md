@@ -447,8 +447,8 @@ this testing for various pages.
 |                                                | Authorized                          |               | Personal greeting by username.                                                                          | Pass      |
 | New post                                       | Authorized, created profile already | Functionality | Clicking the link redirects to the Create New Post page.                                                | Pass      |
 |                                                |                                     | Style         | Hover effect working as expected.                                                                       | Pass      |
-| New post                                       | Authorized, without profile         | Functionality | Clicking the link redirects to the Create User Profile First page.                                      |           |
-|                                                |                                     | Style         | Hover effect working as expected.                                                                       |           |
+| New post                                       | Authorized, without profile         | Functionality | Clicking the link redirects to the Create User Profile First page.                                      | Pass      |
+|                                                |                                     | Style         | Hover effect working as expected.                                                                       | Pass      |
 | My posts                                       | Authorised as a post author         | Functionality | Clicking the drop-down item expands the dropdown menu.                                                  | Pass      |
 |                                                |                                     | Style         | Hover effect working as expected.                                                                       | Pass      |
 | My posts > Dropdown menu > Drafts              | Authorised as a post author         | Functionality | Clicking the link redirects to the paginated list of user’s Draft posts.                                | Pass      |
@@ -786,7 +786,7 @@ this testing for various pages.
 | Element            | Users                       | Test          | Outcome                                                                                                           | Pass/Fail |
 |--------------------|-----------------------------|---------------|-------------------------------------------------------------------------------------------------------------------|-----------|
 | Page content       | Authorised as a post author | Functionality | A deletion warning sign is displayed.                                                                             | Pass      |
-|                    |                             | Style         | Style applied as expected.                                                                                        | Fail      |
+|                    |                             | Style         | Style applied as expected.                                                                                        | Pass      |
 | Delete Post button | Authorised as a post author | Functionality | Clicking the button redirects to the Home page. A flash message about the successful deletion of the post occurs. | Pass      |
 |                    |                             | Style         | Hover effect working as expected.                                                                                 | Pass      |
 | Reject button      | Authorised as a post author | Functionality | Clicking the button redirects to the Post Details page.                                                           | Pass      |
