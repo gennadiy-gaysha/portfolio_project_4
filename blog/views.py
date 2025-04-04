@@ -225,7 +225,7 @@ class DraftList(LoginRequiredMixin, generic.ListView):
     """
     model = Post
     template_name = 'blog/user_post_list.html'
-    paginate_by = 3
+    paginate_by = 6
 
     def get_queryset(self):
         """
