@@ -29,7 +29,7 @@ class PostList(generic.ListView):
     model = Post
     template_name = 'blog/home.html'
     queryset = Post.objects.filter(status=2).order_by('-created_on')
-    paginate_by = 3
+    paginate_by = 6
 
     def get_queryset(self):
         """
@@ -254,7 +254,7 @@ class PublishedList(LoginRequiredMixin, generic.ListView):
     """
     model = Post
     template_name = 'blog/user_post_list.html'
-    paginate_by = 3
+    paginate_by = 6
 
     def get_queryset(self):
         user = self.request.user
@@ -275,7 +275,7 @@ class ModerationList(LoginRequiredMixin, generic.ListView):
     """
     model = Post
     template_name = 'blog/user_post_list.html'
-    paginate_by = 3
+    paginate_by = 6
 
     def dispatch(self, request, *args, **kwargs):
         username = kwargs.get('username', None)
